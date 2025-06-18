@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 
-	v1 "github.com/open-policy-agent/opa/v1/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // MustParseBody returns a parsed body.

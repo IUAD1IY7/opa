@@ -14,8 +14,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/types"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestCheckInference(t *testing.T) {
@@ -2433,7 +2433,7 @@ q = p`,
 
 }
 
-// TestSchemaCache is a regression test for https://github.com/open-policy-agent/opa/issues/7679
+// TestSchemaCache is a regression test for https://github.com/IUAD1IY7/opa/issues/7679
 func TestInlinedSchemaAnnotationIgnoredByCache(t *testing.T) {
 	policy := `
 package test

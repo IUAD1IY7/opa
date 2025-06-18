@@ -5,7 +5,7 @@
 package bundle
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/plugins/bundle"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/bundle"
 )
 
 // ParseConfig validates the config and injects default values. This is

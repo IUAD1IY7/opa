@@ -11,9 +11,9 @@ import (
 
 	wasmtime "github.com/bytecodealliance/wasmtime-go/v3"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa/errors"
-	"github.com/open-policy-agent/opa/internal/wasm/util"
-	"github.com/open-policy-agent/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/errors"
+	"github.com/IUAD1IY7/opa/internal/wasm/util"
+	"github.com/IUAD1IY7/opa/v1/metrics"
 )
 
 var errNotReady = errors.New(errors.NotReadyErr, "")

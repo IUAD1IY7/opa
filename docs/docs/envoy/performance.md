@@ -149,7 +149,7 @@ containers:
 > cores that OPA can consume.
 >
 > 💡 The OPA-Envoy plugin can be configured to listen on a UNIX Domain Socket. A complete example of such a setup
-> can be found [here](https://github.com/open-policy-agent/opa-envoy-plugin/tree/main/examples/envoy-uds).
+> can be found [here](https://github.com/IUAD1IY7/opa-envoy-plugin/tree/main/examples/envoy-uds).
 
 ### Load Generator And Measurement Tool
 
@@ -246,7 +246,7 @@ CPU and memory consumed as well as latency added.
 - `OPA Evaluation` is the time taken to evaluate the policy.
 
 - `gRPC Server Handler` is the total time taken to prepare the input for the policy, evaluate the policy (`OPA Evaluation`)
-  and prepare the result. Basically this is time spent by the OPA-Envoy plugin to process the request. OPA's [metrics](https://pkg.go.dev/github.com/open-policy-agent/opa/metrics)
+  and prepare the result. Basically this is time spent by the OPA-Envoy plugin to process the request. OPA's [metrics](https://pkg.go.dev/github.com/IUAD1IY7/opa/metrics)
   package provides helpers to measure both `gRPC Server Handler` and `OPA Evaluation` time.
 
 - `Resource utilization` refers to the CPU and memory usage of the OPA-Envoy container. `kubectl top` utility can be

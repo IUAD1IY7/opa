@@ -8,13 +8,13 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/runtime"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/loader"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	inmem "github.com/open-policy-agent/opa/v1/storage/inmem/test"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	inmem "github.com/IUAD1IY7/opa/v1/storage/inmem/test"
+	"github.com/IUAD1IY7/opa/internal/runtime"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func BenchmarkPartialObjectRuleCrossModule(b *testing.B) {

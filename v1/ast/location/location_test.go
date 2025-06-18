@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	astJSON "github.com/open-policy-agent/opa/v1/ast/json"
-	"github.com/open-policy-agent/opa/v1/util"
+	astJSON "github.com/IUAD1IY7/opa/v1/ast/json"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestLocationCompare(t *testing.T) {

@@ -3,7 +3,7 @@ package logging
 import (
 	"context"
 
-	v1 "github.com/open-policy-agent/opa/v1/logging"
+	v1 "github.com/IUAD1IY7/opa/v1/logging"
 )
 
 // Level log level for Logger

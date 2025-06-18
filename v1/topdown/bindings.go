@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 type undo struct {

@@ -10,7 +10,7 @@ package runtime
 import (
 	"os/user"
 
-	"github.com/open-policy-agent/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/logging"
 )
 
 // checkUserPrivileges could not be running in Docker, so we only warn

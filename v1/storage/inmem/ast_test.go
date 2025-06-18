@@ -7,8 +7,8 @@ package inmem
 import (
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 func TestSetInAst(t *testing.T) {

@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // Transaction is a mock storage.Transaction implementation for use in testing.

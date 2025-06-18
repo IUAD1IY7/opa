@@ -8,11 +8,11 @@ package tester
 import (
 	"context"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/bundle"
-	"github.com/open-policy-agent/opa/loader"
-	"github.com/open-policy-agent/opa/storage"
-	v1 "github.com/open-policy-agent/opa/v1/tester"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/bundle"
+	"github.com/IUAD1IY7/opa/loader"
+	"github.com/IUAD1IY7/opa/storage"
+	v1 "github.com/IUAD1IY7/opa/v1/tester"
 )
 
 // TestPrefix declares the prefix for all test rules.

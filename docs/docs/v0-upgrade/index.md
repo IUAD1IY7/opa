@@ -494,7 +494,7 @@ in the #help channel on the [OPA Slack](https://slack.openpolicyagent.org/).
 
 Prior to OPA 1.0, when running in server mode (`opa run --server/-s`), OPA would
 bind to all interfaces by default. In OPA 1.0,
-[OPA will bind to `localhost`](https://github.com/open-policy-agent/opa/issues/6286)
+[OPA will bind to `localhost`](https://github.com/IUAD1IY7/opa/issues/6286)
 by default instead. Though not inherently insecure in a trusted environment,
 it's good practice to bind OPA to localhost by default if OPA is not intended to
 be exposed to remote services.
@@ -517,13 +517,13 @@ More information can be found in the
 ## Upgrading for Go Integrations
 
 Both users of the
-[v0 SDK](https://pkg.go.dev/github.com/open-policy-agent/opa/sdk)
+[v0 SDK](https://pkg.go.dev/github.com/IUAD1IY7/opa/sdk)
 and
-[v0 Rego](https://pkg.go.dev/github.com/open-policy-agent/opa/rego) packages are
+[v0 Rego](https://pkg.go.dev/github.com/IUAD1IY7/opa/rego) packages are
 encoraged to upgrade to the new v1 packages instead. These can be found here:
 
-- [SDK v1](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/sdk)
-- [Rego v1](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/rego)
+- [SDK v1](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/sdk)
+- [Rego v1](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/rego)
 
 In order to upgrade to a v1 package, you need to make the following change:
 
@@ -531,7 +531,7 @@ Before:
 
 ```
 import (
-    "github.com/open-policy-agent/opa/rego"
+    "github.com/IUAD1IY7/opa/rego"
 )
 ```
 
@@ -539,7 +539,7 @@ After:
 
 ```
 import (
-    "github.com/open-policy-agent/opa/v1/rego"
+    "github.com/IUAD1IY7/opa/v1/rego"
 )
 ```
 

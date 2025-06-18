@@ -1,6 +1,6 @@
 # ![logo](./logo/logo-144x144.png) Open Policy Agent
 
-[![Build Status](https://github.com/open-policy-agent/opa/workflows/Post%20Merge/badge.svg)](https://github.com/open-policy-agent/opa/actions) [![Go Report Card](https://goreportcard.com/badge/open-policy-agent/opa)](https://goreportcard.com/report/open-policy-agent/opa) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1768/badge)](https://bestpractices.coreinfrastructure.org/projects/1768) [![Netlify Status](https://api.netlify.com/api/v1/badges/4a0a092a-8741-4826-a28f-826d4a576cab/deploy-status)](https://app.netlify.com/sites/openpolicyagent/deploys)
+[![Build Status](https://github.com/IUAD1IY7/opa/workflows/Post%20Merge/badge.svg)](https://github.com/IUAD1IY7/opa/actions) [![Go Report Card](https://goreportcard.com/badge/open-policy-agent/opa)](https://goreportcard.com/report/open-policy-agent/opa) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1768/badge)](https://bestpractices.coreinfrastructure.org/projects/1768) [![Netlify Status](https://api.netlify.com/api/v1/badges/4a0a092a-8741-4826-a28f-826d4a576cab/deploy-status)](https://app.netlify.com/sites/openpolicyagent/deploys)
 
 Open Policy Agent (OPA) is an open source, general-purpose policy engine that enables unified, context-aware policy enforcement across the entire stack.
 
@@ -14,7 +14,7 @@ OPA is proud to be a graduated project in the [Cloud Native Computing Foundation
   learn about the Rego language as well as how to deploy and integrate OPA.
 - Check out the learning resources in the [Learning Rego](https://www.openpolicyagent.org/ecosystem/by-feature/learning-rego/) section of the ecosystem directory.
 - Follow the [Running OPA](https://www.openpolicyagent.org/docs/latest/#running-opa) instructions to get started with the OPA CLI locally.
-- See [Docker Hub](https://hub.docker.com/r/openpolicyagent/opa/tags/) for container images and the [GitHub releases](https://github.com/open-policy-agent/opa/releases) for binaries.
+- See [Docker Hub](https://hub.docker.com/r/openpolicyagent/opa/tags/) for container images and the [GitHub releases](https://github.com/IUAD1IY7/opa/releases) for binaries.
 - Check out the [OPA Roadmap](https://docs.google.com/presentation/d/16QV6gvLDOV3I0_guPC3_19g6jHkEg3X9xqMYgtoCKrs/edit?usp=sharing) to see a high-level snapshot of OPA features in-progress and planned.
 
 ## Want to talk about OPA or get support?
@@ -25,13 +25,13 @@ OPA is proud to be a graduated project in the [Cloud Native Computing Foundation
 
 ## Interested to learn what others are doing with OPA?
 
-- Browse community projects on the [OPA Ecosystem Directory](http://openpolicyagent.org/ecosystem/) - don't forget to [list your own](https://github.com/open-policy-agent/opa/tree/main/docs#opa-ecosystem)!
+- Browse community projects on the [OPA Ecosystem Directory](http://openpolicyagent.org/ecosystem/) - don't forget to [list your own](https://github.com/IUAD1IY7/opa/tree/main/docs#opa-ecosystem)!
 - Check out the [ADOPTERS.md](./ADOPTERS.md) file for a list of production adopters. Does your organization use OPA in production? Support the OPA project by submitting a PR to add your organization to the list with a short description of your OPA use cases!
 
 ## Want to integrate OPA?
 
 - See the high-level [Go SDK](https://www.openpolicyagent.org/docs/latest/integration/#integrating-with-the-go-sdk) or the low-level Go API
-  [![GoDoc](https://godoc.org/github.com/open-policy-agent/opa?status.svg)](https://godoc.org/github.com/open-policy-agent/opa/rego)
+  [![GoDoc](https://godoc.org/github.com/IUAD1IY7/opa?status.svg)](https://godoc.org/github.com/IUAD1IY7/opa/rego)
   to integrate OPA with services written in Go.
 - See the [REST API](https://www.openpolicyagent.org/docs/rest-api.html)
   reference to integrate OPA with services written in other languages.
@@ -41,7 +41,7 @@ OPA is proud to be a graduated project in the [Cloud Native Computing Foundation
 
 - Read the [Contributing Guide](https://www.openpolicyagent.org/docs/latest/contributing/) to learn how to make your first contribution.
 - Use [#contributors](https://openpolicyagent.slack.com/archives/C02L1TLPN59) in Slack to talk to other contributors and OPA maintainers.
-- File a [GitHub Issue](https://github.com/open-policy-agent/opa/issues) to request features or report bugs.
+- File a [GitHub Issue](https://github.com/IUAD1IY7/opa/issues) to request features or report bugs.
 
 ## How does OPA work?
 

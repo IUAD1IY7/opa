@@ -6,10 +6,10 @@
 package discovery
 
 import (
-	"github.com/open-policy-agent/opa/plugins"
-	"github.com/open-policy-agent/opa/v1/hooks"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	v1 "github.com/open-policy-agent/opa/v1/plugins/discovery"
+	"github.com/IUAD1IY7/opa/plugins"
+	"github.com/IUAD1IY7/opa/v1/hooks"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/discovery"
 )
 
 const (

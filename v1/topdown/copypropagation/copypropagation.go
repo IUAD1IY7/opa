@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // CopyPropagator implements a simple copy propagation optimization to remove

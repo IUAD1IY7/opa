@@ -6,5 +6,5 @@ package tracing
 
 import (
 	// Importing v1 for side effects
-	_ "github.com/open-policy-agent/opa/v1/features/tracing"
+	_ "github.com/IUAD1IY7/opa/v1/features/tracing"
 )

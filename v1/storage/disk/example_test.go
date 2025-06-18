@@ -9,10 +9,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/disk"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage/disk"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func check(err error) {

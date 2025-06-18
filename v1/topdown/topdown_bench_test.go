@@ -15,11 +15,11 @@ import (
 	"testing"
 	"text/template"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	inmem "github.com/open-policy-agent/opa/v1/storage/inmem/test"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	inmem "github.com/IUAD1IY7/opa/v1/storage/inmem/test"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func BenchmarkArrayIteration(b *testing.B) {
@@ -809,7 +809,7 @@ func BenchmarkObjectSubsetSlow(b *testing.B) {
 			store := inmem.NewFromObject(map[string]any{"all": all, "evens": evens})
 
 			// Code is lifted from here:
-			// https://github.com/open-policy-agent/opa/issues/4358#issue-1141145857
+			// https://github.com/IUAD1IY7/opa/issues/4358#issue-1141145857
 
 			module := `package test
 			path_matches contains match if {

@@ -6,8 +6,8 @@ package oracle
 import (
 	"errors"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Error defines the structure of errors returned by the oracle.

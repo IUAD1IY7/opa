@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/open-policy-agent/opa/internal/rego/opa"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/resolver"
+	"github.com/IUAD1IY7/opa/internal/rego/opa"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/resolver"
 )
 
 // New creates a new Resolver instance which is using the Wasm module

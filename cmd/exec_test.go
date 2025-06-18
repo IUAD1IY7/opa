@@ -15,12 +15,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/cmd/internal/exec"
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/v1/ast"
-	loggingtest "github.com/open-policy-agent/opa/v1/logging/test"
-	sdk_test "github.com/open-policy-agent/opa/v1/sdk/test"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/cmd/internal/exec"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	loggingtest "github.com/IUAD1IY7/opa/v1/logging/test"
+	sdk_test "github.com/IUAD1IY7/opa/v1/sdk/test"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 type execOutput struct {

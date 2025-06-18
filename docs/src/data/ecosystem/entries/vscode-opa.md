@@ -5,7 +5,7 @@ labels:
   category: tooling
   layer: editor
 code:
-- https://github.com/open-policy-agent/vscode-opa
+- https://github.com/IUAD1IY7/vscode-opa
 videos:
 - https://www.youtube.com/watch?v=BpMttxuPv6Y
 tutorials:

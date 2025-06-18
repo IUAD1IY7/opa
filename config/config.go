@@ -6,7 +6,7 @@
 package config
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/config"
+	v1 "github.com/IUAD1IY7/opa/v1/config"
 )
 
 // Config represents the configuration file that OPA can be started with.

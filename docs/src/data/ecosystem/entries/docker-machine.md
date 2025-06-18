@@ -6,7 +6,7 @@ labels:
   layer: server
   category: container
 code:
-- https://github.com/open-policy-agent/opa-docker-authz
+- https://github.com/IUAD1IY7/opa-docker-authz
 tutorials:
 - https://www.openpolicyagent.org/docs/latest/docker-authorization/
 inventors:

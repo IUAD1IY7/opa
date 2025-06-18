@@ -5,7 +5,7 @@
 package formats
 
 import (
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 type option = string

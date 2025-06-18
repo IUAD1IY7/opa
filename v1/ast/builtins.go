@@ -7,7 +7,7 @@ package ast
 import (
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/types"
 )
 
 // Builtins is the registry of built-in functions supported by OPA.

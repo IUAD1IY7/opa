@@ -3,7 +3,7 @@
 stty -onlcr # don't translate newline to carriage return-newline, as these break patch tool
 set -e
 
-OPA_DIR=/go/src/github.com/open-policy-agent/opa
+OPA_DIR=/go/src/github.com/IUAD1IY7/opa
 
 usage() {
     echo "gen-dev-patch.sh --source-url=<git-url>"

@@ -17,7 +17,7 @@ code:
 - https://github.com/fugue/regula
 - https://github.com/accurics/terrascan
 - https://github.com/Checkmarx/kics
-- https://github.com/open-policy-agent/library/tree/master/terraform
+- https://github.com/IUAD1IY7/library/tree/master/terraform
 - https://github.com/accurics/terrascan/tree/master/pkg/policies/opa/rego
 - https://github.com/Checkmarx/kics/tree/master/assets/queries/terraform
 blogs:

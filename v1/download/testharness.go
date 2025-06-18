@@ -19,9 +19,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/plugins/rest"
 )
 
 var errUnauthorized = errors.New("401 Unauthorized")

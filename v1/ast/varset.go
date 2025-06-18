@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // VarSet represents a set of variables.

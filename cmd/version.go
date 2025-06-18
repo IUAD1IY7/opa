@@ -11,13 +11,13 @@ import (
 	"io"
 	"os"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	version2 "github.com/open-policy-agent/opa/v1/version"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	version2 "github.com/IUAD1IY7/opa/v1/version"
 	"github.com/spf13/cobra"
 
-	"github.com/open-policy-agent/opa/cmd/internal/env"
-	"github.com/open-policy-agent/opa/internal/report"
-	"github.com/open-policy-agent/opa/internal/uuid"
+	"github.com/IUAD1IY7/opa/cmd/internal/env"
+	"github.com/IUAD1IY7/opa/internal/report"
+	"github.com/IUAD1IY7/opa/internal/uuid"
 )
 
 func init() {

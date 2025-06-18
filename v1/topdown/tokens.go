@@ -21,12 +21,12 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jwk"
-	"github.com/open-policy-agent/opa/internal/jwx/jws"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwk"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
 )
 
 const headerJwt = "JWT"

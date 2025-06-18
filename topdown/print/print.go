@@ -1,7 +1,7 @@
 package print
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/topdown/print"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown/print"
 )
 
 // Context provides the Hook implementation context about the print() call.

@@ -5,8 +5,8 @@
 package lineage
 
 import (
-	"github.com/open-policy-agent/opa/topdown"
-	v1 "github.com/open-policy-agent/opa/v1/topdown/lineage"
+	"github.com/IUAD1IY7/opa/topdown"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown/lineage"
 )
 
 // Debug contains everything in the log.

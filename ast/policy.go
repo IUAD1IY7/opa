@@ -5,8 +5,8 @@
 package ast
 
 import (
-	astJSON "github.com/open-policy-agent/opa/ast/json"
-	v1 "github.com/open-policy-agent/opa/v1/ast"
+	astJSON "github.com/IUAD1IY7/opa/ast/json"
+	v1 "github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // DefaultRootDocument is the default root document.

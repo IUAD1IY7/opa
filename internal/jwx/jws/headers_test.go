@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jws"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws"
 )
 
 func TestHeader(t *testing.T) {

@@ -1,8 +1,6 @@
-module github.com/open-policy-agent/opa
+module github.com/IUAD1IY7/opa
 
-go 1.23.8
-
-toolchain go1.24.3
+go 1.24.2
 
 require (
 	github.com/bytecodealliance/wasmtime-go/v3 v3.0.2
@@ -103,7 +101,3 @@ require (
 
 // retract directive comment below will be displayed as a warning on pkg.go.dev for the old package name. Please retain
 // this for future releases.
-
-// Use the path github.com/open-policy-agent/opa (lower-case), not github.com/open-policy-agent/OPA.
-// Before 0.15.0 OPA was not using go modules and the correct import path was not enforced.
-retract [v0.1.0-rc1, v0.14.2]

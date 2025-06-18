@@ -11,10 +11,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa"
-	opaLoader "github.com/open-policy-agent/opa/internal/wasm/sdk/opa/loader"
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa/loader/file"
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa/loader/http"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa"
+	opaLoader "github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/loader"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/loader/file"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/loader/http"
 )
 
 var (

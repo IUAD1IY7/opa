@@ -18,8 +18,8 @@ package inmem
 import (
 	"io"
 
-	"github.com/open-policy-agent/opa/storage"
-	v1 "github.com/open-policy-agent/opa/v1/storage/inmem"
+	v1 "github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/storage"
 )
 
 // New returns an empty in-memory store.

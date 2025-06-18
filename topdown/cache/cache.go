@@ -8,7 +8,7 @@ package cache
 import (
 	"context"
 
-	v1 "github.com/open-policy-agent/opa/v1/topdown/cache"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown/cache"
 )
 
 // Config represents the configuration for the inter-query builtin cache.

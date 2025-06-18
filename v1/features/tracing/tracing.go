@@ -7,7 +7,7 @@ package tracing
 import (
 	"net/http"
 
-	pkg_tracing "github.com/open-policy-agent/opa/v1/tracing"
+	pkg_tracing "github.com/IUAD1IY7/opa/v1/tracing"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 

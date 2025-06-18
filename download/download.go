@@ -6,8 +6,8 @@
 package download
 
 import (
-	"github.com/open-policy-agent/opa/plugins/rest"
-	v1 "github.com/open-policy-agent/opa/v1/download"
+	"github.com/IUAD1IY7/opa/plugins/rest"
+	v1 "github.com/IUAD1IY7/opa/v1/download"
 )
 
 // Update contains the result of a download. If an error occurred, the Error

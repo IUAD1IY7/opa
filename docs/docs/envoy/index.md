@@ -17,7 +17,7 @@ incoming request received by Envoy.
 
 ## What is OPA-Envoy Plugin?
 
-[OPA-Envoy](https://github.com/open-policy-agent/opa-envoy-plugin) plugin extends OPA with a gRPC server that
+[OPA-Envoy](https://github.com/IUAD1IY7/opa-envoy-plugin) plugin extends OPA with a gRPC server that
 implements the [Envoy External Authorization API](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/security/ext_authz_filter.html).
 You can use this version of OPA to enforce fine-grained, context-aware access control policies with Envoy _without_
 modifying your microservice.

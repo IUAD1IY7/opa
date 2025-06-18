@@ -6,7 +6,7 @@
 package cases
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/test/cases"
+	v1 "github.com/IUAD1IY7/opa/v1/test/cases"
 )
 
 // Set represents a collection of test cases.

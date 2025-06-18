@@ -6,7 +6,7 @@
 package refactor
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/refactor"
+	v1 "github.com/IUAD1IY7/opa/v1/refactor"
 )
 
 // Error defines the structure of errors returned by refactor.

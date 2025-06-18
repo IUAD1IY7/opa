@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"io"
 
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // UnmarshalJSON parses the JSON encoded data and stores the result in the value

@@ -4,7 +4,7 @@
 
 package tester
 
-import "github.com/open-policy-agent/opa/v1/topdown"
+import "github.com/IUAD1IY7/opa/v1/topdown"
 
 type TestQueryTracer struct {
 	topdown.BufferTracer

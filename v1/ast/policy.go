@@ -11,9 +11,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/ast/internal/tokens"
-	astJSON "github.com/open-policy-agent/opa/v1/ast/json"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/tokens"
+	astJSON "github.com/IUAD1IY7/opa/v1/ast/json"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // DefaultRootDocument is the default root document.

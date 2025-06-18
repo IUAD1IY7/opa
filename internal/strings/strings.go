@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/lcss"
+	"github.com/IUAD1IY7/opa/internal/lcss"
 )
 
 // TruncateFilePaths truncates the given file paths to conform to the given

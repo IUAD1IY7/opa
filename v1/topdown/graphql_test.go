@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
 )
 
 const employeeGQLSchema = `
@@ -862,7 +862,7 @@ func TestGraphQLParseSchemaAlloc(t *testing.T) {
 			schema:   ast.NewTerm(ast.String(schemaWithExtraEmployeeTypes(0))),
 			maxAlloc: 1 * 1024 * 1024,
 		},
-		// Uncomment when https://github.com/open-policy-agent/opa/pull/7509 is merged
+		// Uncomment when https://github.com/IUAD1IY7/opa/pull/7509 is merged
 		// {
 		// 	note:     "default schema plus 100 additional types",
 		// 	schema:   ast.NewTerm(ast.String(schemaWithExtraEmployeeTypes(100))),

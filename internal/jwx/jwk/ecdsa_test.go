@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/jwx/buffer"
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jwk"
+	"github.com/IUAD1IY7/opa/internal/jwx/buffer"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwk"
 )
 
 func TestECDSA(t *testing.T) {

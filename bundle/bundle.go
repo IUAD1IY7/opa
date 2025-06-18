@@ -8,8 +8,8 @@ package bundle
 import (
 	"io"
 
-	"github.com/open-policy-agent/opa/ast"
-	v1 "github.com/open-policy-agent/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/bundle"
 )
 
 // Common file extensions and file names.

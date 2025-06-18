@@ -14,11 +14,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/bundle"
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/loader"
-	"github.com/open-policy-agent/opa/util/test"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/bundle"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/loader"
+	"github.com/IUAD1IY7/opa/util/test"
 )
 
 func TestCompilerDefaultRegoVersion(t *testing.T) {

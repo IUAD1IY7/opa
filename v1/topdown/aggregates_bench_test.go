@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // 36.80 ns/op	       0 B/op	       0 allocs/op

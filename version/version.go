@@ -6,7 +6,7 @@
 package version
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/version"
+	v1 "github.com/IUAD1IY7/opa/v1/version"
 )
 
 // Version is the canonical version of OPA.

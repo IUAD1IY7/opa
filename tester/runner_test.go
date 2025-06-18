@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/storage"
-	"github.com/open-policy-agent/opa/storage/inmem"
-	"github.com/open-policy-agent/opa/util/test"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/storage"
+	"github.com/IUAD1IY7/opa/storage/inmem"
+	"github.com/IUAD1IY7/opa/util/test"
 )
 
 func TestLoad_DefaultRegoVersion(t *testing.T) {

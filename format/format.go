@@ -6,9 +6,9 @@
 package format
 
 import (
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/types"
-	v1 "github.com/open-policy-agent/opa/v1/format"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/types"
+	v1 "github.com/IUAD1IY7/opa/v1/format"
 )
 
 // Opts lets you control the code formatting via `AstWithOpts()`.

@@ -6,8 +6,8 @@
 package status
 
 import (
-	"github.com/open-policy-agent/opa/plugins"
-	v1 "github.com/open-policy-agent/opa/v1/plugins/status"
+	"github.com/IUAD1IY7/opa/plugins"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/status"
 )
 
 // Logger defines the interface for status plugins.

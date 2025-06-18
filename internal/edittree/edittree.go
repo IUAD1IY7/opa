@@ -152,8 +152,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/edittree/bitvector"
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/internal/edittree/bitvector"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // Deletions are encoded with a nil value pointer.

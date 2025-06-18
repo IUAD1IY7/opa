@@ -6,9 +6,9 @@
 package types
 
 import (
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/topdown"
-	v1 "github.com/open-policy-agent/opa/v1/server/types"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/topdown"
+	v1 "github.com/IUAD1IY7/opa/v1/server/types"
 )
 
 // Error codes returned by OPA's REST API.

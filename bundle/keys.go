@@ -6,7 +6,7 @@
 package bundle
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/bundle"
+	v1 "github.com/IUAD1IY7/opa/v1/bundle"
 )
 
 // KeyConfig holds the keys used to sign or verify bundles and tokens

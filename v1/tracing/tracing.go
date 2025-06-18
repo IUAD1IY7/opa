@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // Package tracing enables dependency-injection at runtime. When used
-// together with an underscore-import of `github.com/open-policy-agent/opa/features/tracing`,
+// together with an underscore-import of `github.com/IUAD1IY7/opa/features/tracing`,
 // the server and its runtime will emit OpenTelemetry spans to the
 // configured sink.
 package tracing

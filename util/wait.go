@@ -7,7 +7,7 @@ package util
 import (
 	"time"
 
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // WaitFunc will call passed function at an interval and return nil

@@ -564,7 +564,7 @@ The signature verification process uses each of the fields in the JWT header and
 OPA supports the option to implement your own bundle signing and verification logic. This will be unnecessary
 for most and is intended for advanced use cases, such as leveraging key-related services from cloud providers.
 To implement your own signing and verification logic, you'll need to [extend OPA](./extensions). Here is
-[an example](https://github.com/open-policy-agent/contrib/tree/main/custom_bundle_signing) to get you started.
+[an example](https://github.com/IUAD1IY7/contrib/tree/main/custom_bundle_signing) to get you started.
 
 When registering custom signing and verification plugins, you will need to register the Signer and the Verifier
 under the same plugin key, because the plugin key is stored in the signed bundle and informs OPA which Verifier
@@ -1089,7 +1089,7 @@ keys:
 | Caching headers        | Yes                                                                                                                                                                                                                                                                              |
 | Authentication methods | [OAuth2 Client Credentials](https://www.openpolicyagent.org/docs/latest/configuration/#oauth2-client-credentials), <br/> [OAuth2 Client Credentials JWT authentication](https://www.openpolicyagent.org/docs/latest/configuration/#oauth2-client-credentials-jwt-authentication) |
 
-Note that for the time being, the [Shared Key or Shared Access Signature (SAS)](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage) options are [not supported](https://github.com/open-policy-agent/opa/issues/2964).
+Note that for the time being, the [Shared Key or Shared Access Signature (SAS)](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage) options are [not supported](https://github.com/IUAD1IY7/opa/issues/2964).
 
 #### Setup Instructions
 

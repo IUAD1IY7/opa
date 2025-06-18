@@ -9,9 +9,9 @@ labels:
   category: wasm
   type: poweredbyopa
 tutorials:
-- https://github.com/open-policy-agent/npm-opa-wasm/blob/main/README.md
+- https://github.com/IUAD1IY7/npm-opa-wasm/blob/main/README.md
 code:
-- https://github.com/open-policy-agent/npm-opa-wasm/
+- https://github.com/IUAD1IY7/npm-opa-wasm/
 - https://www.npmjs.com/package/@open-policy-agent/opa-wasm?activeTab=readme
 videos:
 - title: 'Scratching an Itch: Running Policy in Hard to Reach Places with Wasm & OPA'

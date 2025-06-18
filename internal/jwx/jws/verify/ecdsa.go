@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
 )
 
 var ecdsaVerifyFuncs = map[jwa.SignatureAlgorithm]ecdsaVerifyFunc{}

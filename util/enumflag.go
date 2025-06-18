@@ -5,7 +5,7 @@
 package util
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // EnumFlag implements the pflag.Value interface to provide enumerated command

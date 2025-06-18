@@ -12,7 +12,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/server/identifier"
+	"github.com/IUAD1IY7/opa/v1/server/identifier"
 )
 
 // Note: In these tests, we don't worry about the server actually verifying the

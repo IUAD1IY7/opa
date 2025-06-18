@@ -3,8 +3,8 @@ package bundle
 import (
 	"io"
 
-	"github.com/open-policy-agent/opa/storage"
-	v1 "github.com/open-policy-agent/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/storage"
+	v1 "github.com/IUAD1IY7/opa/v1/bundle"
 )
 
 // Descriptor contains information about a file and

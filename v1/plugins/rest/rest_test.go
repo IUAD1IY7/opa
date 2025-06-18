@@ -33,18 +33,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jws"
-	"github.com/open-policy-agent/opa/internal/providers/aws"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws"
+	"github.com/IUAD1IY7/opa/internal/providers/aws"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/tracing"
 
-	"github.com/open-policy-agent/opa/internal/version"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/internal/version"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 
-	testlogger "github.com/open-policy-agent/opa/v1/logging/test"
+	testlogger "github.com/IUAD1IY7/opa/v1/logging/test"
 )
 
 const keyID = "key1"
@@ -1892,7 +1892,7 @@ func TestOauth2ClientCredentialsJwtAuthentication(t *testing.T) {
 	}
 }
 
-// https://github.com/open-policy-agent/opa/issues/3255
+// https://github.com/IUAD1IY7/opa/issues/3255
 func TestS3SigningInstantiationInitializesLogger(t *testing.T) {
 	t.Parallel()
 

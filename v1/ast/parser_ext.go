@@ -18,7 +18,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/open-policy-agent/opa/v1/ast/internal/tokens"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/tokens"
 )
 
 // MustParseBody returns a parsed body.

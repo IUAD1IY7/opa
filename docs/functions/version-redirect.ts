@@ -1,6 +1,6 @@
 // Redirect path versioned requests to archived versions of the OPA
 // documentation.
-// Context: https://github.com/open-policy-agent/opa/issues/7037
+// Context: https://github.com/IUAD1IY7/opa/issues/7037
 import { Context } from "@netlify/edge-functions";
 
 export default async (

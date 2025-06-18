@@ -14,12 +14,12 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"github.com/open-policy-agent/opa/internal/strvals"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/plugins/rest"
-	"github.com/open-policy-agent/opa/v1/tracing"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/strvals"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // ServiceOptions stores the options passed to ParseServicesConfig

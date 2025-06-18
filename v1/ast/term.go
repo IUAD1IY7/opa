@@ -22,9 +22,9 @@ import (
 	"unicode"
 
 	"github.com/cespare/xxhash/v2"
-	astJSON "github.com/open-policy-agent/opa/v1/ast/json"
-	"github.com/open-policy-agent/opa/v1/ast/location"
-	"github.com/open-policy-agent/opa/v1/util"
+	astJSON "github.com/IUAD1IY7/opa/v1/ast/json"
+	"github.com/IUAD1IY7/opa/v1/ast/location"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 var errFindNotFound = errors.New("find: not found")

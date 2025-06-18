@@ -197,7 +197,7 @@ is_ref(value) if value[0].type == "ref"
 # METADATA
 # description: |
 #   returns an array of all rule indices, as strings. this will be needed until
-#   https://github.com/open-policy-agent/opa/issues/6736 is fixed
+#   https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 rule_index_strings := [s |
 	some i, _ in _rules
 	s := sprintf("%d", [i])
@@ -348,7 +348,7 @@ all_function_names := object.keys(all_functions)
 negated_expressions[rule_index] contains value if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [_, value])
@@ -634,7 +634,7 @@ _rules := data.workspace.parsed[input.regal.file.uri].rules if not input.rules
 found.vars[rule_index][context] contains var if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [path, value])
@@ -649,7 +649,7 @@ found.vars[rule_index][context] contains var if {
 found.vars[rule_index].ref contains var if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [_, value])
@@ -667,7 +667,7 @@ found.vars[rule_index].ref contains var if {
 found.refs[rule_index] contains value if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [_, value])
@@ -678,7 +678,7 @@ found.refs[rule_index] contains value if {
 found.refs[rule_index] contains value if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [_, value])
@@ -691,7 +691,7 @@ found.refs[rule_index] contains value if {
 found.symbols[rule_index] contains value.symbols if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [_, value])
@@ -702,7 +702,7 @@ found.symbols[rule_index] contains value.symbols if {
 found.comprehensions[rule_index] contains value if {
 	some i, rule in _rules
 
-	# converting to string until https://github.com/open-policy-agent/opa/issues/6736 is fixed
+	# converting to string until https://github.com/IUAD1IY7/opa/issues/6736 is fixed
 	rule_index := sprintf("%d", [i])
 
 	walk(rule, [_, value])

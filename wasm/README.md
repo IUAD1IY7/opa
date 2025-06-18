@@ -6,7 +6,7 @@ library implements most of the built-in functions provided by OPA. See the "Wasm
 tag next to each function listed in the
 [built-in function reference](https://www.openpolicyagent.org/docs/latest/policy-reference/#built-in-functions)
 for the complete list, or the 
-[builtin_metadata.json](https://github.com/open-policy-agent/opa/blob/main/builtin_metadata.json) file for programmatic purposes.
+[builtin_metadata.json](https://github.com/IUAD1IY7/opa/blob/main/builtin_metadata.json) file for programmatic purposes.
 
 This library does not make any backwards compatibility guarantees.
 

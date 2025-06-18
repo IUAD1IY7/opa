@@ -7,9 +7,9 @@
 package debug
 
 import (
-	"github.com/open-policy-agent/opa/logging"
-	"github.com/open-policy-agent/opa/rego"
-	v1 "github.com/open-policy-agent/opa/v1/debug"
+	"github.com/IUAD1IY7/opa/logging"
+	"github.com/IUAD1IY7/opa/rego"
+	v1 "github.com/IUAD1IY7/opa/v1/debug"
 )
 
 // Debugger is the interface for launching OPA debugger Session(s).

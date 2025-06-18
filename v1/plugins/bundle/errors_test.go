@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/download"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/download"
 )
 
 func TestErrors(t *testing.T) {

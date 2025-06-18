@@ -7,7 +7,7 @@
 package types
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/types"
+	v1 "github.com/IUAD1IY7/opa/v1/types"
 )
 
 // Sprint returns the string representation of the type.

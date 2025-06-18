@@ -128,7 +128,7 @@ def parse_args():
         default_token = os.environ["GITHUB_TOKEN"]
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--repo_url", default="https://github.com/open-policy-agent/opa")
+        "--repo_url", default="https://github.com/IUAD1IY7/opa")
     parser.add_argument("--token", default=default_token, help="GitHub API token")
     parser.add_argument("from_version", nargs="?",
                         default=get_latest_tag(), help="start of changes")

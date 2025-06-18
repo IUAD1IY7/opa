@@ -16,7 +16,7 @@ whole.
 ## Live Debugging
 
 Using the [Debug Adapter](https://docs.styra.com/regal/debug-adapter)
-based on [OPA's Debug API](https://github.com/open-policy-agent/opa/blob/main/v1/debug/README.md),
+based on [OPA's Debug API](https://github.com/IUAD1IY7/opa/blob/main/v1/debug/README.md),
 supported clients are now able to live debug Rego line by line. Breakpoints,
 variable inspection and print statements are all supported.
 

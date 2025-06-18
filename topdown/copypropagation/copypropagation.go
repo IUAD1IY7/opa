@@ -5,8 +5,8 @@
 package copypropagation
 
 import (
-	"github.com/open-policy-agent/opa/ast"
-	v1 "github.com/open-policy-agent/opa/v1/topdown/copypropagation"
+	"github.com/IUAD1IY7/opa/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown/copypropagation"
 )
 
 // CopyPropagator implements a simple copy propagation optimization to remove

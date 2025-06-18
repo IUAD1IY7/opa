@@ -17,12 +17,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/version"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/version"
 
-	"github.com/open-policy-agent/opa/v1/plugins/rest"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // ExternalServiceURL is the base HTTP URL for a telemetry service.
@@ -30,7 +30,7 @@ import (
 //
 // Override at build time via:
 //
-//	-ldflags "-X github.com/open-policy-agent/opa/internal/report.ExternalServiceURL=<url>"
+//	-ldflags "-X github.com/IUAD1IY7/opa/internal/report.ExternalServiceURL=<url>"
 //
 // This will be overridden if the OPA_TELEMETRY_SERVICE_URL environment variable
 // is provided.

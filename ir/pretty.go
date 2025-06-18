@@ -7,7 +7,7 @@ package ir
 import (
 	"io"
 
-	v1 "github.com/open-policy-agent/opa/v1/ir"
+	v1 "github.com/IUAD1IY7/opa/v1/ir"
 )
 
 // Pretty writes a human-readable representation of an IR object to w.

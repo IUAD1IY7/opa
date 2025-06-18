@@ -5,8 +5,8 @@
 package topdown
 
 import (
-	"github.com/open-policy-agent/opa/v1/metrics"
-	v1 "github.com/open-policy-agent/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 // Instrumentation implements helper functions to instrument query evaluation

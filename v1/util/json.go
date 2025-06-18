@@ -13,7 +13,7 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"github.com/open-policy-agent/opa/v1/loader/extension"
+	"github.com/IUAD1IY7/opa/v1/loader/extension"
 )
 
 // UnmarshalJSON parses the JSON encoded data and stores the result in the value

@@ -3472,7 +3472,7 @@ OPA's type checker will fetch these remote references by default.
 To control the remote hosts schemas will be fetched from, pass a capabilities
 file to your `opa eval` or `opa check` call.
 
-Starting from the capabilities.json of your OPA version (which can be found [in the repository](https://github.com/open-policy-agent/opa/tree/main/capabilities)), add
+Starting from the capabilities.json of your OPA version (which can be found [in the repository](https://github.com/IUAD1IY7/opa/tree/main/capabilities)), add
 an `allow_net` key to it: its values are the IP addresses or host names that OPA is
 supposed to connect to for retrieving remote schemas.
 

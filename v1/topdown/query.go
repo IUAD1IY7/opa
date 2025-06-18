@@ -7,15 +7,15 @@ import (
 	"sort"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/resolver"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
-	"github.com/open-policy-agent/opa/v1/topdown/copypropagation"
-	"github.com/open-policy-agent/opa/v1/topdown/print"
-	"github.com/open-policy-agent/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/resolver"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/topdown/copypropagation"
+	"github.com/IUAD1IY7/opa/v1/topdown/print"
+	"github.com/IUAD1IY7/opa/v1/tracing"
 )
 
 // QueryResultSet represents a collection of results returned by a query.

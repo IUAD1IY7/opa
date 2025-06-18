@@ -21,9 +21,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/providers/aws"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/internal/providers/aws"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 // this is usually private; but we need it here

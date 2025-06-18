@@ -10,7 +10,7 @@ tutorials:
 - https://github.com/tsandall/minimal-opa-envoy-example/blob/master/README.md
 - https://www.openpolicyagent.org/docs/latest/envoy-introduction/
 code:
-- https://github.com/open-policy-agent/opa-envoy-plugin
+- https://github.com/IUAD1IY7/opa-envoy-plugin
 - https://github.com/tsandall/minimal-opa-envoy-example
 inventors:
 - styra
@@ -45,11 +45,11 @@ docs_features:
   envoy:
     note: |
       The
-      [opa-envoy-plugin](https://github.com/open-policy-agent/opa-envoy-plugin)
+      [opa-envoy-plugin](https://github.com/IUAD1IY7/opa-envoy-plugin)
       project is the official integration for OPA and Envoy.
   rest-api-integration:
     note: |
-      The [opa-envoy-plugin](https://github.com/open-policy-agent/opa-envoy-plugin)
+      The [opa-envoy-plugin](https://github.com/IUAD1IY7/opa-envoy-plugin)
       project uses the REST API to allow and deny requests routed via an Envoy proxy.
 
       Read about this integration in the

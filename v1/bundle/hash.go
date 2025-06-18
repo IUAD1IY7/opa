@@ -16,7 +16,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // HashingAlgorithm represents a subset of hashing algorithms implemented in Go

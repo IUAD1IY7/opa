@@ -16,8 +16,8 @@ import (
 	// Side-effecting import. Triggers GraphQL library's validation rule init() functions.
 	_ "github.com/vektah/gqlparser/v2/validator/rules"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 // Parses a GraphQL schema, and returns the GraphQL AST for the schema.

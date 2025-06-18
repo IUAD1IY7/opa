@@ -129,7 +129,7 @@ You might find it easier to build your OPA integration using one of the
 
 Every time the demo web server receives an HTTP request, it
 asks OPA to decide whether an HTTP API is authorized or not
-using a single RESTful API call. An example code is [here](https://github.com/open-policy-agent/contrib/blob/main/api_authz/docker/echo_server.py),
+using a single RESTful API call. An example code is [here](https://github.com/IUAD1IY7/contrib/blob/main/api_authz/docker/echo_server.py),
 but the crux of the (Python) code is shown below.
 
 ```python
@@ -369,5 +369,5 @@ You learned a number of things about API authorization with OPA:
 - You can use a remote bundle server for distributing policy and data.
 
 The code for this tutorial can be found in the
-[open-policy-agent/contrib](https://github.com/open-policy-agent/contrib)
+[open-policy-agent/contrib](https://github.com/IUAD1IY7/contrib)
 repository.

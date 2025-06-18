@@ -138,7 +138,7 @@ const baseUrl = "/";
             type: "html",
             position: "right",
             value: `
-        <a href="https://github.com/open-policy-agent/opa"
+        <a href="https://github.com/IUAD1IY7/opa"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="GitHub repository">
@@ -174,7 +174,7 @@ const baseUrl = "/";
 
 © ${new Date().getFullYear()}
 Open Policy Agent contributors.
-<a href="https://github.com/open-policy-agent/opa/blob/main/LICENSE">Licensed under the Apache License, Version 2.0</a>.
+<a href="https://github.com/IUAD1IY7/opa/blob/main/LICENSE">Licensed under the Apache License, Version 2.0</a>.
 See the <a href="${baseUrl}/docs/contributing">contributing documentation</a> for information about contributing.
 
 The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page.`,

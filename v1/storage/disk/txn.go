@@ -14,11 +14,11 @@ import (
 
 	badger "github.com/dgraph-io/badger/v4"
 
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/internal/errors"
-	"github.com/open-policy-agent/opa/v1/storage/internal/ptr"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage/internal/errors"
+	"github.com/IUAD1IY7/opa/v1/storage/internal/ptr"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (

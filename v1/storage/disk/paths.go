@@ -9,7 +9,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 const pathWildcard = "*"

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/open-policy-agent/opa/v1/util/decoding"
+	"github.com/IUAD1IY7/opa/v1/util/decoding"
 )
 
 var gzipReaderPool = sync.Pool{

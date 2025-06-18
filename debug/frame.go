@@ -5,7 +5,7 @@
 package debug
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/debug"
+	v1 "github.com/IUAD1IY7/opa/v1/debug"
 )
 
 type FrameID = v1.FrameID

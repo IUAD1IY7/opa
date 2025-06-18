@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/v1/plugins"
 )
 
 const (

@@ -21,7 +21,7 @@ unexported types and functions as much as possible.
 
 If you need to share logic across multiple OPA packages, consider
 implementing it inside of the
-`github.com/open-policy-agent/opa/internal` package. The `internal`
+`github.com/IUAD1IY7/opa/internal` package. The `internal`
 package is not visible outside of OPA.
 
 Avoid adding third-party dependencies (vendoring). OPA is designed to be minimal,
@@ -172,7 +172,7 @@ in the `.trivyignore` file.
 ## Contribution process
 
 Small bug fixes (or other small improvements) can be submitted directly via a
-[Pull Request](https://github.com/open-policy-agent/opa/pulls) on GitHub.
+[Pull Request](https://github.com/IUAD1IY7/opa/pulls) on GitHub.
 You can expect at least one of the OPA maintainers to respond quickly.
 
 Before submitting large changes, please open an issue on GitHub outlining:
@@ -185,4 +185,4 @@ Before submitting large changes, please open an issue on GitHub outlining:
 Use your judgement about what constitutes a large change. If you aren't sure,
 send a message in
 [#contributors](https://openpolicyagent.slack.com/archives/C02L1TLPN59) on Slack
-or submit [an issue on GitHub](https://github.com/open-policy-agent/opa/issues).
+or submit [an issue on GitHub](https://github.com/IUAD1IY7/opa/issues).

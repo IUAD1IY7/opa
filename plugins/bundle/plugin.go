@@ -6,8 +6,8 @@
 package bundle
 
 import (
-	"github.com/open-policy-agent/opa/plugins"
-	v1 "github.com/open-policy-agent/opa/v1/plugins/bundle"
+	"github.com/IUAD1IY7/opa/plugins"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/bundle"
 )
 
 // Loader defines the interface that the bundle plugin uses to control bundle

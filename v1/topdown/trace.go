@@ -11,10 +11,10 @@ import (
 	"slices"
 	"strings"
 
-	iStrs "github.com/open-policy-agent/opa/internal/strings"
+	iStrs "github.com/IUAD1IY7/opa/internal/strings"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 const (

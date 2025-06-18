@@ -7,7 +7,7 @@ package identifier
 import (
 	"net/http"
 
-	v1 "github.com/open-policy-agent/opa/v1/server/identifier"
+	v1 "github.com/IUAD1IY7/opa/v1/server/identifier"
 )
 
 // TLSBased extracts the CN of the client's TLS ceritificate

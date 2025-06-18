@@ -3,7 +3,7 @@ package errors
 import (
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // 160.8 ns/op    96 B/op    5 allocs/op    // using fmt.Sprintf

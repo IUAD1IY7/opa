@@ -3,7 +3,7 @@ package jws
 import (
 	"fmt"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
 )
 
 // Constants for JWS Common parameters

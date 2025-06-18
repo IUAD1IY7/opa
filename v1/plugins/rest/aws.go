@@ -22,8 +22,8 @@ import (
 	"time"
 
 	"github.com/go-ini/ini"
-	"github.com/open-policy-agent/opa/internal/providers/aws"
-	"github.com/open-policy-agent/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/internal/providers/aws"
+	"github.com/IUAD1IY7/opa/v1/logging"
 )
 
 const (

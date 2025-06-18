@@ -14,7 +14,7 @@ path = "/badge/*"
 function = "badge"
 
 # Redirect all path based versioned requests to their new archived sites.
-# https://github.com/open-policy-agent/opa/issues/7037
+# https://github.com/IUAD1IY7/opa/issues/7037
 [[edge_functions]]
 path = "/docs/*"
 function = "version-redirect"

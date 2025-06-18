@@ -7,7 +7,7 @@
 package wasm
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/features/wasm"
+	v1 "github.com/IUAD1IY7/opa/v1/features/wasm"
 )
 
 // OPA is an implementation of the OPA SDK.

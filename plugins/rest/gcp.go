@@ -5,7 +5,7 @@
 package rest
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/plugins/rest"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/rest"
 )
 
 // AccessToken holds a GCP access token.

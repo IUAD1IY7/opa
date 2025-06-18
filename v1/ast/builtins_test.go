@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/types"
 )
 
 func TestBuiltinDeclRoundtrip(t *testing.T) {

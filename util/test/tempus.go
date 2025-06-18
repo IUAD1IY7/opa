@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	v1 "github.com/open-policy-agent/opa/v1/util/test"
+	v1 "github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func Eventually(t *testing.T, timeout time.Duration, f func() bool) bool {

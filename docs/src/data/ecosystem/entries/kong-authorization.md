@@ -7,7 +7,7 @@ software:
 - kong
 code:
 - https://github.com/TravelNest/kong-authorization-opa
-- https://github.com/open-policy-agent/contrib/tree/master/kong_api_authz
+- https://github.com/IUAD1IY7/contrib/tree/master/kong_api_authz
 inventors:
 - travelnest
 - wada-ama

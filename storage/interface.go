@@ -5,7 +5,7 @@
 package storage
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/storage"
+	v1 "github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // Transaction defines the interface that identifies a consistent snapshot over

@@ -1,6 +1,6 @@
 package rego
 
-import v1 "github.com/open-policy-agent/opa/v1/rego"
+import v1 "github.com/IUAD1IY7/opa/v1/rego"
 
 // HaltError is an error type to return from a custom function implementation
 // that will abort the evaluation process (analogous to topdown.Halt).

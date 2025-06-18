@@ -11,16 +11,16 @@ import (
 	"maps"
 	"os"
 
-	"github.com/open-policy-agent/opa/internal/presentation"
-	"github.com/open-policy-agent/opa/v1/dependencies"
+	"github.com/IUAD1IY7/opa/internal/presentation"
+	"github.com/IUAD1IY7/opa/v1/dependencies"
 
 	"github.com/spf13/cobra"
 
-	"github.com/open-policy-agent/opa/cmd/formats"
-	"github.com/open-policy-agent/opa/cmd/internal/env"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/loader"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/cmd/formats"
+	"github.com/IUAD1IY7/opa/cmd/internal/env"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 type depsCommandParams struct {

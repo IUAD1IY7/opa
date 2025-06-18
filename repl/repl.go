@@ -11,9 +11,9 @@ package repl
 import (
 	"io"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/storage"
-	v1 "github.com/open-policy-agent/opa/v1/repl"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/storage"
+	v1 "github.com/IUAD1IY7/opa/v1/repl"
 )
 
 // REPL represents an instance of the interactive shell.

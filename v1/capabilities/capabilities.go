@@ -8,7 +8,7 @@
 package capabilities
 
 import (
-	v0 "github.com/open-policy-agent/opa/capabilities"
+	v0 "github.com/IUAD1IY7/opa/capabilities"
 )
 
 // FS contains the embedded capabilities/ directory of the built version,

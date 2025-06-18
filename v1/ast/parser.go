@@ -22,10 +22,10 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/open-policy-agent/opa/v1/ast/internal/scanner"
-	"github.com/open-policy-agent/opa/v1/ast/internal/tokens"
-	astJSON "github.com/open-policy-agent/opa/v1/ast/json"
-	"github.com/open-policy-agent/opa/v1/ast/location"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/scanner"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/tokens"
+	astJSON "github.com/IUAD1IY7/opa/v1/ast/json"
+	"github.com/IUAD1IY7/opa/v1/ast/location"
 )
 
 // DefaultMaxParsingRecursionDepth is the default maximum recursion

@@ -115,7 +115,7 @@ docker run openpolicyagent/opa run --help
 ### Tagging
 
 The Docker Hub repository contains tags for every release of OPA. For more
-information on each release see the [GitHub Releases](https://github.com/open-policy-agent/opa/releases) page.
+information on each release see the [GitHub Releases](https://github.com/IUAD1IY7/opa/releases) page.
 
 The "latest" tag refers to the most recent release. The latest tag is convenient
 if you want to quickly try out OPA however for production deployments, we
@@ -377,7 +377,7 @@ In Kubernetes admission control, for example, the Kubernetes admin can choose wh
 
 ## Capabilities
 
-OPA now supports a _capabilities_ check on policies. The check allows callers to restrict the [built-in](./policy-reference/#built-in-functions) functions that policies may depend on. If the policies passed to OPA require built-ins not listed in the capabilities structure, an error is returned. The capabilities check is currently supported by the `check` and `build` sub-commands and can be accessed programmatically on the `ast.Compiler` structure. The OPA repository includes a set of capabilities files for previous versions of OPA in the [capabilities](https://github.com/open-policy-agent/opa/tree/main/capabilities) folder.
+OPA now supports a _capabilities_ check on policies. The check allows callers to restrict the [built-in](./policy-reference/#built-in-functions) functions that policies may depend on. If the policies passed to OPA require built-ins not listed in the capabilities structure, an error is returned. The capabilities check is currently supported by the `check` and `build` sub-commands and can be accessed programmatically on the `ast.Compiler` structure. The OPA repository includes a set of capabilities files for previous versions of OPA in the [capabilities](https://github.com/IUAD1IY7/opa/tree/main/capabilities) folder.
 
 For example, given the following policy:
 

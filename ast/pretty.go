@@ -7,7 +7,7 @@ package ast
 import (
 	"io"
 
-	v1 "github.com/open-policy-agent/opa/v1/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // Pretty writes a pretty representation of the AST rooted at x to w.

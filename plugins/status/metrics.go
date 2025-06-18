@@ -1,7 +1,7 @@
 package status
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/plugins/status"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/status"
 )
 
 type PrometheusConfig = v1.PrometheusConfig

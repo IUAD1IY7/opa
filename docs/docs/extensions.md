@@ -13,7 +13,7 @@ Read this section if you want to extend OPA with custom built-in functions.
 
 :::info
 This section assumes you are embedding OPA as a library and executing policies
-via the `github.com/open-policy-agent/opa/rego` package. If you are NOT embedding OPA
+via the `github.com/IUAD1IY7/opa/rego` package. If you are NOT embedding OPA
 as a library and instead want to customize the OPA runtime, read this section
 anyway because it provides useful information on implementing built-in functions.
 For a complete example that shows how to add custom built-in functions to the
@@ -34,9 +34,9 @@ evaluation.
 To get started you need to import three packages:
 
 ```
-import "github.com/open-policy-agent/opa/ast"
-import "github.com/open-policy-agent/opa/types"
-import "github.com/open-policy-agent/opa/rego"
+import "github.com/IUAD1IY7/opa/ast"
+import "github.com/IUAD1IY7/opa/types"
+import "github.com/IUAD1IY7/opa/rego"
 ```
 
 The `ast` and `types` packages contain the types for declarations and runtime
@@ -196,13 +196,13 @@ OPA defines a plugin interface that allows you to customize certain behaviour
 like decision logging or add new behaviour like different query APIs. To
 implement a custom plugin you must implement two interfaces:
 
-- [`Factory`](https://pkg.go.dev/github.com/open-policy-agent/opa/plugins#Factory)
+- [`Factory`](https://pkg.go.dev/github.com/IUAD1IY7/opa/plugins#Factory)
   to instantiate your plugin.
-- [`Plugin`](https://pkg.go.dev/github.com/open-policy-agent/opa/plugins#Plugin)
+- [`Plugin`](https://pkg.go.dev/github.com/IUAD1IY7/opa/plugins#Plugin)
   to provide your plugin behavior.
 
 You can register your factory with OPA by calling
-[`RegisterPlugin`](https://pkg.go.dev/github.com/open-policy-agent/opa/runtime#RegisterPlugin)
+[`RegisterPlugin`](https://pkg.go.dev/github.com/IUAD1IY7/opa/runtime#RegisterPlugin)
 inside your main function.
 
 ### Plugin Status
@@ -226,7 +226,7 @@ that writes events to a stream (e.g., stdout/stderr).
 import (
 	"encoding/json"
 
-	"github.com/open-policy-agent/opa/plugins/logs"
+	"github.com/IUAD1IY7/opa/plugins/logs"
 )
 
 const PluginName = "println_decision_logger"
@@ -283,8 +283,8 @@ Next, implement a factory function that instantiates your plugin:
 
 ```golang
 import (
-	"github.com/open-policy-agent/opa/plugins"
-	"github.com/open-policy-agent/opa/util"
+	"github.com/IUAD1IY7/opa/plugins"
+	"github.com/IUAD1IY7/opa/util"
 )
 
 type Factory struct{}
@@ -310,8 +310,8 @@ latter starts OPA and does not return.
 
 ```golang
 import (
-	"github.com/open-policy-agent/opa/cmd"
-	"github.com/open-policy-agent/opa/runtime"
+	"github.com/IUAD1IY7/opa/cmd"
+	"github.com/IUAD1IY7/opa/runtime"
 )
 
 func main() {
@@ -358,7 +358,7 @@ If everything worked you will see the Go struct representation of the decision
 log event written to stdout.
 
 The source code for this example can be found
-[here](https://github.com/open-policy-agent/contrib/tree/main/decision_logger_plugin_example).
+[here](https://github.com/IUAD1IY7/contrib/tree/main/decision_logger_plugin_example).
 
 :::info
 If there is a mask policy set (see [Decision Logger](./management-decision-logs)
@@ -369,7 +369,7 @@ than the example documented.
 ## Setting the OPA Runtime Version
 
 The OPA runtime version is set statically at build-time. The following global variables
-are exported by the `github.com/open-policy-agent/opa/version` package and can be
+are exported by the `github.com/IUAD1IY7/opa/version` package and can be
 set at build-time:
 
 | Name        | Description                                             |
@@ -384,10 +384,10 @@ These values can be set on the command-line when building OPA from source:
 ```
 go build \
   -ldflags=" \
-  -X github.com/open-policy-agent/opa/v1/version.Version=MY_VERSION\
-  -X github.com/open-policy-agent/opa/v1/version.Vcs=MY_COMMIT_HASH \
-  -X github.com/open-policy-agent/opa/v1/version.Hostname=MY_HOSTNAME \
-  -X github.com/open-policy-agent/opa/v1/version.Timestamp=MY_TIMESTAMP" \
+  -X github.com/IUAD1IY7/opa/v1/version.Version=MY_VERSION\
+  -X github.com/IUAD1IY7/opa/v1/version.Vcs=MY_COMMIT_HASH \
+  -X github.com/IUAD1IY7/opa/v1/version.Hostname=MY_HOSTNAME \
+  -X github.com/IUAD1IY7/opa/v1/version.Timestamp=MY_TIMESTAMP" \
   -o opa++
 ```
 
@@ -405,9 +405,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/rego"
-	"github.com/open-policy-agent/opa/types"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/rego"
+	"github.com/IUAD1IY7/opa/types"
 )
 
 func main() {
@@ -479,10 +479,10 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/cmd"
-	"github.com/open-policy-agent/opa/rego"
-	"github.com/open-policy-agent/opa/types"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/cmd"
+	"github.com/IUAD1IY7/opa/rego"
+	"github.com/IUAD1IY7/opa/types"
 
 )
 

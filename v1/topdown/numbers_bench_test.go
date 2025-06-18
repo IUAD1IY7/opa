@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // BenchmarkNumbersRange/interned-12         	  824348	      1443 ns/op	    1880 B/op	       4 allocs/op

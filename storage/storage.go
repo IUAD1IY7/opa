@@ -7,7 +7,7 @@ package storage
 import (
 	"context"
 
-	v1 "github.com/open-policy-agent/opa/v1/storage"
+	v1 "github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // NewTransactionOrDie is a helper function to create a new transaction. If the

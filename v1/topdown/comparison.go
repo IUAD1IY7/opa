@@ -4,7 +4,7 @@
 
 package topdown
 
-import "github.com/open-policy-agent/opa/v1/ast"
+import "github.com/IUAD1IY7/opa/v1/ast"
 
 type compareFunc func(a, b ast.Value) bool
 

@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
 )
 
 var hmacSignFuncs = map[jwa.SignatureAlgorithm]hmacSignFunc{}

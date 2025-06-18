@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	inmem "github.com/open-policy-agent/opa/v1/storage/inmem/test"
+	inmem "github.com/IUAD1IY7/opa/v1/storage/inmem/test"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 func TestQueryIDFactory(t *testing.T) {
@@ -664,7 +664,7 @@ func TestTopdownVirtualCache(t *testing.T) {
 			miss:  2, // data.test.p + data.test.a[1][_][5]
 		},
 		{
-			// Regression test for https://github.com/open-policy-agent/opa/issues/6926
+			// Regression test for https://github.com/IUAD1IY7/opa/issues/6926
 			note: "partial object, ref-head, leaf set, ref with unification scope",
 			module: `package p
 

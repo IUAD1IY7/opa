@@ -11,11 +11,11 @@ import (
 	"path/filepath"
 
 	"github.com/fsnotify/fsnotify"
-	initload "github.com/open-policy-agent/opa/internal/runtime/init"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/loader"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util"
+	initload "github.com/IUAD1IY7/opa/internal/runtime/init"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // CreatePathWatcher creates watchers to monitor for path changes

@@ -19,7 +19,7 @@ For the purpose of the tutorial we will deploy two policies that ensure:
 > inside of OPA (or any other admission controller) is out-of-date. To catch
 > these violations we recommend you periodically audit the state of the cluster
 > against your policies. Offline auditing is one of the features provided by the
-> [OPA Gatekeeper](https://github.com/open-policy-agent/gatekeeper) project.
+> [OPA Gatekeeper](https://github.com/IUAD1IY7/gatekeeper) project.
 
 ## Prerequisites
 

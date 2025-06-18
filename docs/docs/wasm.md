@@ -68,9 +68,9 @@ empty (indicating an undefined policy decision) otherwise they should select the
 ### Advanced Compiling Options
 
 You can also compile Rego policies into Wasm modules from Go using the lower-level
-[rego](https://pkg.go.dev/github.com/open-policy-agent/opa/rego#Rego.Compile) API
+[rego](https://pkg.go.dev/github.com/IUAD1IY7/opa/rego#Rego.Compile) API
 that produces raw Wasm executables and the higher-level
-[compile](https://pkg.go.dev/github.com/open-policy-agent/opa/compile#Compiler.Build)
+[compile](https://pkg.go.dev/github.com/IUAD1IY7/opa/compile#Compiler.Build)
 API that produces OPA bundle files. The compile API is recommended.
 
 ## Using Compiled Policies
@@ -80,9 +80,9 @@ API that produces OPA bundle files. The compile API is recommended.
 There is a JavaScript SDK available that simplifies the process of loading and
 evaluating compiled policies. If you want to evaluate Rego policies inside
 JavaScript we recommend you use the
-[Javascript SDK](https://github.com/open-policy-agent/npm-opa-wasm).
+[Javascript SDK](https://github.com/IUAD1IY7/npm-opa-wasm).
 There is also an
-[example NodeJS application](https://github.com/open-policy-agent/npm-opa-wasm/tree/master/examples/nodejs-app)
+[example NodeJS application](https://github.com/IUAD1IY7/npm-opa-wasm/tree/master/examples/nodejs-app)
 provided for reference.
 
 ### Other Languages

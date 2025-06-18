@@ -4,7 +4,7 @@
 
 package ast
 
-import v1 "github.com/open-policy-agent/opa/v1/ast"
+import v1 "github.com/IUAD1IY7/opa/v1/ast"
 
 // Visitor defines the interface for iterating AST elements. The Visit function
 // can return a Visitor w which will be used to visit the children of the AST

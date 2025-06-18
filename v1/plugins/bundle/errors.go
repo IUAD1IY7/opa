@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/v1/download"
+	"github.com/IUAD1IY7/opa/v1/download"
 )
 
 // Errors represents a list of errors that occurred during a bundle load enriched by the bundle name.

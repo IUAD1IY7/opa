@@ -4,7 +4,7 @@
 
 package ast
 
-import v1 "github.com/open-policy-agent/opa/v1/ast"
+import v1 "github.com/IUAD1IY7/opa/v1/ast"
 
 // Unify returns a set of variables that will be unified when the equality expression defined by
 // terms a and b is evaluated. The unifier assumes that variables in the VarSet safe are already

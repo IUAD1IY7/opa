@@ -5,7 +5,7 @@
 package loader
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/loader"
+	v1 "github.com/IUAD1IY7/opa/v1/loader"
 )
 
 // Errors is a wrapper for multiple loader errors.

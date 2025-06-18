@@ -4,7 +4,7 @@
 
 package ast
 
-import v1 "github.com/open-policy-agent/opa/v1/ast"
+import v1 "github.com/IUAD1IY7/opa/v1/ast"
 
 // CompileModules takes a set of Rego modules represented as strings and
 // compiles them for evaluation. The keys of the map are used as filenames.

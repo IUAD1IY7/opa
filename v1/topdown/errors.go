@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // Halt is a special error type that built-in function implementations return to indicate

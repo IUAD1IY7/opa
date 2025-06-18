@@ -10,10 +10,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/internal/storage/mock"
-	"github.com/open-policy-agent/opa/metrics"
-	"github.com/open-policy-agent/opa/storage"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/internal/storage/mock"
+	"github.com/IUAD1IY7/opa/metrics"
+	"github.com/IUAD1IY7/opa/storage"
 )
 
 func TestHasRootsOverlap(t *testing.T) {

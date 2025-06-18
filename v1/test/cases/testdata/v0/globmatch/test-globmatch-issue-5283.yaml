@@ -1,5 +1,5 @@
 ---
-# See https://github.com/open-policy-agent/opa/issues/528
+# See https://github.com/IUAD1IY7/opa/issues/528
 cases:
   - modules:
       - |

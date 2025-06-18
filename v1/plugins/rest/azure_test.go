@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/keys"
 )
 
 func assertStringsEqual(t *testing.T, expected string, actual string, label string) {

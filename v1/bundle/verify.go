@@ -13,10 +13,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jws"
-	"github.com/open-policy-agent/opa/internal/jwx/jws/verify"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws/verify"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const defaultVerifierID = "_default"

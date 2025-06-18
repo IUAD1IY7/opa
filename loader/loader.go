@@ -10,9 +10,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/bundle"
-	v1 "github.com/open-policy-agent/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/bundle"
+	v1 "github.com/IUAD1IY7/opa/v1/loader"
 )
 
 // Result represents the result of successfully loading zero or more files.

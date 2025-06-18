@@ -5,7 +5,7 @@
 package tester
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/tester"
+	v1 "github.com/IUAD1IY7/opa/v1/tester"
 )
 
 // Reporter defines the interface for reporting test results.

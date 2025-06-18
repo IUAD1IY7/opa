@@ -9,8 +9,8 @@ labels:
 tutorials:
 - "https://www.openpolicyagent.org/docs/kubernetes"
 code:
-- https://github.com/open-policy-agent/kube-mgmt
-- https://github.com/open-policy-agent/gatekeeper
+- https://github.com/IUAD1IY7/kube-mgmt
+- https://github.com/IUAD1IY7/gatekeeper
 inventors:
 - styra
 - microsoft

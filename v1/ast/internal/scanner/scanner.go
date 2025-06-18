@@ -10,8 +10,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/open-policy-agent/opa/v1/ast/internal/tokens"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/tokens"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const bom = 0xFEFF

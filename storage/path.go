@@ -5,8 +5,8 @@
 package storage
 
 import (
-	"github.com/open-policy-agent/opa/ast"
-	v1 "github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // Path refers to a document in storage.

@@ -9,11 +9,11 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/storage"
-	"github.com/open-policy-agent/opa/topdown/cache"
-	"github.com/open-policy-agent/opa/topdown/print"
-	v1 "github.com/open-policy-agent/opa/v1/server/authorizer"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/storage"
+	"github.com/IUAD1IY7/opa/topdown/cache"
+	"github.com/IUAD1IY7/opa/topdown/print"
+	v1 "github.com/IUAD1IY7/opa/v1/server/authorizer"
 )
 
 // Basic provides policy-based authorization over incoming requests.
