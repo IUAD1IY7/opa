@@ -1,6 +1,6 @@
 package json
 
-import v1 "github.com/open-policy-agent/opa/v1/ast/json"
+import v1 "github.com/IUAD1IY7/opa/v1/ast/json"
 
 // Options defines the options for JSON operations,
 // currently only marshaling can be configured

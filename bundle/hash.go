@@ -5,7 +5,7 @@
 package bundle
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/bundle"
+	v1 "github.com/IUAD1IY7/opa/v1/bundle"
 )
 
 // HashingAlgorithm represents a subset of hashing algorithms implemented in Go

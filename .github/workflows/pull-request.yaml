@@ -472,7 +472,7 @@ jobs:
 
   # This job is required to complete before merging, and is set as a branch
   # protection rule:
-  # https://github.com/open-policy-agent/opa/settings/branch_protection_rules
+  # https://github.com/IUAD1IY7/opa/settings/branch_protection_rules
   pr-check-summary:
     name: PR Check Summary
     runs-on: ubuntu-24.04

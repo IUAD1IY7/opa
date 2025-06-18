@@ -8,8 +8,8 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/open-policy-agent/opa/internal/gojsonschema"
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/internal/gojsonschema"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // astValueToJSONSchemaLoader converts a value to JSON Loader.

@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/open-policy-agent/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/metrics"
 )
 
 const (

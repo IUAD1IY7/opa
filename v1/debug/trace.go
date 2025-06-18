@@ -5,8 +5,8 @@
 package debug
 
 import (
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 type stack interface {

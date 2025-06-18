@@ -58,7 +58,7 @@ as part of an upgrade to OPA v1.0.
 
 ### v0.x compatibility mode in Rego package
 
-There are three ways to enable v0.x compatibility mode in the [Rego package](https://pkg.go.dev/github.com/open-policy-agent/opa/rego):
+There are three ways to enable v0.x compatibility mode in the [Rego package](https://pkg.go.dev/github.com/IUAD1IY7/opa/rego):
 
 1. Set the Rego version on modules
 2. Set the Rego version on bundle manifests
@@ -68,7 +68,7 @@ There are three ways to enable v0.x compatibility mode in the [Rego package](htt
 mix of v0.x and v1.0 compatible Rego in the same OPA instance and thus better
 support a gradual upgrade path.
 
-The `SetRegoVersion` method on [Module](https://pkg.go.dev/github.com/open-policy-agent/opa/ast#Module.SetRegoVersion?)
+The `SetRegoVersion` method on [Module](https://pkg.go.dev/github.com/IUAD1IY7/opa/ast#Module.SetRegoVersion?)
 can be used like this:
 
 ```go
@@ -79,7 +79,7 @@ m := ast.Module{
 m.SetRegoVersion(ast.RegoV0)
 ```
 
-Similarly, the [Bundle Manifest](https://pkg.go.dev/github.com/open-policy-agent/opa/bundle#Manifest.SetRegoVersion) Rego version
+Similarly, the [Bundle Manifest](https://pkg.go.dev/github.com/IUAD1IY7/opa/bundle#Manifest.SetRegoVersion) Rego version
 can be set like this:
 
 ```go
@@ -90,7 +90,7 @@ b.SetRegoVersion(ast.RegoV0)
 ```
 
 If you cannot set the Rego version on modules or bundle manifests, you
-can use the [`SetRegoVersion`](https://pkg.go.dev/github.com/open-policy-agent/opa/rego#SetRegoVersion) Rego argument to control the Rego version used when
+can use the [`SetRegoVersion`](https://pkg.go.dev/github.com/IUAD1IY7/opa/rego#SetRegoVersion) Rego argument to control the Rego version used when
 evaluating policies.
 
 Users are encouraged to use the more granular options where possible to better
@@ -120,9 +120,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/rego"
+	"github.com/IUAD1IY7/opa/rego"
     // rather than the v1 import, which is:
-	// "github.com/open-policy-agent/opa/v1/rego"
+	// "github.com/IUAD1IY7/opa/v1/rego"
 )
 
 func main() {
@@ -154,8 +154,8 @@ the two packages is not guaranteed and should be considered unsupported.
 
 In OPA 1.0, the recommended
 
-[SDK package](https://pkg.go.dev/github.com/open-policy-agent/opa/v1/sdk)
-import for most users is `github.com/open-policy-agent/opa/v1/sdk`.
+[SDK package](https://pkg.go.dev/github.com/IUAD1IY7/opa/v1/sdk)
+import for most users is `github.com/IUAD1IY7/opa/v1/sdk`.
 
 Those who need to support v0 bundles should set the Rego version on bundle
 manifests as outlined above wherever possible. For users unable to do this, use
@@ -169,7 +169,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/sdk" // <-- import v0 sdk package
+	"github.com/IUAD1IY7/opa/sdk" // <-- import v0 sdk package
 )
 
 func main() {

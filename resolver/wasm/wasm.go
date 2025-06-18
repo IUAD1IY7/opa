@@ -5,8 +5,8 @@
 package wasm
 
 import (
-	"github.com/open-policy-agent/opa/ast"
-	v1 "github.com/open-policy-agent/opa/v1/resolver/wasm"
+	"github.com/IUAD1IY7/opa/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/resolver/wasm"
 )
 
 // New creates a new Resolver instance which is using the Wasm module

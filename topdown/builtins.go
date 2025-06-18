@@ -5,7 +5,7 @@
 package topdown
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/topdown"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 type (

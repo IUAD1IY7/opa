@@ -8,8 +8,8 @@ package writer
 import (
 	"net/http"
 
-	"github.com/open-policy-agent/opa/v1/server/types"
-	v1 "github.com/open-policy-agent/opa/v1/server/writer"
+	"github.com/IUAD1IY7/opa/v1/server/types"
+	v1 "github.com/IUAD1IY7/opa/v1/server/writer"
 )
 
 // HTTPStatus is used to set a specific status code

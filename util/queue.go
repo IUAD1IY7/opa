@@ -4,7 +4,7 @@
 
 package util
 
-import v1 "github.com/open-policy-agent/opa/v1/util"
+import v1 "github.com/IUAD1IY7/opa/v1/util"
 
 // LIFO represents a simple LIFO queue.
 type LIFO = v1.LIFO

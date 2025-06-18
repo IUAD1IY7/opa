@@ -10,9 +10,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/storage"
-	"github.com/open-policy-agent/opa/storage/inmem"
-	"github.com/open-policy-agent/opa/util"
+	"github.com/IUAD1IY7/opa/storage"
+	"github.com/IUAD1IY7/opa/storage/inmem"
+	"github.com/IUAD1IY7/opa/util"
 )
 
 func TestOneShot_DefaultRegoVersion(t *testing.T) {

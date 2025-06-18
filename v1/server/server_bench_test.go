@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/plugins"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/plugins"
 )
 
 func BenchmarkDataPostV1Request(b *testing.B) {

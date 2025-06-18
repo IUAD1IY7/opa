@@ -8,14 +8,14 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 	"github.com/sirupsen/logrus"
 
-	"github.com/open-policy-agent/opa/v1/hooks"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/plugins"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/hooks"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // Options contains parameters to setup and configure OPA.

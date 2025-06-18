@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
 )
 
 const privateKey = `{

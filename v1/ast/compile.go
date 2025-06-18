@@ -14,12 +14,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/debug"
-	"github.com/open-policy-agent/opa/internal/gojsonschema"
-	"github.com/open-policy-agent/opa/v1/ast/location"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/types"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/debug"
+	"github.com/IUAD1IY7/opa/internal/gojsonschema"
+	"github.com/IUAD1IY7/opa/v1/ast/location"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // CompileErrorLimitDefault is the default number errors a compiler will allow before

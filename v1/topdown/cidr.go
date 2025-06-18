@@ -9,9 +9,9 @@ import (
 	"slices"
 	"sort"
 
-	cidrMerge "github.com/open-policy-agent/opa/internal/cidr/merge"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
+	cidrMerge "github.com/IUAD1IY7/opa/internal/cidr/merge"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 func getNetFromOperand(v ast.Value) (*net.IPNet, error) {

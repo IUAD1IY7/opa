@@ -8,8 +8,8 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa/errors"
-	"github.com/open-policy-agent/opa/internal/wasm/util"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/errors"
+	"github.com/IUAD1IY7/opa/internal/wasm/util"
 )
 
 // WithPolicyFile configures a policy file to load.

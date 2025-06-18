@@ -28,17 +28,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/version"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
-	"github.com/open-policy-agent/opa/v1/tracing"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/version"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/v1/util"
 
-	inmem "github.com/open-policy-agent/opa/v1/storage/inmem/test"
-	iCache "github.com/open-policy-agent/opa/v1/topdown/cache"
+	inmem "github.com/IUAD1IY7/opa/v1/storage/inmem/test"
+	iCache "github.com/IUAD1IY7/opa/v1/topdown/cache"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // The person Type

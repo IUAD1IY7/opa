@@ -4,7 +4,7 @@
 
 package instruction
 
-import "github.com/open-policy-agent/opa/internal/wasm/opcode"
+import "github.com/IUAD1IY7/opa/internal/wasm/opcode"
 
 // I32Load represents the WASM i32.load instruction.
 type I32Load struct {

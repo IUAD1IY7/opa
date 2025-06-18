@@ -1,7 +1,7 @@
 package metrics
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/plugins/server/metrics"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/server/metrics"
 )
 
 // Config represents the configuration for the Server.Metrics settings

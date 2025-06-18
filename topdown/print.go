@@ -7,8 +7,8 @@ package topdown
 import (
 	"io"
 
-	"github.com/open-policy-agent/opa/topdown/print"
-	v1 "github.com/open-policy-agent/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/topdown/print"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 func NewPrintHook(w io.Writer) print.Hook {

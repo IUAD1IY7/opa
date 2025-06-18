@@ -6,10 +6,10 @@
 package rest
 
 import (
-	"github.com/open-policy-agent/opa/logging"
-	"github.com/open-policy-agent/opa/v1/keys"
-	v1 "github.com/open-policy-agent/opa/v1/plugins/rest"
-	"github.com/open-policy-agent/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/logging"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/tracing"
 )
 
 // An HTTPAuthPlugin represents a mechanism to construct and configure HTTP authentication for a REST service

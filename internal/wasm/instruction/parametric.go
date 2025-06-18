@@ -5,7 +5,7 @@
 package instruction
 
 import (
-	"github.com/open-policy-agent/opa/internal/wasm/opcode"
+	"github.com/IUAD1IY7/opa/internal/wasm/opcode"
 )
 
 // Drop reprsents a WASM drop instruction.

@@ -4,7 +4,7 @@
 
 package ir
 
-import v1 "github.com/open-policy-agent/opa/v1/ir"
+import v1 "github.com/IUAD1IY7/opa/v1/ir"
 
 // Visitor defines the interface for visiting IR nodes.
 type Visitor = v1.Visitor

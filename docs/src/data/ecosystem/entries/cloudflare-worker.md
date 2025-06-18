@@ -6,16 +6,16 @@ labels:
   layer: application
   category: serverless
 code:
-- https://github.com/open-policy-agent/contrib/tree/master/wasm/cloudflare-worker
+- https://github.com/IUAD1IY7/contrib/tree/master/wasm/cloudflare-worker
 tutorials:
-- https://github.com/open-policy-agent/contrib/blob/master/wasm/cloudflare-worker/README.md
+- https://github.com/IUAD1IY7/contrib/blob/master/wasm/cloudflare-worker/README.md
 docs_features:
   wasm-integration:
     note: |
       This example project in
-      [OPA contrib](https://github.com/open-policy-agent/contrib/tree/main/wasm/cloudflare-worker)
+      [OPA contrib](https://github.com/IUAD1IY7/contrib/tree/main/wasm/cloudflare-worker)
       uses the
-      [NodeJS OPA Wasm Module](https://github.com/open-policy-agent/npm-opa-wasm)
+      [NodeJS OPA Wasm Module](https://github.com/IUAD1IY7/npm-opa-wasm)
       to enforce policy at the edge of Cloudflare's network.
 ---
 Cloudflare Workers are a serverless platform that supports Wasm.

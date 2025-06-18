@@ -15,10 +15,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/semver"
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa/capabilities"
-	caps "github.com/open-policy-agent/opa/v1/capabilities"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/semver"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/capabilities"
+	caps "github.com/IUAD1IY7/opa/v1/capabilities"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // VersonIndex contains an index from built-in function name, language feature,
@@ -74,7 +74,7 @@ type Capabilities struct {
 	// As of now, this only controls fetching remote refs for using JSON Schemas in
 	// the type checker.
 	// TODO(sr): support ports to further restrict connection peers
-	// TODO(sr): support restricting `http.send` using the same mechanism (see https://github.com/open-policy-agent/opa/issues/3665)
+	// TODO(sr): support restricting `http.send` using the same mechanism (see https://github.com/IUAD1IY7/opa/issues/3665)
 	AllowNet []string `json:"allow_net,omitempty"`
 }
 

@@ -1,8 +1,8 @@
 package test
 
 import (
-	"github.com/open-policy-agent/opa/ast"
-	v1 "github.com/open-policy-agent/opa/v1/sdk/test"
+	"github.com/IUAD1IY7/opa/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/sdk/test"
 )
 
 // MockBundle sets a bundle named file on the test server containing the given

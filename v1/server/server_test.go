@@ -41,25 +41,25 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.7.0"
 
-	"github.com/open-policy-agent/opa/internal/distributedtracing"
-	"github.com/open-policy-agent/opa/internal/prometheus"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/config"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/plugins"
-	pluginBundle "github.com/open-policy-agent/opa/v1/plugins/bundle"
-	pluginStatus "github.com/open-policy-agent/opa/v1/plugins/status"
-	"github.com/open-policy-agent/opa/v1/server/authorizer"
-	"github.com/open-policy-agent/opa/v1/server/identifier"
-	"github.com/open-policy-agent/opa/v1/server/types"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/disk"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/util/test"
-	"github.com/open-policy-agent/opa/v1/version"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/internal/distributedtracing"
+	"github.com/IUAD1IY7/opa/internal/prometheus"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/config"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/plugins"
+	pluginBundle "github.com/IUAD1IY7/opa/v1/plugins/bundle"
+	pluginStatus "github.com/IUAD1IY7/opa/v1/plugins/status"
+	"github.com/IUAD1IY7/opa/v1/server/authorizer"
+	"github.com/IUAD1IY7/opa/v1/server/identifier"
+	"github.com/IUAD1IY7/opa/v1/server/types"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage/disk"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/v1/version"
 	prom "github.com/prometheus/client_golang/prometheus"
 )
 
@@ -1916,7 +1916,7 @@ func generateJSONBenchmarkData(k, v int) map[string]any {
 	}
 }
 
-// Ref: https://github.com/open-policy-agent/opa/issues/6804
+// Ref: https://github.com/IUAD1IY7/opa/issues/6804
 func TestDataGetV1CompressedRequestWithAuthorizer(t *testing.T) {
 	t.Parallel()
 

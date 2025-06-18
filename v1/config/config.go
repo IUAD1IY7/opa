@@ -15,10 +15,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/ref"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/version"
+	"github.com/IUAD1IY7/opa/internal/ref"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/version"
 )
 
 // Config represents the configuration file that OPA can be started with.

@@ -8,7 +8,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/logging"
 )
 
 func mockPayload(request KMSSignRequest) string {

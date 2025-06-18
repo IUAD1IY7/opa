@@ -8,20 +8,20 @@ package plugins
 import (
 	"net/http"
 
-	"github.com/open-policy-agent/opa/internal/report"
+	"github.com/IUAD1IY7/opa/internal/report"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.opentelemetry.io/otel/sdk/trace"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/bundle"
-	"github.com/open-policy-agent/opa/hooks"
-	"github.com/open-policy-agent/opa/loader"
-	"github.com/open-policy-agent/opa/logging"
-	"github.com/open-policy-agent/opa/resolver/wasm"
-	"github.com/open-policy-agent/opa/storage"
-	"github.com/open-policy-agent/opa/topdown/print"
-	"github.com/open-policy-agent/opa/tracing"
-	v1 "github.com/open-policy-agent/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/bundle"
+	"github.com/IUAD1IY7/opa/hooks"
+	"github.com/IUAD1IY7/opa/loader"
+	"github.com/IUAD1IY7/opa/logging"
+	"github.com/IUAD1IY7/opa/resolver/wasm"
+	"github.com/IUAD1IY7/opa/storage"
+	"github.com/IUAD1IY7/opa/topdown/print"
+	"github.com/IUAD1IY7/opa/tracing"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins"
 )
 
 // Factory defines the interface OPA uses to instantiate your plugin.

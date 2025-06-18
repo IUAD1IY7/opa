@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/sdk"
-	sdktest "github.com/open-policy-agent/opa/v1/sdk/test"
+	"github.com/IUAD1IY7/opa/sdk"
+	sdktest "github.com/IUAD1IY7/opa/v1/sdk/test"
 )
 
 func TestDefaultRegoVersion(t *testing.T) {

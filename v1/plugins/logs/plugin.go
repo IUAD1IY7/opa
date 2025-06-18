@@ -22,18 +22,18 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/open-policy-agent/opa/internal/ref"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/plugins"
-	lstat "github.com/open-policy-agent/opa/v1/plugins/logs/status"
-	"github.com/open-policy-agent/opa/v1/plugins/rest"
-	"github.com/open-policy-agent/opa/v1/plugins/status"
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/server"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/ref"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/plugins"
+	lstat "github.com/IUAD1IY7/opa/v1/plugins/logs/status"
+	"github.com/IUAD1IY7/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/plugins/status"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/server"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Logger defines the interface for decision logging plugins.

@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
 )
 
 // New creates a new JWS verifier using the specified algorithm

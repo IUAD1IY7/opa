@@ -29,7 +29,7 @@ I found the broken link on https://...
   const labels = "docs,bug";
 
   const githubIssueUrl =
-    `https://github.com/open-policy-agent/opa/issues/new?template=bug_report.md&title=${encodedTitle}&body=${encodedBody}&labels=${labels}`;
+    `https://github.com/IUAD1IY7/opa/issues/new?template=bug_report.md&title=${encodedTitle}&body=${encodedBody}&labels=${labels}`;
 
   return (
     <main className={clsx("container margin-vert--xl", className)}>

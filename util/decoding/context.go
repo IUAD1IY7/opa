@@ -3,7 +3,7 @@ package decoding
 import (
 	"context"
 
-	v1 "github.com/open-policy-agent/opa/v1/util/decoding"
+	v1 "github.com/IUAD1IY7/opa/v1/util/decoding"
 )
 
 func AddServerDecodingMaxLen(ctx context.Context, maxLen int64) context.Context {

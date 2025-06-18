@@ -9,9 +9,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // New returns an empty in-memory store.

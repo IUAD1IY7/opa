@@ -22,8 +22,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	signerCrypto "github.com/open-policy-agent/opa/internal/providers/aws/crypto"
-	v4Internal "github.com/open-policy-agent/opa/internal/providers/aws/v4"
+	signerCrypto "github.com/IUAD1IY7/opa/internal/providers/aws/crypto"
+	v4Internal "github.com/IUAD1IY7/opa/internal/providers/aws/v4"
 )
 
 const (

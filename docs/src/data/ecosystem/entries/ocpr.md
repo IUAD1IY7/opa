@@ -14,7 +14,7 @@ docs_features:
   go-integration:
     note: |
       Makes use of the
-      [OPA Repl package](https://pkg.go.dev/github.com/open-policy-agent/opa/repl)
+      [OPA Repl package](https://pkg.go.dev/github.com/IUAD1IY7/opa/repl)
       to interact with an OPA instance.
   opa-bundles:
     note: |

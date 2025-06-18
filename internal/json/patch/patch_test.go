@@ -4,7 +4,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 func TestParsePatchPathEscaped(t *testing.T) {
@@ -36,13 +36,13 @@ func TestParsePatchPathEscaped(t *testing.T) {
 		{ // not strictly correct but included for backwards compatibility with existing OPA
 			note:         "url-escaped forward slash",
 			path:         "/github.com%2Fopen-policy-agent",
-			expectedPath: storage.Path{"github.com/open-policy-agent"},
+			expectedPath: storage.Path{"github.com/IUAD1IY7"},
 			expectedOK:   true,
 		},
 		{
 			note:         "json-pointer-escaped forward slash",
 			path:         "/github.com~1open-policy-agent",
-			expectedPath: storage.Path{"github.com/open-policy-agent"},
+			expectedPath: storage.Path{"github.com/IUAD1IY7"},
 			expectedOK:   true,
 		},
 		{

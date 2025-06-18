@@ -11,12 +11,12 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/v1/plugins"
 
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/download"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/download"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // ParseConfig validates the config and injects default values. This is

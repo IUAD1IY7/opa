@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jws/sign"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws/sign"
 )
 
 func newHMAC(alg jwa.SignatureAlgorithm) (*HMACVerifier, error) {

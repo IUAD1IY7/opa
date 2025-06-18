@@ -32,7 +32,7 @@ cases:
     want_result:
       - x:
           - bar
-  - note: regression/dynamic object to static object comparison (https://github.com/open-policy-agent/opa/issues/6138)
+  - note: regression/dynamic object to static object comparison (https://github.com/IUAD1IY7/opa/issues/6138)
     query: data.test.compare = x
     modules:
       - |

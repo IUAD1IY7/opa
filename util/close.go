@@ -7,7 +7,7 @@ package util
 import (
 	"net/http"
 
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Close reads the remaining bytes from the response and then closes it to

@@ -8,8 +8,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/runtime"
-	v1 "github.com/open-policy-agent/opa/v1/test/e2e"
+	"github.com/IUAD1IY7/opa/v1/runtime"
+	v1 "github.com/IUAD1IY7/opa/v1/test/e2e"
 )
 
 // NewAPIServerTestParams creates a new set of runtime.Params with enough

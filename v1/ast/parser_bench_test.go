@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // BenchmarkParseModuleRulesBase gives a baseline for parsing modules with

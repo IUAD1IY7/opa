@@ -1,2 +1,2 @@
 go test fuzz v1
-string("github.com/open-policy-agent/opa/ast")
+string("github.com/IUAD1IY7/opa/ast")

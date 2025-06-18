@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const defaultSigningAlgorithm = "RS256"

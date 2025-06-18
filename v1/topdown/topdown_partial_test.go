@@ -15,10 +15,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
-	inmem "github.com/open-policy-agent/opa/v1/storage/inmem/test"
-	"github.com/open-policy-agent/opa/v1/util"
+	inmem "github.com/IUAD1IY7/opa/v1/storage/inmem/test"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestTopDownPartialEval(t *testing.T) {
@@ -3841,7 +3841,7 @@ func TestTopDownPartialEval(t *testing.T) {
 					a2 = input; __local4__2 > __local2__2 }
 				}`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/5367
+		{ // https://github.com/IUAD1IY7/opa/issues/5367
 			note:  "copypropagation: keep equations that are only found in comprehensions, inlined function call",
 			query: "data.test.p",
 			modules: []string{`package test
@@ -3873,7 +3873,7 @@ func TestTopDownPartialEval(t *testing.T) {
 			}`},
 			wantQueries: []string{`every __local0__1, __local1__1 in input.ys { __local1__1 = input.foo }; x1 = input.foo`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/6027
+		{ // https://github.com/IUAD1IY7/opa/issues/6027
 			note:  "ref heads: \"double\" unification, single-value rule",
 			query: "data.test.foo[input.a][input.b]",
 			modules: []string{`package test
@@ -3892,7 +3892,7 @@ func TestTopDownPartialEval(t *testing.T) {
 			}`},
 			wantQueries: []string{`"bar" = input.a; "baz" = input.b; "bax" = input.c`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/6027
+		{ // https://github.com/IUAD1IY7/opa/issues/6027
 			note:  "ref heads: \"double\" unification, multi-value rule",
 			query: "data.test.foo[input.a][input.b]",
 			modules: []string{`package test
@@ -3958,7 +3958,7 @@ func TestTopDownPartialEval(t *testing.T) {
 			}`},
 			wantQueries: []string{`data.test.p.q.r = y; x = "r"`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/6094
+		{ // https://github.com/IUAD1IY7/opa/issues/6094
 			note:    "ref heads: ref var, unknown rule value, shallow inlining",
 			query:   "data.test.p.q[x]",
 			shallow: true,
@@ -3973,7 +3973,7 @@ func TestTopDownPartialEval(t *testing.T) {
 				__local1__1 = input.y
 			}`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/6094
+		{ // https://github.com/IUAD1IY7/opa/issues/6094
 			note:    "ref heads: unknown ref var, unknown rule value, shallow inlining",
 			query:   "data.test.p.q[x]",
 			shallow: true,
@@ -3989,7 +3989,7 @@ func TestTopDownPartialEval(t *testing.T) {
 				__local1__1 = input.y
 			}`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/6094
+		{ // https://github.com/IUAD1IY7/opa/issues/6094
 			note:    "ref heads: unknown ref var, unknown rule value, shallow inlining",
 			query:   "data.test.p.q.r.s[x]",
 			shallow: true,
@@ -4005,7 +4005,7 @@ func TestTopDownPartialEval(t *testing.T) {
 				__local1__1 = input.y
 			}`},
 		},
-		{ // https://github.com/open-policy-agent/opa/issues/6094
+		{ // https://github.com/IUAD1IY7/opa/issues/6094
 			note:    "ref heads, partial set: unknown key, shallow inlining",
 			query:   "data.test.p.q[x]",
 			shallow: true,
@@ -4926,7 +4926,7 @@ func TestTopDownPartialEval(t *testing.T) {
 			wantQueries: []string{"not input.x = 7"},
 		},
 
-		{ // Regression test for https://github.com/open-policy-agent/opa/issues/1418
+		{ // Regression test for https://github.com/IUAD1IY7/opa/issues/1418
 			note:  "regression, good",
 			query: "data.x.p_good",
 			modules: []string{`package x
@@ -4944,7 +4944,7 @@ default q := false
 q if { input.x = 7 }`},
 			wantQueries: []string{"input.x = 7"},
 		},
-		{ // Regression test for https://github.com/open-policy-agent/opa/issues/1418
+		{ // Regression test for https://github.com/IUAD1IY7/opa/issues/1418
 			note:  "regression, bad",
 			query: "data.x.p_bad",
 			modules: []string{`package x

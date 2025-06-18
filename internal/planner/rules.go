@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 // funcstack implements a simple map structure used to keep track of virtual

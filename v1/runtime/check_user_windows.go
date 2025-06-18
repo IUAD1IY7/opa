@@ -5,7 +5,7 @@
 package runtime
 
 import (
-	"github.com/open-policy-agent/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/logging"
 )
 
 // checkUserPrivileges is a no-op in Windows to avoid lookups with

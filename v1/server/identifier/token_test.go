@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/server/identifier"
+	"github.com/IUAD1IY7/opa/v1/server/identifier"
 )
 
 func TestTokenBased(t *testing.T) {

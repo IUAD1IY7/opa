@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/ast"
-	"github.com/open-policy-agent/opa/format"
+	"github.com/IUAD1IY7/opa/ast"
+	"github.com/IUAD1IY7/opa/format"
 )
 
 func TestParseModule_DefaultRegoVersion(t *testing.T) {

@@ -15,12 +15,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/open-policy-agent/opa/cmd/internal/env"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/compile"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/cmd/internal/env"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/compile"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const defaultPublicKeyID = "default"

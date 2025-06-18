@@ -1,8 +1,8 @@
 package status
 
 import (
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/version"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/version"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

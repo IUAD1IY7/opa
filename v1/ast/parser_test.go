@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast/internal/tokens"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/tokens"
 )
 
 const (
@@ -4090,7 +4090,7 @@ func TestWildcards(t *testing.T) {
 	})
 }
 
-// https://github.com/open-policy-agent/opa/issues/7128
+// https://github.com/IUAD1IY7/opa/issues/7128
 func TestParseMultiValueRuleGeneratedBodyLocationText(t *testing.T) {
 	t.Parallel()
 
@@ -6072,7 +6072,7 @@ is_string := rego.metadata.rule().custom.string == "yes"
 	}
 }
 
-// https://github.com/open-policy-agent/opa/issues/6587
+// https://github.com/IUAD1IY7/opa/issues/6587
 func TestAnnotationsParseErrorOnFirstRowGetsCorrectLocation(t *testing.T) {
 	module := `# METADATA
 # description: ` + "`foo` bars" + `

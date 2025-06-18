@@ -4,7 +4,7 @@
 
 package instruction
 
-import "github.com/open-policy-agent/opa/internal/wasm/opcode"
+import "github.com/IUAD1IY7/opa/internal/wasm/opcode"
 
 // GetLocal represents the WASM get_local instruction.
 type GetLocal struct {

@@ -16,11 +16,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/loader"
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func TestBuildProducesBundle(t *testing.T) {

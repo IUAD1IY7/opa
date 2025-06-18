@@ -10,9 +10,9 @@ inventors:
 blogs:
 - "https://blog.openpolicyagent.org/introducing-swift-opa-native-policy-evaluation-for-swift-d5136c8a662e"
 code:
-- "https://github.com/open-policy-agent/swift-opa"
+- "https://github.com/IUAD1IY7/swift-opa"
 tutorials:
-- "https://github.com/open-policy-agent/swift-opa?tab=readme-ov-file#usage"
+- "https://github.com/IUAD1IY7/swift-opa?tab=readme-ov-file#usage"
 ---
 
 Swift-OPA is a Swift package for evaluating

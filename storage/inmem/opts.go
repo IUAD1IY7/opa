@@ -1,6 +1,6 @@
 package inmem
 
-import v1 "github.com/open-policy-agent/opa/v1/storage/inmem"
+import v1 "github.com/IUAD1IY7/opa/v1/storage/inmem"
 
 // An Opt modifies store at instantiation.
 type Opt = v1.Opt

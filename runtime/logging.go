@@ -7,8 +7,8 @@ package runtime
 import (
 	"net/http"
 
-	"github.com/open-policy-agent/opa/logging"
-	v1 "github.com/open-policy-agent/opa/v1/runtime"
+	"github.com/IUAD1IY7/opa/logging"
+	v1 "github.com/IUAD1IY7/opa/v1/runtime"
 )
 
 // LoggingHandler returns an http.Handler that will print log messages

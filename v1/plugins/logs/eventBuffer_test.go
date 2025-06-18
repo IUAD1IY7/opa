@@ -16,12 +16,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/plugins/rest"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 func TestEventBuffer_Push(t *testing.T) {

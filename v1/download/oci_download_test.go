@@ -13,17 +13,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
 
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/plugins/rest"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/plugins/rest"
 )
 
 // when changed the layer hash & size should be updated in .manifest files
-//go:generate go run github.com/open-policy-agent/opa build -b --signing-alg HS256 testdata/latest_bundle_data --output testdata/latest.tar.gz
-//go:generate go run github.com/open-policy-agent/opa build -b --signing-alg HS256 --signing-key secret testdata/signed_bundle_data --output testdata/signed.tar.gz
-//go:generate go run github.com/open-policy-agent/opa build --v1-compatible -b --signing-alg HS256 --signing-key secret testdata/rego_v1_bundle_data --output testdata/rego_v1.tar.gz
+//go:generate go run github.com/IUAD1IY7/opa build -b --signing-alg HS256 testdata/latest_bundle_data --output testdata/latest.tar.gz
+//go:generate go run github.com/IUAD1IY7/opa build -b --signing-alg HS256 --signing-key secret testdata/signed_bundle_data --output testdata/signed.tar.gz
+//go:generate go run github.com/IUAD1IY7/opa build --v1-compatible -b --signing-alg HS256 --signing-key secret testdata/rego_v1_bundle_data --output testdata/rego_v1.tar.gz
 
 func TestOCIDownloaderWithBundleVerificationConfig(t *testing.T) {
 	vc := bundle.NewVerificationConfig(map[string]*bundle.KeyConfig{"default": {Key: "secret", Algorithm: "HS256"}}, "", "", nil)

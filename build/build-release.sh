@@ -3,7 +3,7 @@
 
 set -e
 
-OPA_DIR=/go/src/github.com/open-policy-agent/opa
+OPA_DIR=/go/src/github.com/IUAD1IY7/opa
 BUILD_DIR=$OPA_DIR/build
 
 usage() {
@@ -46,8 +46,8 @@ build_release() {
 }
 
 clone_repo() {
-    git clone $SOURCE_URL /go/src/github.com/open-policy-agent/opa
-    cd /go/src/github.com/open-policy-agent/opa
+    git clone $SOURCE_URL /go/src/github.com/IUAD1IY7/opa
+    cd /go/src/github.com/IUAD1IY7/opa
     if [ -n "$VERSION" ]; then
         git checkout v${VERSION}
     fi

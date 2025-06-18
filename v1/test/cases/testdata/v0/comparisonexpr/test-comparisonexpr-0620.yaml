@@ -1,7 +1,7 @@
 ---
 cases:
   # Leaving out floats as map keys until this is resolved:
-  # https://github.com/open-policy-agent/opa/issues/4797
+  # https://github.com/IUAD1IY7/opa/issues/4797
   - modules:
       - |
         package comparison

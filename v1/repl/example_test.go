@@ -9,9 +9,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/repl"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/repl"
 )
 
 // nolint // example code

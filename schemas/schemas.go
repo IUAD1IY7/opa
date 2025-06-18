@@ -5,7 +5,7 @@
 package schemas
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/schemas"
+	v1 "github.com/IUAD1IY7/opa/v1/schemas"
 )
 
 // FS contains the known schemas for OPA's Authorization Policy etc.

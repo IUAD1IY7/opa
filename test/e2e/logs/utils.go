@@ -1,7 +1,7 @@
 package logs
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/test/e2e/logs"
+	v1 "github.com/IUAD1IY7/opa/v1/test/e2e/logs"
 )
 
 // GeneratePolicy generates a policy for use in Decision Log e2e tests. The

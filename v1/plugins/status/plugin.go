@@ -15,13 +15,13 @@ import (
 	"reflect"
 	"slices"
 
-	lstat "github.com/open-policy-agent/opa/v1/plugins/logs/status"
+	lstat "github.com/IUAD1IY7/opa/v1/plugins/logs/status"
 
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/plugins"
-	"github.com/open-policy-agent/opa/v1/plugins/bundle"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/v1/plugins/bundle"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (

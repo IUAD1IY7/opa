@@ -11,10 +11,10 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/ir"
-	"github.com/open-policy-agent/opa/v1/topdown"
-	"github.com/open-policy-agent/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ir"
+	"github.com/IUAD1IY7/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/types"
 )
 
 type testPlugin struct {

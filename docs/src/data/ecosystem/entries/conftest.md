@@ -5,7 +5,7 @@ labels:
   type: poweredbyopa
   layer: configuration
 code:
-- https://github.com/open-policy-agent/conftest
+- https://github.com/IUAD1IY7/conftest
 software:
 - kustomize
 - terraform
@@ -46,6 +46,6 @@ docs_features:
     note: |
       Conftest has generic support for Terraform source files defined in HCL.
       There is an example provided here on
-      [GitHub](https://github.com/open-policy-agent/conftest/tree/master/examples/hcl2).
+      [GitHub](https://github.com/IUAD1IY7/conftest/tree/master/examples/hcl2).
 ---
 Conftest is a utility built on top of OPA to help you write tests against structured configuration data.

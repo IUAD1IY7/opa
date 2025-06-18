@@ -1,7 +1,7 @@
 package util
 
 import (
-	"github.com/open-policy-agent/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/metrics"
 )
 
 // This prevents getting blocked forever writing to a full buffer, in case another routine fills the last space.

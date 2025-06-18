@@ -7,7 +7,7 @@ package util
 import (
 	"time"
 
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // DefaultBackoff returns a delay with an exponential backoff based on the

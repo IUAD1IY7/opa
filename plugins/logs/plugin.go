@@ -6,8 +6,8 @@
 package logs
 
 import (
-	"github.com/open-policy-agent/opa/plugins"
-	v1 "github.com/open-policy-agent/opa/v1/plugins/logs"
+	"github.com/IUAD1IY7/opa/plugins"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/logs"
 )
 
 // Logger defines the interface for decision logging plugins.

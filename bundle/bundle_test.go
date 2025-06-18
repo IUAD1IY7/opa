@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
 )
 
 func TestRead_DefaultRegoVersion(t *testing.T) {

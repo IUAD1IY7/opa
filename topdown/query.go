@@ -1,8 +1,8 @@
 package topdown
 
 import (
-	"github.com/open-policy-agent/opa/v1/ast"
-	v1 "github.com/open-policy-agent/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 // QueryResultSet represents a collection of results returned by a query.

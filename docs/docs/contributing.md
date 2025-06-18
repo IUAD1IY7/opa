@@ -26,7 +26,7 @@ Overflow.
 ## I'd like to contribute code
 
 If you have found a bug and would like to work on a fix, **we always encourage you
-file a [GitHub Issue](https://github.com/open-policy-agent/opa/issues)** to talk
+file a [GitHub Issue](https://github.com/IUAD1IY7/opa/issues)** to talk
 about the problem and the solution you have in mind. This allows you to get
 feedback from maintainers before committing time to something that might already
 have a solution or might not be the right approach.
@@ -56,9 +56,9 @@ Awesome! For OPA-based projects, we have our [Ecosystem page](/ecosystem/).
 This is a great place to showcase your project and how it uses OPA.
 
 You can create a markdown file in:
-[`docs/src/data/ecosystem/entries`](https://github.com/open-policy-agent/opa/tree/main/docs/src/data/ecosystem/entries)
+[`docs/src/data/ecosystem/entries`](https://github.com/IUAD1IY7/opa/tree/main/docs/src/data/ecosystem/entries)
 and add an icon in
-[`/docs/static/img/ecosystem-entry-logos`](https://github.com/open-policy-agent/opa/tree/main/docs/static/img/ecosystem-entry-logos)
+[`/docs/static/img/ecosystem-entry-logos`](https://github.com/IUAD1IY7/opa/tree/main/docs/static/img/ecosystem-entry-logos)
 to have your project listed on the ecosystem page.
 
 If you have a talk or blog you'd like to share please feel free to post in:

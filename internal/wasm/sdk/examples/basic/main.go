@@ -9,7 +9,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa"
 )
 
 // main demonstrates the loading and executing of OPA produced wasm

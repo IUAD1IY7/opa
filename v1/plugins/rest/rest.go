@@ -18,11 +18,11 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/version"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/tracing"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/version"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (

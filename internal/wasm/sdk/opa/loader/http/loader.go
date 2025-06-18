@@ -14,10 +14,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa"
-	werrors "github.com/open-policy-agent/opa/internal/wasm/sdk/opa/errors"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa"
+	werrors "github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/errors"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (

@@ -5,9 +5,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/open-policy-agent/opa/cmd/formats"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/cmd/formats"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 type Params struct {

@@ -8,7 +8,7 @@
 package authz
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/test/authz"
+	v1 "github.com/IUAD1IY7/opa/v1/test/authz"
 )
 
 // Policy is a test rego policy for a token based authz system

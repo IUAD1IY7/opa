@@ -7,7 +7,7 @@ package ast
 import (
 	"encoding/json"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // ValueMap represents a key/value map between AST term values. Any type of term

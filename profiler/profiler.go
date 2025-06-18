@@ -6,7 +6,7 @@
 package profiler
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/profiler"
+	v1 "github.com/IUAD1IY7/opa/v1/profiler"
 )
 
 // Profiler computes and reports on the time spent on expressions.

@@ -61,8 +61,8 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/open-policy-agent/opa/logging"
-	v1 "github.com/open-policy-agent/opa/v1/storage/disk"
+	"github.com/IUAD1IY7/opa/logging"
+	v1 "github.com/IUAD1IY7/opa/v1/storage/disk"
 )
 
 // Options contains parameters that configure the disk-based store.

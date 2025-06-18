@@ -8,7 +8,7 @@ import (
 	"crypto/tls"
 	"net/http"
 
-	v1 "github.com/open-policy-agent/opa/v1/plugins/rest"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/rest"
 )
 
 // DefaultTLSConfig defines standard TLS configurations based on the Config

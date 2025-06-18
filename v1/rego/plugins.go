@@ -8,8 +8,8 @@ import (
 	"context"
 	"sync"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/ir"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ir"
 )
 
 var targetPlugins = map[string]TargetPlugin{}

@@ -18,19 +18,19 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/util"
 
 	"github.com/fortytw2/leaktest"
 
-	sdk_errors "github.com/open-policy-agent/opa/internal/wasm/sdk/opa/errors"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/topdown"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	sdk_errors "github.com/IUAD1IY7/opa/internal/wasm/sdk/opa/errors"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 
-	_ "github.com/open-policy-agent/opa/v1/features/wasm"
+	_ "github.com/IUAD1IY7/opa/v1/features/wasm"
 )
 
 func TestPrepareAndEvalWithWasmTarget(t *testing.T) {

@@ -13,13 +13,13 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	storageerrors "github.com/open-policy-agent/opa/v1/storage/internal/errors"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	storageerrors "github.com/IUAD1IY7/opa/v1/storage/internal/errors"
 
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestInMemoryRead(t *testing.T) {

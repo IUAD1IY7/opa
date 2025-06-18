@@ -10,8 +10,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 // These test cases require malformed tree nodes or arguments,

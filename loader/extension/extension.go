@@ -5,7 +5,7 @@
 package extension
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/loader/extension"
+	v1 "github.com/IUAD1IY7/opa/v1/loader/extension"
 )
 
 // Handler is used to unmarshal a byte slice of a registered extension

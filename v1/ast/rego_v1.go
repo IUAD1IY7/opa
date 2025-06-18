@@ -3,7 +3,7 @@ package ast
 import (
 	"fmt"
 
-	"github.com/open-policy-agent/opa/v1/ast/internal/tokens"
+	"github.com/IUAD1IY7/opa/v1/ast/internal/tokens"
 )
 
 func checkDuplicateImports(modules []*Module) (errors Errors) {

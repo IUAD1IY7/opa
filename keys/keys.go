@@ -3,7 +3,7 @@ package keys
 import (
 	"encoding/json"
 
-	v1 "github.com/open-policy-agent/opa/v1/keys"
+	v1 "github.com/IUAD1IY7/opa/v1/keys"
 )
 
 // IsSupportedAlgorithm true if provided alg is supported

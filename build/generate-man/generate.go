@@ -10,7 +10,7 @@ import (
 
 	"github.com/spf13/cobra/doc"
 
-	"github.com/open-policy-agent/opa/cmd"
+	"github.com/IUAD1IY7/opa/cmd"
 )
 
 func main() {

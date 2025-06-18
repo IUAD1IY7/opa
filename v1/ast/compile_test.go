@@ -17,9 +17,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/types"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestOutputVarsForNode(t *testing.T) {
@@ -5947,7 +5947,7 @@ func TestRewriteDeclaredVars(t *testing.T) {
 			// the first run rewrites every to include a generated key var,
 			// the second one bails because it's not used.
 			// Seen in the wild when using `opa test -b` on a bundle that
-			// used `every`, https://github.com/open-policy-agent/opa/issues/4420
+			// used `every`, https://github.com/IUAD1IY7/opa/issues/4420
 			note: "rewrite every: unused generated key var",
 			module: `
 				package test
@@ -8598,7 +8598,7 @@ dataref = true if { data }`,
 func TestCompilerCheckDynamicRecursion(t *testing.T) {
 	// This test tries to circumvent the recursion check by using dynamic
 	// references.  For more background info, see
-	// <https://github.com/open-policy-agent/opa/issues/1565>.
+	// <https://github.com/IUAD1IY7/opa/issues/1565>.
 
 	for _, tc := range []struct {
 		note, err string
@@ -10999,12 +10999,12 @@ func TestKeepModules(t *testing.T) {
 	})
 }
 
-// see https://github.com/open-policy-agent/opa/issues/5166
+// see https://github.com/IUAD1IY7/opa/issues/5166
 func TestCompilerWithRecursiveSchema(t *testing.T) {
 
 	jsonSchema := `{
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/open-policy-agent/opa/issues/5166",
+  "$id": "https://github.com/IUAD1IY7/opa/issues/5166",
   "type": "object",
   "properties": {
     "Something": {
@@ -11062,12 +11062,12 @@ deny if {
 	}
 }
 
-// see https://github.com/open-policy-agent/opa/issues/5166
+// see https://github.com/IUAD1IY7/opa/issues/5166
 func TestCompilerWithRecursiveSchemaAndInvalidSource(t *testing.T) {
 
 	jsonSchema := `{
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/open-policy-agent/opa/issues/5166",
+  "$id": "https://github.com/IUAD1IY7/opa/issues/5166",
   "type": "object",
   "properties": {
     "Something": {

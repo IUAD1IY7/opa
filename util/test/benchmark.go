@@ -5,7 +5,7 @@ package test
 // - topdown/topdown_bench_test.go
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/util/test"
+	v1 "github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 // PartialObjectBenchmarkCrossModule returns a module with n "bench_test_" prefixed rules

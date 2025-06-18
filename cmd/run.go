@@ -17,11 +17,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/open-policy-agent/opa/cmd/internal/env"
-	fileurl "github.com/open-policy-agent/opa/internal/file/url"
-	"github.com/open-policy-agent/opa/v1/runtime"
-	"github.com/open-policy-agent/opa/v1/server"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/cmd/internal/env"
+	fileurl "github.com/IUAD1IY7/opa/internal/file/url"
+	"github.com/IUAD1IY7/opa/v1/runtime"
+	"github.com/IUAD1IY7/opa/v1/server"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (

@@ -11,8 +11,8 @@ import (
 
 	gintersect "github.com/yashtewari/glob-intersection"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 const regexCacheMaxSize = 100

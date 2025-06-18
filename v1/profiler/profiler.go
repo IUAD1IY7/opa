@@ -9,9 +9,9 @@ import (
 	"sort"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 // Profiler computes and reports on the time spent on expressions.

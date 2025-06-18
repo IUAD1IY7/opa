@@ -30,7 +30,7 @@ Join #help for support.`,
           icon: require.context("./assets/logos/github.png").default,
           note: `Get involved with OPA development; request a feature, file a bug,
 or view the code.`,
-          link: "https://github.com/open-policy-agent",
+          link: "https://github.com/IUAD1IY7",
           link_text: "Visit OPA on GitHub",
         },
         {
@@ -38,7 +38,7 @@ or view the code.`,
           icon: require.context("./assets/logos/github-discussions.png").default,
           note: `Community powered support for OPA and Rego. Ask questions about writing
 Rego files, implementing OPA, or share the configurations you are working on.`,
-          link: "https://github.com/open-policy-agent/community/discussions",
+          link: "https://github.com/IUAD1IY7/community/discussions",
           link_text: "Ask a Question",
         },
         {

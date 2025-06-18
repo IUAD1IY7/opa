@@ -12,9 +12,9 @@ import (
 	"testing"
 
 	"github.com/dgraph-io/badger/v4"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func randomString(n int) string {

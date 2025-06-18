@@ -17,10 +17,10 @@ import (
 	"strings"
 	"time"
 
-	v4 "github.com/open-policy-agent/opa/internal/providers/aws/v4"
+	v4 "github.com/IUAD1IY7/opa/internal/providers/aws/v4"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func stringFromTerm(t *ast.Term) string {

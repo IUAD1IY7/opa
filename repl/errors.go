@@ -4,7 +4,7 @@
 
 package repl
 
-import v1 "github.com/open-policy-agent/opa/v1/repl"
+import v1 "github.com/IUAD1IY7/opa/v1/repl"
 
 // Error is the error type returned by the REPL.
 type Error = v1.Error

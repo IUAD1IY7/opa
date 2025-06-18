@@ -7,7 +7,7 @@ ARG BASE
 FROM ${BASE}
 
 LABEL org.opencontainers.image.authors="Torin Sandall <torinsandall@gmail.com>"
-LABEL org.opencontainers.image.source="https://github.com/open-policy-agent/opa"
+LABEL org.opencontainers.image.source="https://github.com/IUAD1IY7/opa"
 
 # Any non-zero number will do, and unfortunately a named user will not, as k8s
 # pod securityContext runAsNonRoot can't resolve the user ID:

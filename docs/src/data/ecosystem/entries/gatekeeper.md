@@ -5,7 +5,7 @@ labels:
   type: poweredbyopa
   layer: configuration
 code:
-- https://github.com/open-policy-agent/gatekeeper
+- https://github.com/IUAD1IY7/gatekeeper
 software:
 - kubernetes
 tutorials:

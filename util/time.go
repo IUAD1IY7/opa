@@ -3,7 +3,7 @@ package util
 import (
 	"time"
 
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // TimerWithCancel exists because of memory leaks when using

@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // All returns the list of data ast.Refs that the given AST element depends on.

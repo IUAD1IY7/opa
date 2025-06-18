@@ -5,7 +5,7 @@ import (
 	"crypto/rsa"
 	"io"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
 )
 
 // Signer provides a common interface for supported alg signing methods

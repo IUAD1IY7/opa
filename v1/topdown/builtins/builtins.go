@@ -12,8 +12,8 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Cache defines the built-in cache used by the top-down evaluation. The keys

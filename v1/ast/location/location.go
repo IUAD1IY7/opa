@@ -7,7 +7,7 @@ import (
 	"errors"
 	"fmt"
 
-	astJSON "github.com/open-policy-agent/opa/v1/ast/json"
+	astJSON "github.com/IUAD1IY7/opa/v1/ast/json"
 )
 
 // Location records a position in source code

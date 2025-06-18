@@ -8,9 +8,9 @@ package ptr
 import (
 	"strconv"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/internal/errors"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage/internal/errors"
 )
 
 func Ptr(data any, path storage.Path) (any, error) {

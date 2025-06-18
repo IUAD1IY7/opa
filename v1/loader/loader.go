@@ -16,16 +16,16 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	fileurl "github.com/open-policy-agent/opa/internal/file/url"
-	"github.com/open-policy-agent/opa/internal/merge"
-	"github.com/open-policy-agent/opa/v1/ast"
-	astJSON "github.com/open-policy-agent/opa/v1/ast/json"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/loader/filter"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	fileurl "github.com/IUAD1IY7/opa/internal/file/url"
+	"github.com/IUAD1IY7/opa/internal/merge"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	astJSON "github.com/IUAD1IY7/opa/v1/ast/json"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/loader/filter"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Result represents the result of successfully loading zero or more files.

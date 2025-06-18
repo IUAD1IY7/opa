@@ -15,13 +15,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/server/identifier"
-	"github.com/open-policy-agent/opa/v1/server/types"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
-	"github.com/open-policy-agent/opa/v1/topdown/print"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/server/identifier"
+	"github.com/IUAD1IY7/opa/v1/server/types"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/topdown/print"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 type mockHandler struct {

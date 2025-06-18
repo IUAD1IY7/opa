@@ -20,12 +20,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/uuid"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/logging/test"
-	"github.com/open-policy-agent/opa/v1/runtime"
-	"github.com/open-policy-agent/opa/v1/server/types"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/uuid"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/logging/test"
+	"github.com/IUAD1IY7/opa/v1/runtime"
+	"github.com/IUAD1IY7/opa/v1/server/types"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (

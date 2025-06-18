@@ -8,9 +8,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/server/types"
-	"github.com/open-policy-agent/opa/v1/storage/disk"
-	"github.com/open-policy-agent/opa/v1/test/e2e"
+	"github.com/IUAD1IY7/opa/v1/server/types"
+	"github.com/IUAD1IY7/opa/v1/storage/disk"
+	"github.com/IUAD1IY7/opa/v1/test/e2e"
 )
 
 var testRuntime *e2e.TestRuntime

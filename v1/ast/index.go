@@ -11,7 +11,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // RuleIndex defines the interface for rule indices.

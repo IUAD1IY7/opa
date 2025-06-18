@@ -5,7 +5,7 @@
 package discovery
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/plugins/discovery"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/discovery"
 )
 
 // Config represents the configuration for the discovery feature.

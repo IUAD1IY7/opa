@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/report"
+	"github.com/IUAD1IY7/opa/internal/report"
 )
 
 func TestGenerateCmdOutputDisableCheckFlag(t *testing.T) {
@@ -36,7 +36,7 @@ func TestGenerateCmdOutputDisableCheckFlag(t *testing.T) {
 func TestGenerateCmdOutputWithCheckFlagNoError(t *testing.T) {
 	exp := &report.DataResponse{Latest: report.ReleaseDetails{
 		Download:      "https://openpolicyagent.org/downloads/v100.0.0/opa_darwin_amd64",
-		ReleaseNotes:  "https://github.com/open-policy-agent/opa/releases/tag/v100.0.0",
+		ReleaseNotes:  "https://github.com/IUAD1IY7/opa/releases/tag/v100.0.0",
 		LatestRelease: "v100.0.0",
 	}}
 

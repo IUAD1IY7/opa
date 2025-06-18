@@ -20,18 +20,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/v1/loader"
 
-	"github.com/open-policy-agent/opa/internal/report"
-	"github.com/open-policy-agent/opa/v1/logging"
-	testLog "github.com/open-policy-agent/opa/v1/logging/test"
-	"github.com/open-policy-agent/opa/v1/server"
+	"github.com/IUAD1IY7/opa/internal/report"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	testLog "github.com/IUAD1IY7/opa/v1/logging/test"
+	"github.com/IUAD1IY7/opa/v1/server"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func TestRuntimeProcessWatchEvents(t *testing.T) {
@@ -660,7 +660,7 @@ func TestCheckOPAUpdateBadURL(t *testing.T) {
 func TestCheckOPAUpdateWithNewUpdate(t *testing.T) {
 	exp := &report.DataResponse{Latest: report.ReleaseDetails{
 		Download:      "https://openpolicyagent.org/downloads/v100.0.0/opa_darwin_amd64",
-		ReleaseNotes:  "https://github.com/open-policy-agent/opa/releases/tag/v100.0.0",
+		ReleaseNotes:  "https://github.com/IUAD1IY7/opa/releases/tag/v100.0.0",
 		LatestRelease: "v100.0.0",
 	}}
 
@@ -732,7 +732,7 @@ func TestCheckOPAUpdateLoopLaterRequests(t *testing.T) {
 func TestCheckOPAUpdateLoopWithNewUpdate(t *testing.T) {
 	exp := &report.DataResponse{Latest: report.ReleaseDetails{
 		Download:      "https://openpolicyagent.org/downloads/v100.0.0/opa_darwin_amd64",
-		ReleaseNotes:  "https://github.com/open-policy-agent/opa/releases/tag/v100.0.0",
+		ReleaseNotes:  "https://github.com/IUAD1IY7/opa/releases/tag/v100.0.0",
 		LatestRelease: "v100.0.0",
 		OPAUpToDate:   false,
 	}}

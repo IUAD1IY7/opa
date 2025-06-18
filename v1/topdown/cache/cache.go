@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 const (
@@ -196,7 +196,7 @@ func NewInterQueryCacheWithContext(ctx context.Context, config *Config) InterQue
 				case <-cleanupTicker.C:
 					// NOTE: We stop the ticker and create a new one here to ensure that applications
 					// get _at least_ staleEntryEvictionTimePeriodSeconds with the cache unlocked;
-					// see https://github.com/open-policy-agent/opa/pull/7188/files#r1855342998
+					// see https://github.com/IUAD1IY7/opa/pull/7188/files#r1855342998
 					cleanupTicker.Stop()
 					iqCache.cleanStaleValues()
 					cleanupTicker = time.NewTicker(time.Duration(iqCache.staleEntryEvictionTimePeriodSeconds()) * time.Second)

@@ -14,8 +14,8 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/version"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/version"
 )
 
 func TestConfigPluginNames(t *testing.T) {

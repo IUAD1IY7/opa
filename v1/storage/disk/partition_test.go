@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 func TestPartitionTrie(t *testing.T) {

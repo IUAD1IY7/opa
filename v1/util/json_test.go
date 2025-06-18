@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestInvalidJSONInput(t *testing.T) {
@@ -114,7 +114,7 @@ func TestReference(t *testing.T) {
 }
 
 // There's valid JSON that doesn't pass through yaml.YAMLToJSON.
-// See https://github.com/open-policy-agent/opa/issues/4673
+// See https://github.com/IUAD1IY7/opa/issues/4673
 func TestInvalidYAMLValidJSON(t *testing.T) {
 	x := []byte{0x22, 0x3a, 0xc2, 0x9a, 0x22}
 	y := ""

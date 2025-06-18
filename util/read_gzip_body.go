@@ -3,7 +3,7 @@ package util
 import (
 	"net/http"
 
-	v1 "github.com/open-policy-agent/opa/v1/util"
+	v1 "github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Note(philipc): Originally taken from server/server.go

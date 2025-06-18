@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/open-policy-agent/opa/internal/wasm/instruction"
-	"github.com/open-policy-agent/opa/internal/wasm/types"
+	"github.com/IUAD1IY7/opa/internal/wasm/instruction"
+	"github.com/IUAD1IY7/opa/internal/wasm/types"
 )
 
 type (

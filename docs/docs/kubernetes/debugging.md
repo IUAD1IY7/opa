@@ -14,7 +14,7 @@ has its own docs.
 ### Check for the `openpolicyagent.org/kube-mgmt-status` annotation on ConfigMaps containing policies
 
 If you are loading policies into OPA via
-[kube-mgmt](https://github.com/open-policy-agent/kube-mgmt) you can check the
+[kube-mgmt](https://github.com/IUAD1IY7/kube-mgmt) you can check the
 `openpolicyagent.org/kube-mgmt-status` annotation on ConfigMaps that contain your
 policies. The annotation should be set to `{"status":"ok"}` if the policy was loaded
 successfully. If errors occurred during loading (e.g., because the policy
@@ -169,5 +169,5 @@ patches := [
 </SideBySideContainer>
 
 Also, for more examples of how to construct mutating policies and integrating
-them with validating policies, see [these examples](https://github.com/open-policy-agent/library/tree/master/kubernetes/mutating-admission)
-in https://github.com/open-policy-agent/library.
+them with validating policies, see [these examples](https://github.com/IUAD1IY7/library/tree/master/kubernetes/mutating-admission)
+in https://github.com/IUAD1IY7/library.

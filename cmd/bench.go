@@ -19,23 +19,23 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 
-	"github.com/open-policy-agent/opa/v1/server/types"
+	"github.com/IUAD1IY7/opa/v1/server/types"
 
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/runtime"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/runtime"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 
-	"github.com/open-policy-agent/opa/cmd/formats"
-	"github.com/open-policy-agent/opa/cmd/internal/env"
-	"github.com/open-policy-agent/opa/internal/presentation"
-	"github.com/open-policy-agent/opa/v1/compile"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/cmd/formats"
+	"github.com/IUAD1IY7/opa/cmd/internal/env"
+	"github.com/IUAD1IY7/opa/internal/presentation"
+	"github.com/IUAD1IY7/opa/v1/compile"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // benchmarkCommandParams are a superset of evalCommandParams

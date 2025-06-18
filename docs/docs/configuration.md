@@ -717,10 +717,10 @@ plugins:
 package plugins
 
 import (
-	"github.com/open-policy-agent/opa/plugins"
-	"github.com/open-policy-agent/opa/plugins/rest"
-	"github.com/open-policy-agent/opa/runtime"
-	"github.com/open-policy-agent/opa/util"
+	"github.com/IUAD1IY7/opa/plugins"
+	"github.com/IUAD1IY7/opa/plugins/rest"
+	"github.com/IUAD1IY7/opa/runtime"
+	"github.com/IUAD1IY7/opa/util"
 )
 
 type Config struct {
@@ -833,7 +833,7 @@ included in the actual bundle gzipped tarball.
 | `decision_logs.service`                            | `string`  | No                               | Name of the service to use to contact remote server. If no `plugin` is specified, and `console` logging is disabled, this will default to the first `service` name defined in the Services configuration.                                                |
 | `decision_logs.partition_name`                     | `string`  | No                               | Deprecated: Use `resource` instead. Path segment to include in status updates.                                                                                                                                                                           |
 | `decision_logs.resource`                           | `string`  | No (default: `/logs`)            | Full path to use for sending decision logs to a remote server.                                                                                                                                                                                           |
-| `decision_logs.reporting.buffer_type`              | `string`  | No (default: `size`)             | Toggles the type of buffer to use. The two available options are "size" or "event". Refer to the [Decision Log Plugin README](https://github.com/open-policy-agent/opa/tree/main/v1/plugins/logs/README.md) for for a detailed comparison.               |
+| `decision_logs.reporting.buffer_type`              | `string`  | No (default: `size`)             | Toggles the type of buffer to use. The two available options are "size" or "event". Refer to the [Decision Log Plugin README](https://github.com/IUAD1IY7/opa/tree/main/v1/plugins/logs/README.md) for for a detailed comparison.               |
 | `decision_logs.reporting.buffer_size_limit_events` | `int64`   | No (default: `10000`)            | Decision log buffer size limit by events. OPA will drop old events from the log if this limit is exceeded. By default, 100 events are held. This number has to be greater than zero. Only works with "event" buffer type.                                |
 | `decision_logs.reporting.buffer_size_limit_bytes`  | `int64`   | No (default: `unlimited`)        | Decision log buffer size limit in bytes. OPA will drop old events from the log if this limit is exceeded. By default, no limit is set. Only one of `buffer_size_limit_bytes`, `max_decisions_per_second` may be set. Only works with "size" buffer type. |
 | `decision_logs.reporting.max_decisions_per_second` | `float64` | No                               | Maximum number of decision log events to buffer per second. OPA will drop events if the rate limit is exceeded. Only one of `buffer_size_limit_bytes`, `max_decisions_per_second` may be set.                                                            |

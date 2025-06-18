@@ -14,13 +14,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/opa"
-	wasm_util "github.com/open-policy-agent/opa/internal/wasm/util"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/compile"
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/opa"
+	wasm_util "github.com/IUAD1IY7/opa/internal/wasm/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/compile"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // control dumping in this file
@@ -161,7 +161,7 @@ a = "c" if { input > 2 }`,
 			WantErr: "internal_error: module.rego:12:5: var assignment conflict",
 		},
 		// NOTE(sr): The next two test cases were used to replicate issue
-		// https://github.com/open-policy-agent/opa/issues/2962 -- their raison d'être
+		// https://github.com/IUAD1IY7/opa/issues/2962 -- their raison d'être
 		// is thus questionable, but it might be good to keep them around a bit.
 		{
 			Description: "Only input changing, regex.match",

@@ -10,11 +10,11 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/v1/plugins"
 
-	"github.com/open-policy-agent/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/keys"
 
-	"github.com/open-policy-agent/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/bundle"
 
 	"sigs.k8s.io/yaml"
 )

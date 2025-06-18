@@ -12,9 +12,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown"
 )
 
 func ExampleQuery_Iter() {

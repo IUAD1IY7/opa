@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
 )
 
 // transaction implements the low-level read/write operations on the in-memory

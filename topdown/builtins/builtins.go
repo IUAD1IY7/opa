@@ -8,8 +8,8 @@ package builtins
 import (
 	"math/big"
 
-	"github.com/open-policy-agent/opa/ast"
-	v1 "github.com/open-policy-agent/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/ast"
+	v1 "github.com/IUAD1IY7/opa/v1/topdown/builtins"
 )
 
 // Cache defines the built-in cache used by the top-down evaluation. The keys

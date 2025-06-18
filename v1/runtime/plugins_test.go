@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/plugins"
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/v1/plugins"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 type Tester struct {

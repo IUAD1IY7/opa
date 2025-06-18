@@ -146,7 +146,7 @@ production users that have added themselves (in alphabetical order):
 * [Mercari](https://www.mercari.com/) uses OPA to enforce admission control
   policies in their multi-tenant Kubernetes clusters. It helps maintain
   the governance of the cluster, checking that developers are following
-  the best practices in the admission controller. They also use [confest](https://github.com/open-policy-agent/conftest) to
+  the best practices in the admission controller. They also use [confest](https://github.com/IUAD1IY7/conftest) to
   enforce policies in their CI/CD pipeline.
 
 * [Mia-Platform](https://mia-platform.eu/) uses OPA to run RBAC authorization policies
@@ -178,7 +178,7 @@ production users that have added themselves (in alphabetical order):
   audits. The CI/CD pipelines at Plex leverage [conftest](https://github.com/instrumenta/conftest),
   a policy enforcement tool that relies on OPA, to automatically reject changes that do not adhere
   to defined policies. Plex also uses
-  [Gatekeeper](https://github.com/open-policy-agent/gatekeeper), a Kubernetes policy controller, as
+  [Gatekeeper](https://github.com/IUAD1IY7/gatekeeper), a Kubernetes policy controller, as
   a means to enforce policies within their Kubernetes clusters. The general-purpose nature of OPA
   has enabled Plex to have a consistent means of policy enforcement,
   no matter the environment.
@@ -307,4 +307,4 @@ testing include:
 
 If you have adopted OPA and would like to be included in this list,
 feel free to submit a PR updating this file or
-[open an issue](https://github.com/open-policy-agent/opa/issues/new?assignees=&labels=adopt-opa&template=adopt-opa.yaml&title=organization_name+has+adopted+OPA).
+[open an issue](https://github.com/IUAD1IY7/opa/issues/new?assignees=&labels=adopt-opa&template=adopt-opa.yaml&title=organization_name+has+adopted+OPA).

@@ -54,7 +54,7 @@ Sample response from the external service looks like this:
 {
   "latest": {
     "download": "https://openpolicyagent.org/downloads/v0.19.2/opa_darwin_amd64",
-    "release_notes": "https://github.com/open-policy-agent/opa/releases/tag/v0.19.2",
+    "release_notes": "https://github.com/IUAD1IY7/opa/releases/tag/v0.19.2",
     "latest_release": "v0.19.2"
   }
 }

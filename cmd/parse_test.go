@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/cmd/formats"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/cmd/formats"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func TestParseExit0(t *testing.T) {

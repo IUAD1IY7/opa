@@ -14,16 +14,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/ast/location"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/topdown"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
-	"github.com/open-policy-agent/opa/v1/types"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast/location"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/types"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func TestDebuggerEvalStepOver(t *testing.T) {

@@ -16,14 +16,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jwk"
-	"github.com/open-policy-agent/opa/internal/jwx/jws"
-	"github.com/open-policy-agent/opa/internal/jwx/jws/sign"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/storage"
-	inmem "github.com/open-policy-agent/opa/v1/storage/inmem/test"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
+	inmem "github.com/IUAD1IY7/opa/v1/storage/inmem/test"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwk"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws/sign"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
 )
 
 func TestParseTokenConstraints(t *testing.T) {

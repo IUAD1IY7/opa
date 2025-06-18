@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/version"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
-	"github.com/open-policy-agent/opa/v1/tracing"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/version"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/tracing"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 type cachingMode string

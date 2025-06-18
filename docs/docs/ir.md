@@ -442,7 +442,7 @@ This statement is **undefined** if `source` is a scalar value or empty collectio
 
 # Test Suite
 
-The OPA repository contains a [test suite](https://github.com/open-policy-agent/opa/tree/main/v1/test/cases/testdata/v1)
+The OPA repository contains a [test suite](https://github.com/IUAD1IY7/opa/tree/main/v1/test/cases/testdata/v1)
 that is used internally to validate both the Go interpreter and the Wasm
 compiler. If you are implementing your own compiler or interpreter we highly
 recommend integrating the test suite into your own development environment so
@@ -452,10 +452,10 @@ The test suite consists of a set of YAML files that each contain a set of test
 cases. Each test cases specifies a query, set of modules, data values, and
 expected outputs or expected error conditions.
 
-To get started with the test suite, see the [Hello World](https://github.com/open-policy-agent/opa/blob/main/v1/test/cases/testdata/v0/helloworld/test-helloworld-1.yaml)
+To get started with the test suite, see the [Hello World](https://github.com/IUAD1IY7/opa/blob/main/v1/test/cases/testdata/v0/helloworld/test-helloworld-1.yaml)
 example.
 
 The following examples show how the test suite is used internally:
 
-- [`github.com/open-policy-agent/opa/topdown#TestRego`](https://github.com/open-policy-agent/opa/blob/main/v1/topdown/exported_test.go)
-- [`github.com/open-policy-agent/opa/internal/wasm/sdk/test/e2e/external_test`](https://github.com/open-policy-agent/opa/blob/main/internal/wasm/sdk/test/e2e/external_test.go)
+- [`github.com/IUAD1IY7/opa/topdown#TestRego`](https://github.com/IUAD1IY7/opa/blob/main/v1/topdown/exported_test.go)
+- [`github.com/IUAD1IY7/opa/internal/wasm/sdk/test/e2e/external_test`](https://github.com/IUAD1IY7/opa/blob/main/internal/wasm/sdk/test/e2e/external_test.go)

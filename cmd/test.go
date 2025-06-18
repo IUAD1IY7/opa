@@ -18,24 +18,24 @@ import (
 	"time"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/open-policy-agent/opa/internal/pathwatcher"
-	initload "github.com/open-policy-agent/opa/internal/runtime/init"
+	"github.com/IUAD1IY7/opa/internal/pathwatcher"
+	initload "github.com/IUAD1IY7/opa/internal/runtime/init"
 	"github.com/spf13/cobra"
 
-	"github.com/open-policy-agent/opa/cmd/formats"
-	"github.com/open-policy-agent/opa/cmd/internal/env"
-	"github.com/open-policy-agent/opa/internal/runtime"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/compile"
-	"github.com/open-policy-agent/opa/v1/cover"
-	"github.com/open-policy-agent/opa/v1/loader"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/tester"
-	"github.com/open-policy-agent/opa/v1/topdown"
-	"github.com/open-policy-agent/opa/v1/topdown/lineage"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	"github.com/IUAD1IY7/opa/cmd/formats"
+	"github.com/IUAD1IY7/opa/cmd/internal/env"
+	"github.com/IUAD1IY7/opa/internal/runtime"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/compile"
+	"github.com/IUAD1IY7/opa/v1/cover"
+	"github.com/IUAD1IY7/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/tester"
+	"github.com/IUAD1IY7/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/topdown/lineage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 type testCommandParams struct {
@@ -178,7 +178,7 @@ func runTests(ctx context.Context, txn storage.Transaction, runner *tester.Runne
 	if testParams.benchmark {
 		// Initialize testing package for benchmarking. This is needed to set default values for some flags that may
 		// otherwise be dereferenced on some code paths causing panics, as reported in:
-		// https://github.com/open-policy-agent/opa/issues/7205
+		// https://github.com/IUAD1IY7/opa/issues/7205
 		testing.Init()
 
 		benchOpts := tester.BenchmarkOptions{

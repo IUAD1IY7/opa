@@ -7,7 +7,7 @@ package topdown
 import (
 	"errors"
 
-	"github.com/open-policy-agent/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast"
 )
 
 func builtinTypeName(_ BuiltinContext, operands []*ast.Term, iter func(*ast.Term) error) error {

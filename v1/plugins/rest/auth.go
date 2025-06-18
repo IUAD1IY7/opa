@@ -29,13 +29,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
-	"github.com/open-policy-agent/opa/internal/jwx/jws"
-	"github.com/open-policy-agent/opa/internal/jwx/jws/sign"
-	"github.com/open-policy-agent/opa/internal/providers/aws"
-	"github.com/open-policy-agent/opa/internal/uuid"
-	"github.com/open-policy-agent/opa/v1/keys"
-	"github.com/open-policy-agent/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws"
+	"github.com/IUAD1IY7/opa/internal/jwx/jws/sign"
+	"github.com/IUAD1IY7/opa/internal/providers/aws"
+	"github.com/IUAD1IY7/opa/internal/uuid"
+	"github.com/IUAD1IY7/opa/v1/keys"
+	"github.com/IUAD1IY7/opa/v1/logging"
 )
 
 const (

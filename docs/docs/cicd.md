@@ -33,7 +33,7 @@ various types of data in your continuous integration workflows:
   thresholds or that benchmarks results are within acceptable limits.
 - **Defining dependencies between jobs** - Validate that deployment pipelines
   follow proper sequencing and dependency requirements. An example of this can
-  be found in the OPA Repo's [own PR checks](https://github.com/open-policy-agent/opa/blob/aee10e4a8deef80f3110237426a64fa5d4e229de/.github/workflows/pull-request.yaml#L476-L521).
+  be found in the OPA Repo's [own PR checks](https://github.com/IUAD1IY7/opa/blob/aee10e4a8deef80f3110237426a64fa5d4e229de/.github/workflows/pull-request.yaml#L476-L521).
 - **Test coverage enforcement** - Check that test files are added when code
   files are created (e.g., ensuring each `foo.js` has a corresponding
   `foo_test.js` in the appropriate directory).

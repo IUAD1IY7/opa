@@ -8,7 +8,7 @@ package ast
 import (
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/test/cases"
+	"github.com/IUAD1IY7/opa/v1/test/cases"
 )
 
 var testcases = cases.MustLoad("../test/cases/testdata").Sorted().Cases

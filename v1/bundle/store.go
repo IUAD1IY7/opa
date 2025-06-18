@@ -14,12 +14,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	iCompiler "github.com/open-policy-agent/opa/internal/compiler"
-	"github.com/open-policy-agent/opa/internal/json/patch"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/util"
+	iCompiler "github.com/IUAD1IY7/opa/internal/compiler"
+	"github.com/IUAD1IY7/opa/internal/json/patch"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // BundlesBasePath is the storage path used for storing bundle metadata

@@ -17,8 +17,8 @@ import (
 
 	"github.com/fsnotify/fsnotify"
 
-	"github.com/open-policy-agent/opa/internal/pathwatcher"
-	"github.com/open-policy-agent/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/internal/pathwatcher"
+	"github.com/IUAD1IY7/opa/v1/logging"
 )
 
 func (s *Server) getCertificate(_ *tls.ClientHelloInfo) (*tls.Certificate, error) {

@@ -1155,7 +1155,7 @@ If possible, prefer using an explicit `input` or `data` value instead of `opa.ru
 | `opa run` (REPL)      | `stderr`    |                                                                                                                                                                                  |
 | `opa test`            | `stdout`    | Specify `-v` to see output for passing tests. Output for failing tests is displayed automatically.                                                                               |
 | `opa run -s` (server) | `stderr`    | Specify `--log-level=info` (default) or higher. Output is sent to the log stream. Use `--log-format=text` for pretty output.                                                     |
-| Go (library)          | `io.Writer` | [https://pkg.go.dev/github.com/open-policy-agent/opa/rego#example-Rego-Print_statements](https://pkg.go.dev/github.com/open-policy-agent/opa/rego#example-Rego-Print_statements) |
+| Go (library)          | `io.Writer` | [https://pkg.go.dev/github.com/IUAD1IY7/opa/rego#example-Rego-Print_statements](https://pkg.go.dev/github.com/IUAD1IY7/opa/rego#example-Rego-Print_statements) |
 
 </BuiltinTable>
 

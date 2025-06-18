@@ -7,7 +7,7 @@ package test
 import (
 	"io/fs"
 
-	v1 "github.com/open-policy-agent/opa/v1/util/test"
+	v1 "github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 // WithTempFS creates a temporary directory structure and invokes f with the

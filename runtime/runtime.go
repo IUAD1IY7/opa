@@ -7,8 +7,8 @@ package runtime
 import (
 	"context"
 
-	"github.com/open-policy-agent/opa/plugins"
-	v1 "github.com/open-policy-agent/opa/v1/runtime"
+	"github.com/IUAD1IY7/opa/plugins"
+	v1 "github.com/IUAD1IY7/opa/v1/runtime"
 )
 
 // RegisterPlugin registers a plugin factory with the runtime

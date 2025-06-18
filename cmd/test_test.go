@@ -15,12 +15,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/topdown"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/topdown"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func TestFilterTraceDefault(t *testing.T) {
@@ -3546,7 +3546,7 @@ test_l if {
 }
 
 // Assert that a failing test doesn't cause a panic.
-// https://github.com/open-policy-agent/opa/issues/7205
+// https://github.com/IUAD1IY7/opa/issues/7205
 func TestTestBenchFailingTest(t *testing.T) {
 	files := map[string]string{
 		"test.rego": `package test

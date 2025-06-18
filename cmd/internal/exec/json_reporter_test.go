@@ -7,7 +7,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/open-policy-agent/opa/v1/sdk"
+	"github.com/IUAD1IY7/opa/v1/sdk"
 )
 
 func TestJsonReporter_Close(t *testing.T) {

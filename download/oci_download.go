@@ -3,9 +3,9 @@
 package download
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/download"
+	v1 "github.com/IUAD1IY7/opa/v1/download"
 
-	"github.com/open-policy-agent/opa/plugins/rest"
+	"github.com/IUAD1IY7/opa/plugins/rest"
 )
 
 // NewOCI returns a new Downloader that can be started.

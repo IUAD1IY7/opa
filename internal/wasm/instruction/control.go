@@ -5,8 +5,8 @@
 package instruction
 
 import (
-	"github.com/open-policy-agent/opa/internal/wasm/opcode"
-	"github.com/open-policy-agent/opa/internal/wasm/types"
+	"github.com/IUAD1IY7/opa/internal/wasm/opcode"
+	"github.com/IUAD1IY7/opa/internal/wasm/types"
 )
 
 // !!! If you find yourself adding support for more control

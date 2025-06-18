@@ -70,11 +70,11 @@ RELEASE_BUILD_IMAGE := golang:$(GOVERSION)-bullseye
 RELEASE_DIR ?= _release/$(VERSION)
 
 ifneq (,$(TELEMETRY_URL))
-TELEMETRY_FLAG := -X github.com/open-policy-agent/opa/internal/report.ExternalServiceURL=$(TELEMETRY_URL)
+TELEMETRY_FLAG := -X github.com/IUAD1IY7/opa/internal/report.ExternalServiceURL=$(TELEMETRY_URL)
 endif
 
 LDFLAGS := "$(TELEMETRY_FLAG) \
-	-X github.com/open-policy-agent/opa/version.Hostname=$(BUILD_HOSTNAME)"
+	-X github.com/IUAD1IY7/opa/version.Hostname=$(BUILD_HOSTNAME)"
 
 
 ######################################################

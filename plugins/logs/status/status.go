@@ -5,7 +5,7 @@
 package status
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/plugins/logs/status"
+	v1 "github.com/IUAD1IY7/opa/v1/plugins/logs/status"
 )
 
 // Status represents the status of processing a decision log.

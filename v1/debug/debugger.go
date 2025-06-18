@@ -17,15 +17,15 @@ import (
 	"strings"
 	"sync"
 
-	fileurl "github.com/open-policy-agent/opa/internal/file/url"
-	"github.com/open-policy-agent/opa/v1/ast/location"
-	"github.com/open-policy-agent/opa/v1/logging"
-	"github.com/open-policy-agent/opa/v1/rego"
-	"github.com/open-policy-agent/opa/v1/storage"
-	"github.com/open-policy-agent/opa/v1/storage/inmem"
-	"github.com/open-policy-agent/opa/v1/topdown"
-	prnt "github.com/open-policy-agent/opa/v1/topdown/print"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/storage/inmem"
+	fileurl "github.com/IUAD1IY7/opa/internal/file/url"
+	"github.com/IUAD1IY7/opa/v1/ast/location"
+	"github.com/IUAD1IY7/opa/v1/logging"
+	"github.com/IUAD1IY7/opa/v1/rego"
+	"github.com/IUAD1IY7/opa/v1/storage"
+	"github.com/IUAD1IY7/opa/v1/topdown"
+	prnt "github.com/IUAD1IY7/opa/v1/topdown/print"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 // Debugger is the interface for launching OPA debugger Session(s).

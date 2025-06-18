@@ -11,10 +11,10 @@ import (
 	"io"
 	"sort"
 
-	"github.com/open-policy-agent/opa/internal/debug"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/ast/location"
-	"github.com/open-policy-agent/opa/v1/ir"
+	"github.com/IUAD1IY7/opa/internal/debug"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/ast/location"
+	"github.com/IUAD1IY7/opa/v1/ir"
 )
 
 // QuerySet represents the input to the planner.

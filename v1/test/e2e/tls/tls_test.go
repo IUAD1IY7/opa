@@ -13,8 +13,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/v1/server"
-	"github.com/open-policy-agent/opa/v1/test/e2e"
+	"github.com/IUAD1IY7/opa/v1/server"
+	"github.com/IUAD1IY7/opa/v1/test/e2e"
 )
 
 var testRuntime *e2e.TestRuntime

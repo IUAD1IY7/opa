@@ -16,15 +16,15 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/open-policy-agent/opa/internal/file/archive"
-	"github.com/open-policy-agent/opa/internal/ref"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/format"
-	"github.com/open-policy-agent/opa/v1/ir"
-	"github.com/open-policy-agent/opa/v1/loader"
-	"github.com/open-policy-agent/opa/v1/util"
-	"github.com/open-policy-agent/opa/v1/util/test"
+	"github.com/IUAD1IY7/opa/internal/file/archive"
+	"github.com/IUAD1IY7/opa/internal/ref"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/format"
+	"github.com/IUAD1IY7/opa/v1/ir"
+	"github.com/IUAD1IY7/opa/v1/loader"
+	"github.com/IUAD1IY7/opa/v1/util"
+	"github.com/IUAD1IY7/opa/v1/util/test"
 )
 
 func TestCompilerV1Module(t *testing.T) {
@@ -3503,7 +3503,7 @@ func TestOptimizerError(t *testing.T) {
 		expErr      string
 	}{
 		{
-			// Regression test for https://github.com/open-policy-agent/opa/issues/7321
+			// Regression test for https://github.com/IUAD1IY7/opa/issues/7321
 			note:        "short entrypoint ref",
 			roots:       []string{"test"},
 			entrypoints: []string{"data.test"},
@@ -3515,7 +3515,7 @@ func TestOptimizerError(t *testing.T) {
 			expErr: `invalid entrypoint data.test: to create optimized support module, the entrypoint ref must have at least two components in addition to the 'data' root`,
 		},
 		{
-			// Regression test for https://github.com/open-policy-agent/opa/issues/7321
+			// Regression test for https://github.com/IUAD1IY7/opa/issues/7321
 			note:        "data only entrypoint ref",
 			roots:       []string{"test"},
 			entrypoints: []string{"data"},

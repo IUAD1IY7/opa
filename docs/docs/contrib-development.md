@@ -17,7 +17,7 @@ Requirements:
 
 - Git
 - GitHub account (if you are contributing)
-- Go (please see the project's [go.mod](https://github.com/open-policy-agent/opa/blob/main/go.mod) file for the current version in use)
+- Go (please see the project's [go.mod](https://github.com/IUAD1IY7/opa/blob/main/go.mod) file for the current version in use)
 - GNU Make
 - Python3, pip, yamllint (if linting YAML files manually)
 
@@ -51,7 +51,7 @@ with `make check`.
 
 ### Fork, clone, create a branch
 
-Go to [https://github.com/open-policy-agent/opa](https://github.com/open-policy-agent/opa) and fork the repository
+Go to [https://github.com/IUAD1IY7/opa](https://github.com/IUAD1IY7/opa) and fork the repository
 into your account by clicking the "Fork" button.
 
 Clone the fork to your local machine:
@@ -59,7 +59,7 @@ Clone the fork to your local machine:
 ```bash
 git clone git@github.com/<GITHUB USERNAME>/opa.git opa
 cd opa
-git remote add upstream https://github.com/open-policy-agent/opa.git
+git remote add upstream https://github.com/IUAD1IY7/opa.git
 ```
 
 Create a branch for your changes.
@@ -102,7 +102,7 @@ See the official [GitHub Documentation](https://help.github.com/en/github/collab
 for instructions to create the request.
 
 > Hint: You should be prompted to with a "Compare and Pull Request" button
-> that mentions your new branch on [https://github.com/open-policy-agent/opa](https://github.com/open-policy-agent/opa)
+> that mentions your new branch on [https://github.com/IUAD1IY7/opa](https://github.com/IUAD1IY7/opa)
 
 Once your Pull Request has been reviewed and signed off please squash your
 commits. If you have a specific reason to leave multiple commits in the
@@ -119,17 +119,17 @@ benchmarking framework for all benchmarks.
 ## Dependencies
 
 OPA is a Go module [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules)
-and dependencies are tracked with the standard [go.mod](https://github.com/open-policy-agent/opa/blob/main/go.mod) file.
+and dependencies are tracked with the standard [go.mod](https://github.com/IUAD1IY7/opa/blob/main/go.mod) file.
 
-We also keep a full copy of the dependencies in the [vendor](https://github.com/open-policy-agent/opa/tree/main/vendor)
-directory. All `go` commands from the [Makefile](https://github.com/open-policy-agent/opa/blob/main/Makefile) will enable
+We also keep a full copy of the dependencies in the [vendor](https://github.com/IUAD1IY7/opa/tree/main/vendor)
+directory. All `go` commands from the [Makefile](https://github.com/IUAD1IY7/opa/blob/main/Makefile) will enable
 module mode by setting `GO111MODULE=on GOFLAGS=-mod=vendor` which will also
 force using the `vendor` directory.
 
 To update a dependency ensure that `GO111MODULE` is either on, or the repository
 qualifies for `auto` to enable module mode. Then simply use `go get ..` to get
-the version desired. This should update the [go.mod](https://github.com/open-policy-agent/opa/blob/main/go.mod) and (potentially)
-[go.sum](https://github.com/open-policy-agent/opa/blob/main/go.sum) files. After this you _MUST_ run `go mod vendor` to ensure
+the version desired. This should update the [go.mod](https://github.com/IUAD1IY7/opa/blob/main/go.mod) and (potentially)
+[go.sum](https://github.com/IUAD1IY7/opa/blob/main/go.sum) files. After this you _MUST_ run `go mod vendor` to ensure
 that the `vendor` directory is in sync.
 
 Example workflow for updating a dependency:
@@ -164,7 +164,7 @@ performant, that's great! Some things should however be considered before you su
 
 ## CI Configuration
 
-OPA uses Github Actions defined in the [.github/workflows](https://github.com/open-policy-agent/opa/tree/main/.github/workflows)
+OPA uses Github Actions defined in the [.github/workflows](https://github.com/IUAD1IY7/opa/tree/main/.github/workflows)
 directory.
 
 ### Github Action Secrets
@@ -194,4 +194,4 @@ Below is a list of workflows and links to their status:
 
 | Workflow                                                                                                                                                                    | Description                    |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| [![Nightly](https://github.com/open-policy-agent/opa/workflows/Nightly/badge.svg?branch=main)](https://github.com/open-policy-agent/opa/actions?query=workflow%3A"Nightly") | Runs once per day at 8:00 UTC. |
+| [![Nightly](https://github.com/IUAD1IY7/opa/workflows/Nightly/badge.svg?branch=main)](https://github.com/IUAD1IY7/opa/actions?query=workflow%3A"Nightly") | Runs once per day at 8:00 UTC. |

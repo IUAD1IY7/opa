@@ -5,7 +5,7 @@
 package resolver
 
 import (
-	v1 "github.com/open-policy-agent/opa/v1/resolver"
+	v1 "github.com/IUAD1IY7/opa/v1/resolver"
 )
 
 // Resolver defines an external value resolver for OPA evaluations.

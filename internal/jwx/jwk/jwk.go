@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/open-policy-agent/opa/internal/jwx/jwa"
+	"github.com/IUAD1IY7/opa/internal/jwx/jwa"
 )
 
 // GetPublicKey returns the public key based on the private key type.

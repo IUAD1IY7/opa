@@ -14,15 +14,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-policy-agent/opa/internal/wasm/sdk/internal/wasm"
-	wasm_util "github.com/open-policy-agent/opa/internal/wasm/util"
-	"github.com/open-policy-agent/opa/v1/ast"
-	"github.com/open-policy-agent/opa/v1/bundle"
-	"github.com/open-policy-agent/opa/v1/compile"
-	"github.com/open-policy-agent/opa/v1/metrics"
-	"github.com/open-policy-agent/opa/v1/topdown/builtins"
-	"github.com/open-policy-agent/opa/v1/topdown/cache"
-	"github.com/open-policy-agent/opa/v1/util"
+	"github.com/IUAD1IY7/opa/internal/wasm/sdk/internal/wasm"
+	wasm_util "github.com/IUAD1IY7/opa/internal/wasm/util"
+	"github.com/IUAD1IY7/opa/v1/ast"
+	"github.com/IUAD1IY7/opa/v1/bundle"
+	"github.com/IUAD1IY7/opa/v1/compile"
+	"github.com/IUAD1IY7/opa/v1/metrics"
+	"github.com/IUAD1IY7/opa/v1/topdown/builtins"
+	"github.com/IUAD1IY7/opa/v1/topdown/cache"
+	"github.com/IUAD1IY7/opa/v1/util"
 )
 
 func TestOpaEvalGrowMemoryForLargeInput(t *testing.T) {
