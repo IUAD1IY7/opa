@@ -8,7 +8,42 @@ import (
 	"encoding/json"
 	"fmt"
 	"math/big"
+	"sync"
 )
+
+// Cache for small integer comparisons to avoid allocation
+var (
+	smallIntCache = make(map[[2]int]int, 256)
+	smallIntMux   = sync.RWMutex{}
+)
+
+func init() {
+	// Pre-cache small integer comparisons
+	for i := -10; i <= 10; i++ {
+		for j := -10; j <= 10; j++ {
+			var result int
+			if i < j {
+				result = -1
+			} else if i > j {
+				result = 1
+			} else {
+				result = 0
+			}
+			smallIntCache[[2]int{i, j}] = result
+		}
+	}
+}
+
+// fastIntCompare handles small integers with cached results
+func fastIntCompare(a, b int) (int, bool) {
+	if a >= -10 && a <= 10 && b >= -10 && b <= 10 {
+		smallIntMux.RLock()
+		result := smallIntCache[[2]int{a, b}]
+		smallIntMux.RUnlock()
+		return result, true
+	}
+	return 0, false
+}
 
 // Compare returns 0 if a equals b, -1 if a is less than b, and 1 if b is than a.
 //
@@ -46,6 +81,10 @@ func Compare(a, b any) int {
 	case int:
 		switch b := b.(type) {
 		case int:
+			// Use fast path for small integers
+			if result, cached := fastIntCompare(a, b); cached {
+				return result
+			}
 			if a == b {
 				return 0
 			} else if a < b {

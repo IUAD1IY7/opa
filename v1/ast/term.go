@@ -90,14 +90,16 @@ func InterfaceToValue(x any) (Value, error) {
 	case []string:
 		r := util.NewPtrSlice[Term](len(x))
 		for i, e := range x {
-			r[i].Value = String(e)
+			// Use interned string terms for common strings
+			r[i] = InternedStringTerm(e)
 		}
 		return NewArray(r...), nil
 	case map[string]any:
 		kvs := util.NewPtrSlice[Term](len(x) * 2)
 		idx := 0
 		for k, v := range x {
-			kvs[idx].Value = String(k)
+			// Use interned string terms for keys
+			kvs[idx] = InternedStringTerm(k)
 			v, err := InterfaceToValue(v)
 			if err != nil {
 				return nil, err
@@ -113,7 +115,8 @@ func InterfaceToValue(x any) (Value, error) {
 	case map[string]string:
 		r := newobject(len(x))
 		for k, v := range x {
-			r.Insert(StringTerm(k), StringTerm(v))
+			// Use interned string terms for both keys and values
+			r.Insert(InternedStringTerm(k), InternedStringTerm(v))
 		}
 		return r, nil
 	default:
@@ -187,7 +190,7 @@ func valueToInterface(v Value, resolver Resolver, opt JSONOpt) (any, error) {
 	case String:
 		return string(v), nil
 	case *Array:
-		buf := []any{}
+		buf := make([]any, 0, v.Len()) // Preallocate with exact capacity
 		for i := range v.Len() {
 			x1, err := valueToInterface(v.Elem(i).Value, resolver, opt)
 			if err != nil {
@@ -229,7 +232,7 @@ func valueToInterface(v Value, resolver Resolver, opt JSONOpt) (any, error) {
 		}
 		return v.native, nil
 	case Set:
-		buf := []any{}
+		buf := make([]any, 0, v.Len()) // Preallocate with exact capacity
 		iter := func(x *Term) error {
 			x1, err := valueToInterface(x.Value, resolver, opt)
 			if err != nil {

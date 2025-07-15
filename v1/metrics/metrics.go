@@ -17,6 +17,71 @@ import (
 	go_metrics "github.com/rcrowley/go-metrics"
 )
 
+var metricSlicePool = sync.Pool{
+	New: func() any {
+		return make([]metric, 0, 16)
+	},
+}
+
+var stringSlicePool = sync.Pool{
+	New: func() any {
+		return make([]string, 0, 16)
+	},
+}
+
+// Intern common metric names for memory optimization
+var (
+	metricNameIntern = make(map[string]string)
+	metricNameMux    = sync.RWMutex{}
+	
+	// Pre-intern well-known metric names
+	wellKnownMetrics = []string{
+		BundleRequest,
+		ServerHandler,
+		ServerQueryCacheHit,
+		SDKDecisionEval,
+		RegoQueryCompile,
+		RegoQueryEval,
+		RegoQueryParse,
+		RegoModuleParse,
+		RegoDataParse,
+		RegoModuleCompile,
+		RegoPartialEval,
+		RegoInputParse,
+		RegoLoadFiles,
+		RegoLoadBundles,
+		RegoExternalResolve,
+	}
+)
+
+func init() {
+	// Pre-intern well-known metric names
+	for _, name := range wellKnownMetrics {
+		metricNameIntern[name] = name
+	}
+}
+
+// internMetricName interns metric names to save memory
+func internMetricName(name string) string {
+	metricNameMux.RLock()
+	if interned, exists := metricNameIntern[name]; exists {
+		metricNameMux.RUnlock()
+		return interned
+	}
+	metricNameMux.RUnlock()
+	
+	metricNameMux.Lock()
+	defer metricNameMux.Unlock()
+	
+	// Double-check after acquiring write lock
+	if interned, exists := metricNameIntern[name]; exists {
+		return interned
+	}
+	
+	metricNameIntern[name] = name
+	return name
+}
+
 // Well-known metric names.
 const (
 	BundleRequest       = "bundle_request"
@@ -67,9 +132,9 @@ type metrics struct {
 // New returns a new Metrics object.
 func New() Metrics {
 	return &metrics{
-		timers:     map[string]Timer{},
-		histograms: map[string]Histogram{},
-		counters:   map[string]Counter{},
+		timers:     make(map[string]Timer, 8),
+		histograms: make(map[string]Histogram, 8),
+		counters:   make(map[string]Counter, 8),
 	}
 }
 
@@ -92,7 +157,8 @@ func (*metrics) Info() Info {
 
 func (m *metrics) String() string {
 	all := m.All()
-	sorted := make([]metric, 0, len(all))
+	sorted := metricSlicePool.Get().([]metric)
+	sorted = sorted[:0] // Reset length but keep capacity
 
 	for key, value := range all {
 		sorted = append(sorted, metric{
@@ -105,12 +171,24 @@ func (m *metrics) String() string {
 		return strings.Compare(a.Key, b.Key)
 	})
 
-	buf := make([]string, len(sorted))
+	buf := stringSlicePool.Get().([]string)
+	buf = buf[:0] // Reset length but keep capacity
+	
+	if cap(buf) < len(sorted) {
+		buf = make([]string, 0, len(sorted))
+	}
+	
 	for i := range sorted {
-		buf[i] = fmt.Sprintf("%v:%v", sorted[i].Key, sorted[i].Value)
+		buf = append(buf, fmt.Sprintf("%v:%v", sorted[i].Key, sorted[i].Value))
 	}
 
-	return strings.Join(buf, " ")
+	result := strings.Join(buf, " ")
+	
+	// Return slices to pool
+	metricSlicePool.Put(sorted)
+	stringSlicePool.Put(buf)
+	
+	return result
 }
 
 func (m *metrics) MarshalJSON() ([]byte, error) {
@@ -118,6 +196,7 @@ func (m *metrics) MarshalJSON() ([]byte, error) {
 }
 
 func (m *metrics) Timer(name string) Timer {
+	name = internMetricName(name) // Intern the metric name
 	m.mtx.Lock()
 	defer m.mtx.Unlock()
 	t, ok := m.timers[name]
@@ -129,6 +208,7 @@ func (m *metrics) Timer(name string) Timer {
 }
 
 func (m *metrics) Histogram(name string) Histogram {
+	name = internMetricName(name) // Intern the metric name
 	m.mtx.Lock()
 	defer m.mtx.Unlock()
 	h, ok := m.histograms[name]
@@ -140,6 +220,7 @@ func (m *metrics) Histogram(name string) Histogram {
 }
 
 func (m *metrics) Counter(name string) Counter {
+	name = internMetricName(name) // Intern the metric name
 	m.mtx.Lock()
 	defer m.mtx.Unlock()
 	c, ok := m.counters[name]
@@ -180,9 +261,16 @@ func (m *metrics) Timers() map[string]any {
 func (m *metrics) Clear() {
 	m.mtx.Lock()
 	defer m.mtx.Unlock()
-	m.timers = map[string]Timer{}
-	m.histograms = map[string]Histogram{}
-	m.counters = map[string]Counter{}
+	// Reuse existing maps instead of creating new ones
+	for k := range m.timers {
+		delete(m.timers, k)
+	}
+	for k := range m.histograms {
+		delete(m.histograms, k)
+	}
+	for k := range m.counters {
+		delete(m.counters, k)
+	}
 }
 
 func (*metrics) formatKey(name string, metrics any) string {

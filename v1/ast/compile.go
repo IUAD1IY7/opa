@@ -850,7 +850,7 @@ func (c *Compiler) PassesTypeCheckRules(rules []*Rule) Errors {
 
 			tpe, err := loadSchema(schema, allowNet)
 			if err != nil {
-				return Errors{NewError(TypeErr, nil, err.Error())} //nolint:govet
+				return Errors{NewError(TypeErr, nil, "%s", err.Error())}
 			}
 			c.inputType = tpe
 		}
@@ -1201,13 +1201,12 @@ func (c *Compiler) checkRuleConflicts() {
 
 				childNode, tail := node.find(ref)
 				if childNode != nil && len(tail) == 0 {
-					for _, childMod := range childNode.Modules {
-						// Avoid recursively checking a module for equality unless we know it's a possible self-match.
-						if childMod.Equal(mod) {
-							continue // don't self-conflict
-						}
-						msg := fmt.Sprintf("%v conflicts with rule %v defined at %v", childMod.Package, rule.Head.Ref(), rule.Loc())
-						c.err(NewError(TypeErr, mod.Package.Loc(), msg)) //nolint:govet
+					for _, childMod := range childNode.Modules {					// Avoid recursively checking a module for equality unless we know it's a possible self-match.
+					if childMod.Equal(mod) {
+						continue // don't self-conflict
+					}
+					msg := fmt.Sprintf("%v conflicts with rule %v defined at %v", childMod.Package, rule.Head.Ref(), rule.Loc())
+					c.err(NewError(TypeErr, mod.Package.Loc(), "%s", msg))
 					}
 				}
 			}
@@ -1701,7 +1700,7 @@ func (c *Compiler) init() {
 		if schema := c.schemaSet.Get(SchemaRootRef); schema != nil {
 			tpe, err := loadSchema(schema, c.capabilities.AllowNet)
 			if err != nil {
-				c.err(NewError(TypeErr, nil, err.Error())) //nolint:govet
+				c.err(NewError(TypeErr, nil, "%s", err.Error()))
 			} else {
 				c.inputType = tpe
 			}
@@ -1869,7 +1868,7 @@ func (c *Compiler) resolveAllRefs() {
 		WalkRules(mod, func(rule *Rule) bool {
 			err := resolveRefsInRule(globals, rule)
 			if err != nil {
-				c.err(NewError(CompileErr, rule.Location, err.Error())) //nolint:govet
+				c.err(NewError(CompileErr, rule.Location, "%s", err.Error()))
 			}
 			return false
 		})
@@ -1894,7 +1893,7 @@ func (c *Compiler) resolveAllRefs() {
 
 		parsed, err := c.moduleLoader(c.Modules)
 		if err != nil {
-			c.err(NewError(CompileErr, nil, err.Error())) //nolint:govet
+			c.err(NewError(CompileErr, nil, "%s", err.Error()))
 			return
 		}
 
@@ -2787,7 +2786,7 @@ func (vis *ruleArgLocalRewriter) Visit(x any) Visitor {
 			Walk(vis, vcpy)
 			return k, vcpy, nil
 		}); err != nil {
-			vis.errs = append(vis.errs, NewError(CompileErr, t.Location, err.Error())) //nolint:govet
+			vis.errs = append(vis.errs, NewError(CompileErr, t.Location, "%s", err.Error()))
 		} else {
 			t.Value = cpy
 		}
@@ -5351,7 +5350,7 @@ func rewriteEveryStatement(g *localVarGenerator, stack *localDeclaredVars, expr 
 		if v := every.Key.Value.(Var); !v.IsWildcard() {
 			gv, err := rewriteDeclaredVar(g, stack, v, declaredVar)
 			if err != nil {
-				return nil, append(errs, NewError(CompileErr, every.Loc(), err.Error())) //nolint:govet
+				return nil, append(errs, NewError(CompileErr, every.Loc(), "%s", err.Error()))
 			}
 			every.Key.Value = gv
 		}
@@ -5363,7 +5362,7 @@ func rewriteEveryStatement(g *localVarGenerator, stack *localDeclaredVars, expr 
 	if v := every.Value.Value.(Var); !v.IsWildcard() {
 		gv, err := rewriteDeclaredVar(g, stack, v, declaredVar)
 		if err != nil {
-			return nil, append(errs, NewError(CompileErr, every.Loc(), err.Error())) //nolint:govet
+			return nil, append(errs, NewError(CompileErr, every.Loc(), "%s", err.Error()))
 		}
 		every.Value.Value = gv
 	}
@@ -5379,10 +5378,9 @@ func rewriteSomeDeclStatement(g *localVarGenerator, stack *localDeclaredVars, ex
 	decl := e.Terms.(*SomeDecl)
 	for i := range decl.Symbols {
 		switch v := decl.Symbols[i].Value.(type) {
-		case Var:
-			if _, err := rewriteDeclaredVar(g, stack, v, declaredVar); err != nil {
-				return nil, append(errs, NewError(CompileErr, decl.Loc(), err.Error())) //nolint:govet
-			}
+		case Var:		if _, err := rewriteDeclaredVar(g, stack, v, declaredVar); err != nil {
+			return nil, append(errs, NewError(CompileErr, decl.Loc(), "%s", err.Error()))
+		}
 		case Call:
 			var key, val, container *Term
 			switch len(v) {
@@ -5409,7 +5407,7 @@ func rewriteSomeDeclStatement(g *localVarGenerator, stack *localDeclaredVars, ex
 
 			for _, v0 := range outputVarsForExprEq(e, container.Vars()).Sorted() {
 				if _, err := rewriteDeclaredVar(g, stack, v0, declaredVar); err != nil {
-					return nil, append(errs, NewError(CompileErr, decl.Loc(), err.Error())) //nolint:govet
+					return nil, append(errs, NewError(CompileErr, decl.Loc(), "%s", err.Error()))
 				}
 			}
 			return rewriteDeclaredVarsInExpr(g, stack, e, errs, strict)
@@ -5461,10 +5459,9 @@ func rewriteDeclaredAssignment(g *localVarGenerator, stack *localDeclaredVars, e
 
 	vis = func(t *Term) bool {
 		switch v := t.Value.(type) {
-		case Var:
-			if gv, err := rewriteDeclaredVar(g, stack, v, assignedVar); err != nil {
-				errs = append(errs, NewError(CompileErr, t.Location, err.Error())) //nolint:govet
-			} else {
+		case Var:		if gv, err := rewriteDeclaredVar(g, stack, v, assignedVar); err != nil {
+			errs = append(errs, NewError(CompileErr, t.Location, "%s", err.Error()))
+		} else {
 				t.Value = gv
 			}
 			return true
@@ -5476,10 +5473,9 @@ func rewriteDeclaredAssignment(g *localVarGenerator, stack *localDeclaredVars, e
 			})
 			return true
 		case Ref:
-			if RootDocumentRefs.Contains(t) {
-				if gv, err := rewriteDeclaredVar(g, stack, v[0].Value.(Var), assignedVar); err != nil {
-					errs = append(errs, NewError(CompileErr, t.Location, err.Error())) //nolint:govet
-				} else {
+			if RootDocumentRefs.Contains(t) {			if gv, err := rewriteDeclaredVar(g, stack, v[0].Value.(Var), assignedVar); err != nil {
+				errs = append(errs, NewError(CompileErr, t.Location, "%s", err.Error()))
+			} else {
 					t.Value = gv
 				}
 				return true

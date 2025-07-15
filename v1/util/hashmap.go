@@ -41,7 +41,7 @@ func NewTypedHashMap[K any, V any](keq func(K, K) bool, veq func(V, V) bool, kha
 		khash: khash,
 		vhash: vhash,
 		def:   def,
-		table: make(map[int]*hashEntry[K, V]),
+		table: make(map[int]*hashEntry[K, V], 8), // Start with small capacity
 		size:  0,
 	}
 }
@@ -57,7 +57,7 @@ func NewHashMap(eq func(T, T) bool, hash func(T) int) *HashMap {
 		khash: hash,
 		vhash: hash,
 		def:   nil,
-		table: make(map[int]*hashEntry[T, T]),
+		table: make(map[int]*hashEntry[T, T], 8), // Start with small capacity
 		size:  0,
 	}
 }

@@ -37,7 +37,7 @@ type Result struct {
 
 // ParsedModules returns the parsed modules stored on the result.
 func (l *Result) ParsedModules() map[string]*ast.Module {
-	modules := make(map[string]*ast.Module)
+	modules := make(map[string]*ast.Module, len(l.Modules))
 	for _, module := range l.Modules {
 		modules[module.Name] = module.Parsed
 	}
