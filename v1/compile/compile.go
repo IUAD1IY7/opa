@@ -17,6 +17,7 @@ import (
 	"regexp"
 	"slices"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/open-policy-agent/opa/internal/compiler/wasm"
@@ -1244,7 +1245,16 @@ func (o *optimizer) getSupportModuleFilename(used map[string]int, module *ast.Mo
 		return uniqueFileName
 	}
 
-	return fmt.Sprintf("%v/%v/%v/%v.rego", o.outputprefix, o.nsprefix, entrypointIndex, supportIndex)
+	var builder strings.Builder
+	builder.WriteString(o.outputprefix)
+	builder.WriteString("/")
+	builder.WriteString(o.nsprefix)
+	builder.WriteString("/")
+	builder.WriteString(strconv.Itoa(entrypointIndex))
+	builder.WriteString("/")
+	builder.WriteString(strconv.Itoa(supportIndex))
+	builder.WriteString(".rego")
+	return builder.String()
 }
 
 var safePathPattern = regexp.MustCompile(`^[\w-_/]+$`)

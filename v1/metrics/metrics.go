@@ -171,22 +171,20 @@ func (m *metrics) String() string {
 		return strings.Compare(a.Key, b.Key)
 	})
 
-	buf := stringSlicePool.Get().([]string)
-	buf = buf[:0] // Reset length but keep capacity
-	
-	if cap(buf) < len(sorted) {
-		buf = make([]string, 0, len(sorted))
-	}
-	
+	var builder strings.Builder
 	for i := range sorted {
-		buf = append(buf, fmt.Sprintf("%v:%v", sorted[i].Key, sorted[i].Value))
+		if i > 0 {
+			builder.WriteString(" ")
+		}
+		builder.WriteString(sorted[i].Key)
+		builder.WriteString(":")
+		builder.WriteString(fmt.Sprintf("%v", sorted[i].Value))
 	}
 
-	result := strings.Join(buf, " ")
+	result := builder.String()
 	
-	// Return slices to pool
+	// Return slice to pool
 	metricSlicePool.Put(sorted)
-	stringSlicePool.Put(buf)
 	
 	return result
 }

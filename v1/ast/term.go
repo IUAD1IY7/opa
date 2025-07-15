@@ -90,16 +90,16 @@ func InterfaceToValue(x any) (Value, error) {
 	case []string:
 		r := util.NewPtrSlice[Term](len(x))
 		for i, e := range x {
-			// Use interned string terms for common strings
-			r[i] = InternedStringTerm(e)
+			// Use string terms for each element
+			r[i] = StringTerm(e)
 		}
 		return NewArray(r...), nil
 	case map[string]any:
 		kvs := util.NewPtrSlice[Term](len(x) * 2)
 		idx := 0
 		for k, v := range x {
-			// Use interned string terms for keys
-			kvs[idx] = InternedStringTerm(k)
+			// Use string terms for keys
+			kvs[idx] = StringTerm(k)
 			v, err := InterfaceToValue(v)
 			if err != nil {
 				return nil, err
@@ -115,8 +115,8 @@ func InterfaceToValue(x any) (Value, error) {
 	case map[string]string:
 		r := newobject(len(x))
 		for k, v := range x {
-			// Use interned string terms for both keys and values
-			r.Insert(InternedStringTerm(k), InternedStringTerm(v))
+			// Use string terms for both keys and values
+			r.Insert(StringTerm(k), StringTerm(v))
 		}
 		return r, nil
 	default:
@@ -973,30 +973,51 @@ func (ref Ref) Insert(x *Term, pos int) Ref {
 	return cpy
 }
 
-// Extend returns a copy of ref with the terms from other appended. The head of
-// other will be converted to a string.
-func (ref Ref) Extend(other Ref) Ref {
-	dst := make(Ref, len(ref)+len(other))
-	copy(dst, ref)
+// ExtendWithBuf optimizes Extend by reusing provided Ref buffer
+func (ref Ref) ExtendWithBuf(other Ref, buf Ref) Ref {
+	totalLen := len(ref) + len(other)
+	if cap(buf) < totalLen {
+		buf = make(Ref, totalLen)
+	}
+	buf = buf[:totalLen] // Reset slice to needed length
+	
+	copy(buf, ref)
 
 	head := other[0].Copy()
 	head.Value = String(head.Value.(Var))
 	offset := len(ref)
-	dst[offset] = head
+	buf[offset] = head
 
-	copy(dst[offset+1:], other[1:])
-	return dst
+	copy(buf[offset+1:], other[1:])
+	return buf
+}
+
+// Extend returns a copy of ref with the terms from other appended. The head of
+// other will be converted to a string.
+func (ref Ref) Extend(other Ref) Ref {
+	return ref.ExtendWithBuf(other, nil)
+}
+
+// ConcatWithBuf optimizes Concat by reusing provided Ref buffer
+func (ref Ref) ConcatWithBuf(terms []*Term, buf Ref) Ref {
+	if len(terms) == 0 {
+		return ref
+	}
+	
+	totalLen := len(ref) + len(terms)
+	if cap(buf) < totalLen {
+		buf = make(Ref, totalLen)
+	}
+	buf = buf[:totalLen] // Reset slice to needed length
+	
+	copy(buf, ref)
+	copy(buf[len(ref):], terms)
+	return buf
 }
 
 // Concat returns a ref with the terms appended.
 func (ref Ref) Concat(terms []*Term) Ref {
-	if len(terms) == 0 {
-		return ref
-	}
-	cpy := make(Ref, len(ref)+len(terms))
-	copy(cpy, ref)
-	copy(cpy[len(ref):], terms)
-	return cpy
+	return ref.ConcatWithBuf(terms, nil)
 }
 
 // Dynamic returns the offset of the first non-constant operand of ref.
@@ -1011,6 +1032,11 @@ func (ref Ref) Dynamic() int {
 		}
 	}
 	return -1
+}
+
+// CopyWithBuf returns a deep copy of ref using provided buffer
+func (ref Ref) CopyWithBuf(buf Ref) Ref {
+	return termSliceCopyWithBuf(ref, buf)
 }
 
 // Copy returns a deep copy of ref.
@@ -3068,19 +3094,39 @@ func (c Call) MakeExpr(output *Term) *Expr {
 }
 
 func (c Call) String() string {
-	args := make([]string, len(c)-1)
-	for i := 1; i < len(c); i++ {
-		args[i-1] = c[i].String()
+	if len(c) == 0 {
+		return ""
 	}
-	return fmt.Sprintf("%v(%v)", c[0], strings.Join(args, ", "))
+	
+	var builder strings.Builder
+	builder.WriteString(c[0].String())
+	builder.WriteString("(")
+	
+	for i := 1; i < len(c); i++ {
+		if i > 1 {
+			builder.WriteString(", ")
+		}
+		builder.WriteString(c[i].String())
+	}
+	
+	builder.WriteString(")")
+	return builder.String()
+}
+
+func termSliceCopyWithBuf(a []*Term, buf []*Term) []*Term {
+	if cap(buf) < len(a) {
+		buf = make([]*Term, len(a))
+	}
+	buf = buf[:len(a)] // Reset slice to needed length
+	
+	for i := range a {
+		buf[i] = a[i].Copy()
+	}
+	return buf
 }
 
 func termSliceCopy(a []*Term) []*Term {
-	cpy := make([]*Term, len(a))
-	for i := range a {
-		cpy[i] = a[i].Copy()
-	}
-	return cpy
+	return termSliceCopyWithBuf(a, nil)
 }
 
 func termSliceEqual(a, b []*Term) bool {

@@ -162,12 +162,25 @@ func (h *TypedHashMap[K, V]) Put(k K, v V) {
 }
 
 func (h *TypedHashMap[K, V]) String() string {
-	var buf []string
+	var builder strings.Builder
+	builder.WriteString("{")
+	
+	first := true
 	h.Iter(func(k K, v V) bool {
-		buf = append(buf, fmt.Sprintf("%v: %v", k, v))
+		if !first {
+			builder.WriteString(", ")
+		}
+		first = false
+		
+		// Use string conversion directly to avoid fmt.Sprintf overhead
+		builder.WriteString(fmt.Sprintf("%v", k))
+		builder.WriteString(": ")
+		builder.WriteString(fmt.Sprintf("%v", v))
 		return false
 	})
-	return "{" + strings.Join(buf, ", ") + "}"
+	
+	builder.WriteString("}")
+	return builder.String()
 }
 
 // Update returns a new HashMap with elements from the other HashMap put into this HashMap.

@@ -1097,7 +1097,7 @@ func (c *Compiler) checkRuleConflicts() {
 		arities := make(map[int]struct{}, len(node.Values))
 		name := ""
 		var conflicts []Ref
-		defaultRules := make([]*Rule, 0)
+		defaultRules := make([]*Rule, 0, 2) // Usually very few default rules
 
 		for _, rule := range node.Values {
 			r := rule.(*Rule)
@@ -3389,13 +3389,28 @@ type ModuleTreeNode struct {
 }
 
 func (n *ModuleTreeNode) String() string {
-	var rules []string
+	var builder strings.Builder
+	builder.WriteString("<ModuleTreeNode key:")
+	builder.WriteString(n.Key.String())
+	builder.WriteString(" children:")
+	builder.WriteString(fmt.Sprintf("%v", n.Children))
+	builder.WriteString(" rules:[")
+	
+	first := true
 	for _, m := range n.Modules {
 		for _, r := range m.Rules {
-			rules = append(rules, r.Head.String())
+			if !first {
+				builder.WriteString(" ")
+			}
+			builder.WriteString(r.Head.String())
+			first = false
 		}
 	}
-	return fmt.Sprintf("<ModuleTreeNode key:%v children:%v rules:%v hide:%v>", n.Key, n.Children, rules, n.Hide)
+	
+	builder.WriteString("] hide:")
+	builder.WriteString(fmt.Sprintf("%v", n.Hide))
+	builder.WriteString(">")
+	return builder.String()
 }
 
 // NewModuleTree returns a new ModuleTreeNode that represents the root
@@ -4388,12 +4403,21 @@ func resolveRefsInRule(globals map[Var]*usedRef, rule *Rule) error {
 	return nil
 }
 
-func resolveRefsInBody(globals map[Var]*usedRef, ignore *declaredVarStack, body Body) Body {
-	r := make([]*Expr, 0, len(body))
-	for _, expr := range body {
-		r = append(r, resolveRefsInExpr(globals, ignore, expr))
+// resolveRefsInBodyWithBuf optimizes resolveRefsInBody by reusing provided buffer
+func resolveRefsInBodyWithBuf(globals map[Var]*usedRef, ignore *declaredVarStack, body Body, buf []*Expr) Body {
+	if cap(buf) < len(body) {
+		buf = make([]*Expr, 0, len(body))
 	}
-	return r
+	buf = buf[:0] // Reset slice length but keep capacity
+	
+	for _, expr := range body {
+		buf = append(buf, resolveRefsInExpr(globals, ignore, expr))
+	}
+	return buf
+}
+
+func resolveRefsInBody(globals map[Var]*usedRef, ignore *declaredVarStack, body Body) Body {
+	return resolveRefsInBodyWithBuf(globals, ignore, body, nil)
 }
 
 func resolveRefsInExpr(globals map[Var]*usedRef, ignore *declaredVarStack, expr *Expr) *Expr {
