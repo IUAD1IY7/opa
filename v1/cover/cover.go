@@ -9,6 +9,7 @@ import (
 	"bytes"
 	"fmt"
 	"slices"
+	"strconv"
 	"sync"
 
 	"github.com/open-policy-agent/opa/v1/ast"
@@ -265,10 +266,13 @@ func (e *CoverageThresholdError) Error() string {
 		for _, file := range util.KeysSorted(e.Report.Files) {
 			report := e.Report.Files[file]
 			for _, r := range report.NotCovered {
-				if r.Start.Row == r.End.Row {
-					buffer.WriteString(fmt.Sprintf("\n\t%s:%d", file, r.Start.Row))
-				} else {
-					buffer.WriteString(fmt.Sprintf("\n\t%s:%d-%d", file, r.Start.Row, r.End.Row))
+				buffer.WriteString("\n\t")
+				buffer.WriteString(file)
+				buffer.WriteString(":")
+				buffer.WriteString(strconv.Itoa(r.Start.Row))
+				if r.Start.Row != r.End.Row {
+					buffer.WriteString("-")
+					buffer.WriteString(strconv.Itoa(r.End.Row))
 				}
 			}
 		}

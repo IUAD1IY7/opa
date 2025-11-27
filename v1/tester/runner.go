@@ -70,12 +70,27 @@ type SubResult struct {
 
 type SubResultMap map[string]*SubResult
 
-func (srm SubResultMap) Update(path ast.Array, trace []*topdown.Event) bool {
-	strPath := make([]string, path.Len())
-	for i := range path.Len() {
-		strPath[i] = termToString(path.Elem(i))
+// UpdateWithBuf optimizes Update by reusing provided string slice buffer
+func (srm SubResultMap) UpdateWithBuf(path ast.Array, trace []*topdown.Event, strBuf []string) bool {
+	return srm.updateWithBuf(path, trace, strBuf)
+}
+
+// updateWithBuf optimizes Update by reusing provided string slice buffer
+func (srm SubResultMap) updateWithBuf(path ast.Array, trace []*topdown.Event, strBuf []string) bool {
+	pathLen := path.Len()
+	if cap(strBuf) < pathLen {
+		strBuf = make([]string, pathLen)
 	}
-	return srm.update(strPath, 0, trace)
+	strBuf = strBuf[:pathLen] // Reset slice to needed length
+	
+	for i := range pathLen {
+		strBuf[i] = termToString(path.Elem(i))
+	}
+	return srm.update(strBuf, 0, trace)
+}
+
+func (srm SubResultMap) Update(path ast.Array, trace []*topdown.Event) bool {
+	return srm.updateWithBuf(path, trace, nil)
 }
 
 func (srm SubResultMap) update(path []string, i int, trace []*topdown.Event) bool {
@@ -171,11 +186,24 @@ func (r *Result) String() string {
 
 func (r *Result) string(subResults bool) string {
 	if r.Skip {
-		return fmt.Sprintf("%v.%v: %v", r.Package, r.Name, r.outcome())
+		var builder strings.Builder
+		builder.WriteString(r.Package)
+		builder.WriteString(".")
+		builder.WriteString(r.Name)
+		builder.WriteString(": ")
+		builder.WriteString(r.outcome())
+		return builder.String()
 	}
 	var buf bytes.Buffer
 
-	buf.WriteString(fmt.Sprintf("%v.%v: %v (%v)", r.Package, r.Name, r.outcome(), r.Duration))
+	buf.WriteString(r.Package)
+	buf.WriteString(".")
+	buf.WriteString(r.Name)
+	buf.WriteString(": ")
+	buf.WriteString(r.outcome())
+	buf.WriteString(" (")
+	buf.WriteString(r.Duration.String())
+	buf.WriteString(")")
 
 	if subResults {
 		buf.WriteString("\n")
@@ -214,19 +242,33 @@ func (srm SubResultMap) Iter(yield func([]string, *SubResult) bool) {
 	srm.iter(nil, yield)
 }
 
-func (srm SubResultMap) iter(namePrefix []string, yield func([]string, *SubResult) bool) {
+// iterWithBuf optimizes iter by reusing provided string slice buffer  
+func (srm SubResultMap) iterWithBuf(namePrefix []string, nameBuf []string, yield func([]string, *SubResult) bool) {
 	for _, k := range util.KeysSorted(srm) {
 		sr := srm[k]
+		
+		fullNameLen := len(namePrefix) + 1
+		if cap(nameBuf) < fullNameLen {
+			nameBuf = make([]string, fullNameLen)
+		}
+		nameBuf = nameBuf[:fullNameLen] // Reset slice to needed length
+		
+		copy(nameBuf, namePrefix)
+		nameBuf[len(nameBuf)-1] = k
 
-		fullName := make([]string, len(namePrefix)+1)
-		copy(fullName, namePrefix)
-		fullName[len(fullName)-1] = k
-
-		if !yield(fullName, sr) {
+		if !yield(nameBuf, sr) {
 			return
 		}
-		sr.SubResults.iter(fullName, yield)
+
+		// Recursively iterate sub-results with buffer reuse
+		if sr.SubResults != nil {
+			sr.SubResults.iterWithBuf(nameBuf, nameBuf, yield)
+		}
 	}
+}
+
+func (srm SubResultMap) iter(namePrefix []string, yield func([]string, *SubResult) bool) {
+	srm.iterWithBuf(namePrefix, nil, yield)
 }
 
 func (srm SubResultMap) String() string {

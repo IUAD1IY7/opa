@@ -372,35 +372,50 @@ func (mod *Module) String() string {
 		byNode[a.node] = append(byNode[a.node], a)
 	}
 
-	appendAnnotationStrings := func(buf []string, node Node) []string {
+	appendAnnotationStrings := func(buf *strings.Builder, node Node) {
 		if as, ok := byNode[node]; ok {
 			for i := range as {
-				buf = append(buf, "# METADATA")
-				buf = append(buf, "# "+as[i].String())
+				buf.WriteString("# METADATA\n")
+				buf.WriteString("# ")
+				buf.WriteString(as[i].String())
+				buf.WriteString("\n")
 			}
 		}
-		return buf
 	}
 
-	buf := []string{}
-	buf = appendAnnotationStrings(buf, mod.Package)
-	buf = append(buf, mod.Package.String())
+	var builder strings.Builder
+	appendAnnotationStrings(&builder, mod.Package)
+	builder.WriteString(mod.Package.String())
 
 	if len(mod.Imports) > 0 {
-		buf = append(buf, "")
+		builder.WriteString("\n\n")
 		for _, imp := range mod.Imports {
-			buf = appendAnnotationStrings(buf, imp)
-			buf = append(buf, imp.String())
+			appendAnnotationStrings(&builder, imp)
+			builder.WriteString(imp.String())
+			builder.WriteString("\n")
+		}
+		// Remove trailing newline
+		s := builder.String()
+		if len(s) > 0 && s[len(s)-1] == '\n' {
+			builder.Reset()
+			builder.WriteString(s[:len(s)-1])
 		}
 	}
 	if len(mod.Rules) > 0 {
-		buf = append(buf, "")
+		builder.WriteString("\n\n")
 		for _, rule := range mod.Rules {
-			buf = appendAnnotationStrings(buf, rule)
-			buf = append(buf, rule.stringWithOpts(toStringOpts{regoVersion: mod.regoVersion}))
+			appendAnnotationStrings(&builder, rule)
+			builder.WriteString(rule.stringWithOpts(toStringOpts{regoVersion: mod.regoVersion}))
+			builder.WriteString("\n")
+		}
+		// Remove trailing newline
+		s := builder.String()
+		if len(s) > 0 && s[len(s)-1] == '\n' {
+			builder.Reset()
+			builder.WriteString(s[:len(s)-1])
 		}
 	}
-	return strings.Join(buf, "\n")
+	return builder.String()
 }
 
 // RuleSet returns a RuleSet containing named rules in the mod.
@@ -631,11 +646,14 @@ func (imp *Import) Name() Var {
 }
 
 func (imp *Import) String() string {
-	buf := []string{"import", imp.Path.String()}
+	var builder strings.Builder
+	builder.WriteString("import ")
+	builder.WriteString(imp.Path.String())
 	if len(imp.Alias) > 0 {
-		buf = append(buf, "as", imp.Alias.String())
+		builder.WriteString(" as ")
+		builder.WriteString(imp.Alias.String())
 	}
-	return strings.Join(buf, " ")
+	return builder.String()
 }
 
 func (imp *Import) MarshalJSON() ([]byte, error) {
@@ -764,22 +782,25 @@ func (o toStringOpts) RegoVersion() RegoVersion {
 }
 
 func (rule *Rule) stringWithOpts(opts toStringOpts) string {
-	buf := []string{}
+	var builder strings.Builder
 	if rule.Default {
-		buf = append(buf, "default")
+		builder.WriteString("default ")
 	}
-	buf = append(buf, rule.Head.stringWithOpts(opts))
+	builder.WriteString(rule.Head.stringWithOpts(opts))
 	if !rule.Default {
 		switch opts.RegoVersion() {
 		case RegoV1, RegoV0CompatV1:
-			buf = append(buf, "if")
+			builder.WriteString(" if")
 		}
-		buf = append(buf, "{", rule.Body.String(), "}")
+		builder.WriteString(" { ")
+		builder.WriteString(rule.Body.String())
+		builder.WriteString(" }")
 	}
 	if rule.Else != nil {
-		buf = append(buf, rule.Else.elseString(opts))
+		builder.WriteString(" ")
+		builder.WriteString(rule.Else.elseString(opts))
 	}
-	return strings.Join(buf, " ")
+	return builder.String()
 }
 
 func (rule *Rule) isFunction() bool {
@@ -814,27 +835,31 @@ func (rule *Rule) MarshalJSON() ([]byte, error) {
 }
 
 func (rule *Rule) elseString(opts toStringOpts) string {
-	var buf []string
+	var builder strings.Builder
 
-	buf = append(buf, "else")
+	builder.WriteString("else")
 
 	value := rule.Head.Value
 	if value != nil {
-		buf = append(buf, "=", value.String())
+		builder.WriteString(" = ")
+		builder.WriteString(value.String())
 	}
 
 	switch opts.RegoVersion() {
 	case RegoV1, RegoV0CompatV1:
-		buf = append(buf, "if")
+		builder.WriteString(" if")
 	}
 
-	buf = append(buf, "{", rule.Body.String(), "}")
+	builder.WriteString(" { ")
+	builder.WriteString(rule.Body.String())
+	builder.WriteString(" }")
 
 	if rule.Else != nil {
-		buf = append(buf, rule.Else.elseString(opts))
+		builder.WriteString(" ")
+		builder.WriteString(rule.Else.elseString(opts))
 	}
 
-	return strings.Join(buf, " ")
+	return builder.String()
 }
 
 // NewHead returns a new Head object. If args are provided, the first will be
@@ -1095,11 +1120,20 @@ func (a Args) Copy() Args {
 }
 
 func (a Args) String() string {
-	buf := make([]string, 0, len(a))
-	for _, t := range a {
-		buf = append(buf, t.String())
+	if len(a) == 0 {
+		return "()"
 	}
-	return "(" + strings.Join(buf, ", ") + ")"
+	
+	var builder strings.Builder
+	builder.WriteString("(")
+	for i, t := range a {
+		if i > 0 {
+			builder.WriteString(", ")
+		}
+		builder.WriteString(t.String())
+	}
+	builder.WriteString(")")
+	return builder.String()
 }
 
 // Loc returns the Location of a.
@@ -1232,11 +1266,18 @@ func (body Body) SetLoc(loc *Location) {
 }
 
 func (body Body) String() string {
-	buf := make([]string, 0, len(body))
-	for _, v := range body {
-		buf = append(buf, v.String())
+	if len(body) == 0 {
+		return ""
 	}
-	return strings.Join(buf, "; ")
+	
+	var builder strings.Builder
+	for i, v := range body {
+		if i > 0 {
+			builder.WriteString("; ")
+		}
+		builder.WriteString(v.String())
+	}
+	return builder.String()
 }
 
 // Vars returns a VarSet containing variables in body. The params can be set to
@@ -1547,26 +1588,33 @@ func (expr *Expr) SetLoc(loc *Location) {
 }
 
 func (expr *Expr) String() string {
-	buf := make([]string, 0, 2+len(expr.With))
+	var builder strings.Builder
 	if expr.Negated {
-		buf = append(buf, "not")
+		builder.WriteString("not ")
 	}
 	switch t := expr.Terms.(type) {
 	case []*Term:
 		if expr.IsEquality() && validEqAssignArgCount(expr) {
-			buf = append(buf, fmt.Sprintf("%v %v %v", t[1], Equality.Infix, t[2]))
+			builder.WriteString(t[1].String())
+			builder.WriteString(" ")
+			builder.WriteString(Equality.Infix)
+			builder.WriteString(" ")
+			builder.WriteString(t[2].String())
 		} else {
-			buf = append(buf, Call(t).String())
+			builder.WriteString(Call(t).String())
 		}
 	case fmt.Stringer:
-		buf = append(buf, t.String())
+		builder.WriteString(t.String())
 	}
 
 	for i := range expr.With {
-		buf = append(buf, expr.With[i].String())
+		if builder.Len() > 0 {
+			builder.WriteString(" ")
+		}
+		builder.WriteString(expr.With[i].String())
 	}
 
-	return strings.Join(buf, " ")
+	return builder.String()
 }
 
 func (expr *Expr) MarshalJSON() ([]byte, error) {
@@ -1619,7 +1667,8 @@ func NewBuiltinExpr(terms ...*Term) *Expr {
 	return &Expr{Terms: terms}
 }
 
-func (expr *Expr) CogeneratedExprs() []*Expr {
+// CogeneratedExprsWithBuf optimizes CogeneratedExprs by reusing provided slice buffer
+func (expr *Expr) CogeneratedExprsWithBuf(buf []*Expr) []*Expr {
 	visited := map[*Expr]struct{}{}
 	visitCogeneratedExprs(expr, func(e *Expr) bool {
 		if expr.Equal(e) {
@@ -1632,11 +1681,19 @@ func (expr *Expr) CogeneratedExprs() []*Expr {
 		return false
 	})
 
-	result := make([]*Expr, 0, len(visited))
-	for e := range visited {
-		result = append(result, e)
+	if cap(buf) < len(visited) {
+		buf = make([]*Expr, 0, len(visited))
 	}
-	return result
+	buf = buf[:0] // Reset slice to empty while keeping capacity
+	
+	for e := range visited {
+		buf = append(buf, e)
+	}
+	return buf
+}
+
+func (expr *Expr) CogeneratedExprs() []*Expr {
+	return expr.CogeneratedExprsWithBuf(nil)
 }
 
 func (expr *Expr) BaseCogeneratedExpr() *Expr {
@@ -1661,16 +1718,29 @@ func visitCogeneratedExprs(expr *Expr, f func(*Expr) bool) {
 
 func (d *SomeDecl) String() string {
 	if call, ok := d.Symbols[0].Value.(Call); ok {
+		var builder strings.Builder
+		builder.WriteString("some ")
+		builder.WriteString(call[1].String())
 		if len(call) == 4 {
-			return "some " + call[1].String() + ", " + call[2].String() + " in " + call[3].String()
+			builder.WriteString(", ")
+			builder.WriteString(call[2].String())
+			builder.WriteString(" in ")
+			builder.WriteString(call[3].String())
+		} else {
+			builder.WriteString(" in ")
+			builder.WriteString(call[2].String())
 		}
-		return "some " + call[1].String() + " in " + call[2].String()
+		return builder.String()
 	}
-	buf := make([]string, len(d.Symbols))
-	for i := range buf {
-		buf[i] = d.Symbols[i].String()
+	var builder strings.Builder
+	builder.WriteString("some ")
+	for i, sym := range d.Symbols {
+		if i > 0 {
+			builder.WriteString(", ")
+		}
+		builder.WriteString(sym.String())
 	}
-	return "some " + strings.Join(buf, ", ")
+	return builder.String()
 }
 
 // SetLoc sets the Location on d.
@@ -1789,7 +1859,12 @@ func (q *Every) MarshalJSON() ([]byte, error) {
 }
 
 func (w *With) String() string {
-	return "with " + w.Target.String() + " as " + w.Value.String()
+	var builder strings.Builder
+	builder.WriteString("with ")
+	builder.WriteString(w.Target.String())
+	builder.WriteString(" as ")
+	builder.WriteString(w.Value.String())
+	return builder.String()
 }
 
 // Equal returns true if this With is equals the other With.
@@ -1971,11 +2046,20 @@ func (rs RuleSet) Merge(other RuleSet) RuleSet {
 }
 
 func (rs RuleSet) String() string {
-	buf := make([]string, 0, len(rs))
-	for _, rule := range rs {
-		buf = append(buf, rule.String())
+	if len(rs) == 0 {
+		return "{}"
 	}
-	return "{" + strings.Join(buf, ", ") + "}"
+	
+	var builder strings.Builder
+	builder.WriteString("{")
+	for i, rule := range rs {
+		if i > 0 {
+			builder.WriteString(", ")
+		}
+		builder.WriteString(rule.String())
+	}
+	builder.WriteString("}")
+	return builder.String()
 }
 
 // Returns true if the equality or assignment expression referred to by expr

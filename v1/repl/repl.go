@@ -37,6 +37,15 @@ import (
 	"github.com/open-policy-agent/opa/v1/version"
 )
 
+// Object pools for REPL optimization
+var (
+	moduleMapPool = sync.Pool{
+		New: func() any {
+			return make(map[string]*ast.Module, 16)
+		},
+	}
+)
+
 // REPL represents an instance of the interactive shell.
 type REPL struct {
 	output  io.Writer
@@ -1268,16 +1277,22 @@ func (r *REPL) loadHistory(prompt *liner.State) {
 }
 
 func (r *REPL) loadModules(ctx context.Context, txn storage.Transaction) (map[string]*ast.Module, error) {
-	modules := make(map[string]*ast.Module)
-
+	// Get modules map from pool and reset it
+	modules := moduleMapPool.Get().(map[string]*ast.Module)
+	// Clear the map while keeping the underlying storage
+	for k := range modules {
+		delete(modules, k)
+	}
+	
 	if len(r.initBundles) > 0 {
 		for bundleName, b := range r.initBundles {
 			maps.Copy(modules, b.ParsedModules(bundleName))
 		}
 	}
-
+	
 	ids, err := r.store.ListPolicies(ctx, txn)
 	if err != nil {
+		moduleMapPool.Put(modules) // Return to pool on error
 		return nil, err
 	}
 
@@ -1289,6 +1304,7 @@ func (r *REPL) loadModules(ctx context.Context, txn storage.Transaction) (map[st
 
 		bs, err := r.store.GetPolicy(ctx, txn, id)
 		if err != nil {
+			moduleMapPool.Put(modules) // Return to pool on error
 			return nil, err
 		}
 
@@ -1298,13 +1314,19 @@ func (r *REPL) loadModules(ctx context.Context, txn storage.Transaction) (map[st
 
 		parsed, err := ast.ParseModuleWithOpts(id, string(bs), popts)
 		if err != nil {
+			moduleMapPool.Put(modules) // Return to pool on error
 			return nil, err
 		}
 
 		modules[id] = parsed
 	}
 
-	return modules, nil
+	// Create result copy and return pooled map
+	result := make(map[string]*ast.Module, len(modules))
+	maps.Copy(result, modules)
+	moduleMapPool.Put(modules)
+	
+	return result, nil
 }
 
 func (r *REPL) printTypes(_ context.Context, typeEnv *ast.TypeEnv, body ast.Body) {
@@ -1417,8 +1439,8 @@ func newCommand(line string) *command {
 	for i := range builtin {
 		if builtin[i].name == inputCommand {
 			return &command{
-				op:   builtin[i].name,
-				args: p[1:],
+				op   : builtin[i].name,
+				args : p[1:],
 			}
 		}
 	}
