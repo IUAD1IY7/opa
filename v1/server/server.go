@@ -195,6 +195,24 @@ func New() *Server {
 // Init initializes the server. This function MUST be called before starting any loops
 // from s.Listeners().
 func (s *Server) Init(ctx context.Context) (*Server, error) {
+	InternServerStrings(
+		http.MethodGet,
+		http.MethodPost,
+		http.MethodPut,
+		http.MethodDelete,
+		http.MethodPatch,
+		"/",
+		"/health",
+		"/v1/data",
+		"/v1/policies",
+		"/v1/query",
+		"/v1/compile",
+		"/v1/config",
+		"/v1/status",
+		"127.0.0.1",
+		"::1",
+		"localhost",
+	)
 	s.initRouters(ctx)
 	var err error
 	s.hooks.Each(func(h hooks.Hook) {
@@ -2651,6 +2669,9 @@ func parseRefQuery(str string) (ast.Body, error) {
 
 func (*Server) prepareV1PatchSlice(root string, ops []types.PatchV1) (result []patchImpl, err error) {
 	root = "/" + strings.Trim(root, "/")
+	if len(ops) > 0 {
+		result = make([]patchImpl, 0, len(ops))
+	}
 
 	for _, op := range ops {
 
@@ -2671,15 +2692,24 @@ func (*Server) prepareV1PatchSlice(root string, ops []types.PatchV1) (result []p
 		}
 
 		// Construct patch path.
-		path := strings.Trim(op.Path, "/")
-		if len(path) > 0 {
-			if root == "/" {
-				path = root + path
-			} else {
-				path = root + "/" + path
-			}
-		} else {
+		trimmedPath := strings.Trim(op.Path, "/")
+		var path string
+		switch {
+		case trimmedPath == "":
 			path = root
+		case root == "/":
+			sb := acquireStringBuilder()
+			sb.WriteString(root)
+			sb.WriteString(trimmedPath)
+			path = sb.String()
+			releaseStringBuilder(sb)
+		default:
+			sb := acquireStringBuilder()
+			sb.WriteString(root)
+			sb.WriteByte('/')
+			sb.WriteString(trimmedPath)
+			path = sb.String()
+			releaseStringBuilder(sb)
 		}
 
 		var ok bool
@@ -2715,7 +2745,7 @@ func (s *Server) getProvenance(br bundleRevisions) *types.ProvenanceV1 {
 	if s.hasLegacyBundle(br) {
 		p.Revision = br.LegacyRevision
 	} else {
-		p.Bundles = map[string]types.ProvenanceBundleV1{}
+		p.Bundles = make(map[string]types.ProvenanceBundleV1, len(br.Revisions))
 		for name, revision := range br.Revisions {
 			p.Bundles[name] = types.ProvenanceBundleV1{Revision: revision}
 		}
@@ -2765,7 +2795,11 @@ func stringPathToDataRef(s string) (ast.Ref, error) {
 }
 
 func stringPathToRef(s string) (ast.Ref, error) {
-	r := ast.Ref{}
+	capacity := 0
+	if len(s) > 0 {
+		capacity = strings.Count(s, "/") + 1
+	}
+	r := make(ast.Ref, 0, capacity)
 
 	if len(s) == 0 {
 		return r, nil
@@ -2880,7 +2914,9 @@ func readInputV0(r *http.Request) (ast.Value, *any, error) {
 			}
 		}
 	} else {
-		dec := util.NewJSONDecoder(bytes.NewBuffer(bodyBytes))
+		reader := acquireBytesReader(bodyBytes)
+		defer releaseBytesReader(reader)
+		dec := util.NewJSONDecoder(reader)
 		if err := dec.Decode(&x); err != nil && err != io.EOF {
 			return nil, nil, fmt.Errorf("body contains malformed input document: %w", err)
 		}
@@ -2891,8 +2927,12 @@ func readInputV0(r *http.Request) (ast.Value, *any, error) {
 }
 
 func readInputGetV1(str string) (ast.Value, *any, error) {
+	reader := acquireBytesReader(util.StringToByteSlice(str))
+	defer releaseBytesReader(reader)
+
 	var input any
-	if err := util.UnmarshalJSON([]byte(str), &input); err != nil {
+	dec := util.NewJSONDecoder(reader)
+	if err := dec.Decode(&input); err != nil {
 		return nil, nil, fmt.Errorf("parameter contains malformed input document: %w", err)
 	}
 	v, err := ast.InterfaceToValue(input)
@@ -2929,7 +2969,9 @@ func readInputPostV1(r *http.Request) (ast.Value, *any, error) {
 			}
 		}
 	} else {
-		dec := util.NewJSONDecoder(bytes.NewBuffer(bodyBytes))
+		reader := acquireBytesReader(bodyBytes)
+		defer releaseBytesReader(reader)
+		dec := util.NewJSONDecoder(reader)
 		if err := dec.Decode(&request); err != nil && err != io.EOF {
 			return nil, nil, fmt.Errorf("body contains malformed input document: %w", err)
 		}
@@ -2958,7 +3000,10 @@ type compileRequestOptions struct {
 func readInputCompilePostV1(reqBytes []byte, queryParserOptions ast.ParserOptions) (*compileRequest, *types.ErrorV1) {
 	var request types.CompileRequestV1
 
-	err := util.NewJSONDecoder(bytes.NewBuffer(reqBytes)).Decode(&request)
+	reader := acquireBytesReader(reqBytes)
+	defer releaseBytesReader(reader)
+
+	err := util.NewJSONDecoder(reader).Decode(&request)
 	if err != nil {
 		return nil, types.NewErrorV1(types.CodeInvalidParameter, "error(s) occurred while decoding request: %v", err.Error())
 	}
@@ -3085,9 +3130,14 @@ func (l decisionLogger) Log(
 		return nil
 	}
 
-	bundles := map[string]BundleInfo{}
-	for name, rev := range l.revisions {
-		bundles[name] = BundleInfo{Revision: rev}
+	var bundles map[string]BundleInfo
+	if len(l.revisions) > 0 {
+		bundles = make(map[string]BundleInfo, len(l.revisions))
+		for name, rev := range l.revisions {
+			bundles[internString(name)] = BundleInfo{Revision: internString(rev)}
+		}
+	} else {
+		bundles = map[string]BundleInfo{}
 	}
 
 	rctx := logging.RequestContext{}
@@ -3095,6 +3145,7 @@ func (l decisionLogger) Log(
 		rctx = *r
 	}
 	decisionID, _ := logging.DecisionIDFromContext(ctx)
+	decisionID = internString(decisionID)
 
 	var httpRctx logging.HTTPRequestContext
 
@@ -3105,14 +3156,14 @@ func (l decisionLogger) Log(
 
 	info := &Info{
 		Txn:                txn,
-		Revision:           l.revision,
+		Revision:           internString(l.revision),
 		Bundles:            bundles,
 		Timestamp:          time.Now().UTC(),
 		DecisionID:         decisionID,
-		RemoteAddr:         rctx.ClientAddr,
+		RemoteAddr:         internString(rctx.ClientAddr),
 		HTTPRequestContext: httpRctx,
-		Path:               path,
-		Query:              query,
+		Path:               internString(path),
+		Query:              internString(query),
 		Input:              goInput,
 		InputAST:           astInput,
 		Results:            goResults,
@@ -3132,8 +3183,8 @@ func (l decisionLogger) Log(
 
 	sctx := trace.SpanFromContext(ctx).SpanContext()
 	if sctx.IsValid() {
-		info.TraceID = sctx.TraceID().String()
-		info.SpanID = sctx.SpanID().String()
+		info.TraceID = internString(sctx.TraceID().String())
+		info.SpanID = internString(sctx.SpanID().String())
 	}
 
 	if intermediateResultsEnabled {

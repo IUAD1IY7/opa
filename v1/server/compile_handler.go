@@ -4,7 +4,6 @@
 package server
 
 import (
-	"bytes"
 	"context"
 	"encoding/json"
 	"errors"
@@ -422,7 +421,9 @@ func readInputCompileFiltersV1(comp *ast.Compiler, reqBytes []byte, urlPath stri
 	var request CompileFiltersRequestV1
 
 	if len(reqBytes) > 0 {
-		if err := util.NewJSONDecoder(bytes.NewBuffer(reqBytes)).Decode(&request); err != nil {
+		reader := acquireBytesReader(reqBytes)
+		defer releaseBytesReader(reader)
+		if err := util.NewJSONDecoder(reader).Decode(&request); err != nil {
 			return nil, nil, types.NewErrorV1(types.CodeInvalidParameter, "error(s) occurred while decoding request: %v", err.Error())
 		}
 	}
