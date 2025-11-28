@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"strings"
 	"sync"
+	"unique"
 )
 
 const (
@@ -14,6 +15,15 @@ const (
 	contentEncodingHeader = "Content-Encoding"
 	contentLengthHeader   = "Content-Length"
 	gzipEncodingValue     = "gzip"
+)
+
+var (
+	httpMethodGET  = unique.Make(http.MethodGet)
+	httpMethodPOST = unique.Make(http.MethodPost)
+	
+	pathV1Data     = unique.Make("/v1/data")
+	pathV0Data     = unique.Make("/v0/data")
+	pathV1Compile  = unique.Make("/v1/compile")
 )
 
 // This handler applies only for data and compile endpoints, for selected HTTP methods
@@ -135,7 +145,7 @@ func (w *compressResponseWriter) Close() error {
 		// gzip didn't handle the response, send it plain
 		err := w.doUncompressedResponse()
 		if err != nil {
-			err = fmt.Errorf("error writing uncompressed data: %v", err.Error())
+			return fmt.Errorf("error writing uncompressed data: %w", err)
 		}
 		return err
 	}
@@ -195,20 +205,21 @@ func (w *compressResponseWriter) writeHeader() {
 
 func isDataEndpoint(req *http.Request) bool {
 	isPostOrGetMethod := isPostMethod(req) || isGetMethod(req)
-	isV1rV0 := strings.HasPrefix(req.URL.Path, "/v1/data") || strings.HasPrefix(req.URL.Path, "/v0/data")
+	path := req.URL.Path
+	isV1rV0 := strings.HasPrefix(path, pathV1Data.Value()) || strings.HasPrefix(path, pathV0Data.Value())
 	return isPostOrGetMethod && isV1rV0
 }
 
 func isCompileEndpoint(req *http.Request) bool {
-	return isPostMethod(req) && strings.HasPrefix(req.URL.Path, "/v1/compile")
+	return isPostMethod(req) && strings.HasPrefix(req.URL.Path, pathV1Compile.Value())
 }
 
 func isPostMethod(req *http.Request) bool {
-	return req.Method == "POST"
+	return unique.Make(req.Method) == httpMethodPOST
 }
 
 func isGetMethod(req *http.Request) bool {
-	return req.Method == "GET"
+	return unique.Make(req.Method) == httpMethodGET
 }
 
 func gzipHeaderDetected(header http.Header) bool {

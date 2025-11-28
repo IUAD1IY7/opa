@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"slices"
 	"strings"
+	"unique"
 
 	"github.com/open-policy-agent/opa/internal/compile"
 	"github.com/open-policy-agent/opa/v1/ast"
@@ -39,37 +40,39 @@ const (
 
 	unknownsCacheSize    = 500
 	maskingRuleCacheSize = 500
+)
 
+var (
 	// These need to be kept up to date with `CompileApiKnownHeaders()` below
-	multiTargetJSON  = "application/vnd.opa.multitarget+json"
-	ucastAllJSON     = "application/vnd.opa.ucast.all+json"
-	ucastMinimalJSON = "application/vnd.opa.ucast.minimal+json"
-	ucastPrismaJSON  = "application/vnd.opa.ucast.prisma+json"
-	ucastLINQJSON    = "application/vnd.opa.ucast.linq+json"
-	sqlPostgresJSON  = "application/vnd.opa.sql.postgresql+json"
-	sqlMySQLJSON     = "application/vnd.opa.sql.mysql+json"
-	sqlSQLServerJSON = "application/vnd.opa.sql.sqlserver+json"
-	sqliteJSON       = "application/vnd.opa.sql.sqlite+json"
+	multiTargetJSON  = unique.Make("application/vnd.opa.multitarget+json")
+	ucastAllJSON     = unique.Make("application/vnd.opa.ucast.all+json")
+	ucastMinimalJSON = unique.Make("application/vnd.opa.ucast.minimal+json")
+	ucastPrismaJSON  = unique.Make("application/vnd.opa.ucast.prisma+json")
+	ucastLINQJSON    = unique.Make("application/vnd.opa.ucast.linq+json")
+	sqlPostgresJSON  = unique.Make("application/vnd.opa.sql.postgresql+json")
+	sqlMySQLJSON     = unique.Make("application/vnd.opa.sql.mysql+json")
+	sqlSQLServerJSON = unique.Make("application/vnd.opa.sql.sqlserver+json")
+	sqliteJSON       = unique.Make("application/vnd.opa.sql.sqlite+json")
 
 	// back-compat
-	applicationJSON = "application/json"
+	applicationJSON = unique.Make("application/json")
 )
 
 func CompileAPIKnownHeaders() []string {
 	return []string{
-		multiTargetJSON,
-		ucastAllJSON,
-		ucastMinimalJSON,
-		ucastPrismaJSON,
-		ucastLINQJSON,
-		sqlPostgresJSON,
-		sqlMySQLJSON,
-		sqlSQLServerJSON,
-		sqliteJSON,
+		multiTargetJSON.Value(),
+		ucastAllJSON.Value(),
+		ucastMinimalJSON.Value(),
+		ucastPrismaJSON.Value(),
+		ucastLINQJSON.Value(),
+		sqlPostgresJSON.Value(),
+		sqlMySQLJSON.Value(),
+		sqlSQLServerJSON.Value(),
+		sqliteJSON.Value(),
 	}
 }
 
-var allKnownHeaders = append(CompileAPIKnownHeaders(), applicationJSON)
+var allKnownHeaders = append(CompileAPIKnownHeaders(), applicationJSON.Value())
 
 type CompileResult struct {
 	Query any            `json:"query"`
@@ -494,7 +497,7 @@ func readInputCompileFiltersV1(comp *ast.Compiler, reqBytes []byte, urlPath stri
 
 func fin(w http.ResponseWriter,
 	result CompileResponseV1,
-	contentType string,
+	contentType unique.Handle[string],
 	metrics metrics.Metrics,
 	includeMetrics, includeInstrumentation, pretty bool,
 ) {
@@ -507,7 +510,7 @@ func fin(w http.ResponseWriter,
 		enc.SetIndent("", "  ")
 	}
 
-	w.Header().Add("Content-Type", contentType)
+	w.Header().Add("Content-Type", contentType.Value())
 	// If Encode() calls w.Write() for the first time, it'll set the HTTP status
 	// to 200 OK.
 	if err := enc.Encode(result); err != nil {
@@ -516,23 +519,23 @@ func fin(w http.ResponseWriter,
 	}
 }
 
-func sanitizeHeader(accept string) (string, error) {
+func sanitizeHeader(accept string) (unique.Handle[string], error) {
 	if accept == "" {
-		return "", errors.New("missing required header")
+		return unique.Handle[string]{}, errors.New("missing required header")
 	}
 
 	if strings.Contains(accept, ",") {
-		return "", errors.New("multiple headers not supported")
+		return unique.Handle[string]{}, errors.New("multiple headers not supported")
 	}
 
 	if !slices.Contains(allKnownHeaders, accept) {
-		return "", fmt.Errorf("unsupported header: %s", accept)
+		return unique.Handle[string]{}, fmt.Errorf("unsupported header: %s", accept)
 	}
 
-	return accept, nil
+	return unique.Make(accept), nil
 }
 
-func targetDialect(accept string) (string, string) {
+func targetDialect(accept unique.Handle[string]) (string, string) {
 	switch accept {
 	case applicationJSON:
 		return "", ""

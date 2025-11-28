@@ -24,6 +24,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"unique"
 
 	lru "github.com/hashicorp/golang-lru/v2"
 	"go.opentelemetry.io/otel/attribute"
@@ -105,6 +106,11 @@ var (
 	supportedTLSVersions       = []uint16{tls.VersionTLS10, tls.VersionTLS11, tls.VersionTLS12, tls.VersionTLS13}
 	unsafeBuiltinsMap          = map[string]struct{}{ast.HTTPSend.Name: {}}
 	intermediateResultsEnabled = os.Getenv("OPA_DECISIONS_INTERMEDIATE_RESULTS") != ""
+	
+	// unique handles for patch operations (pointer comparison optimization)
+	patchOpAdd     = unique.Make("add")
+	patchOpRemove  = unique.Make("remove")
+	patchOpReplace = unique.Make("replace")
 )
 
 type IntermediateResultsContextKey struct{}
@@ -288,11 +294,17 @@ func (s *Server) Shutdown(ctx context.Context) error {
 	}
 
 	if len(errorList) > 0 {
-		errMsg := "error while shutting down: "
+		sb := acquireStringBuilder()
+		sb.WriteString("error while shutting down: ")
 		for i, err := range errorList {
-			//nolint:perfsprint
-			errMsg += fmt.Sprintf("(%d) %s. ", i, err.Error())
+			sb.WriteByte('(')
+			sb.WriteString(strconv.Itoa(i))
+			sb.WriteString(") ")
+			sb.WriteString(err.Error())
+			sb.WriteString(". ")
 		}
+		errMsg := sb.String()
+		releaseStringBuilder(sb)
 		return errors.New(errMsg)
 	}
 	return nil
@@ -861,7 +873,13 @@ func (s *Server) initRouters(ctx context.Context) {
 	for _, router := range []*http.ServeMux{mainRouter, diagRouter} {
 		if s.metrics != nil {
 			s.metrics.RegisterEndpoints(func(path, method string, handler http.Handler) {
-				router.Handle(fmt.Sprintf("%s %s", method, path), handler)
+				sb := acquireStringBuilder()
+				sb.WriteString(method)
+				sb.WriteByte(' ')
+				sb.WriteString(path)
+				pattern := sb.String()
+				releaseStringBuilder(sb)
+				router.Handle(pattern, handler)
 			})
 		}
 
@@ -1670,7 +1688,14 @@ func (s *Server) v1DataPatch(w http.ResponseWriter, r *http.Request) {
 	var ops []types.PatchV1
 
 	m.Timer(metrics.RegoInputParse).Start()
-	if err := util.NewJSONDecoder(r.Body).Decode(&ops); err != nil {
+	bodyBytes, err := io.ReadAll(r.Body)
+	if err != nil {
+		writer.ErrorString(w, http.StatusBadRequest, types.CodeInvalidParameter, err)
+		return
+	}
+	reader := acquireBytesReader(bodyBytes)
+	defer releaseBytesReader(reader)
+	if err := util.NewJSONDecoder(reader).Decode(&ops); err != nil {
 		writer.ErrorString(w, http.StatusBadRequest, types.CodeInvalidParameter, err)
 		return
 	}
@@ -1909,8 +1934,15 @@ func (s *Server) v1DataPut(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	m.Timer(metrics.RegoInputParse).Start()
+	bodyBytes, err := io.ReadAll(r.Body)
+	if err != nil {
+		writer.ErrorString(w, http.StatusBadRequest, types.CodeInvalidParameter, err)
+		return
+	}
 	var value any
-	if err := util.NewJSONDecoder(r.Body).Decode(&value); err != nil {
+	reader := acquireBytesReader(bodyBytes)
+	defer releaseBytesReader(reader)
+	if err := util.NewJSONDecoder(reader).Decode(&value); err != nil {
 		writer.ErrorString(w, http.StatusBadRequest, types.CodeInvalidParameter, err)
 		return
 	}
@@ -2342,8 +2374,16 @@ func (s *Server) v1QueryPost(w http.ResponseWriter, r *http.Request) {
 	ctx := logging.WithDecisionID(r.Context(), decisionID)
 	annotateSpan(ctx, decisionID)
 
+	bodyBytes, err := io.ReadAll(r.Body)
+	if err != nil {
+		writer.Error(w, http.StatusBadRequest, types.NewErrorV1(types.CodeInvalidParameter, "error(s) occurred while reading request: %v", err.Error()))
+		return
+	}
+
 	var request types.QueryRequestV1
-	err := util.NewJSONDecoder(r.Body).Decode(&request)
+	reader := acquireBytesReader(bodyBytes)
+	defer releaseBytesReader(reader)
+	err = util.NewJSONDecoder(reader).Decode(&request)
 	if err != nil {
 		writer.Error(w, http.StatusBadRequest, types.NewErrorV1(types.CodeInvalidParameter, "error(s) occurred while decoding request: %v", err.Error()))
 		return
@@ -2680,12 +2720,13 @@ func (*Server) prepareV1PatchSlice(root string, ops []types.PatchV1) (result []p
 		}
 
 		// Map patch operation.
-		switch op.Op {
-		case "add":
+		opHandle := unique.Make(op.Op)
+		switch opHandle {
+		case patchOpAdd:
 			impl.op = storage.AddOp
-		case "remove":
+		case patchOpRemove:
 			impl.op = storage.RemoveOp
-		case "replace":
+		case patchOpReplace:
 			impl.op = storage.ReplaceOp
 		default:
 			return nil, types.BadPatchOperationErr(op.Op)

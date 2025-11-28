@@ -12,8 +12,8 @@ type cache struct {
 
 func newCache(maxSize int) *cache {
 	return &cache{
-		data:    map[string]any{},
-		keylist: []string{},
+		data:    make(map[string]any, maxSize),
+		keylist: make([]string, 0, maxSize),
 		maxSize: maxSize,
 	}
 }
