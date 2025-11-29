@@ -228,7 +228,7 @@ func (a *Annotations) MarshalJSON() ([]byte, error) {
 		data["custom"] = a.Custom
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Annotations {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Annotations() {
 		if a.Location != nil {
 			data["location"] = a.Location
 		}
@@ -280,7 +280,7 @@ func (ar *AnnotationsRef) MarshalJSON() ([]byte, error) {
 		data["annotations"] = ar.Annotations
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.AnnotationsRef {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.AnnotationsRef() {
 		if ar.Location != nil {
 			data["location"] = ar.Location
 		}

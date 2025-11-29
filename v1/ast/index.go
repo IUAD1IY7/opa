@@ -894,7 +894,8 @@ func globDelimiterToString(delim *Term) (string, bool) {
 	if arr.Len() == 0 {
 		result = "."
 	} else {
-		sb := strings.Builder{}
+		sb := sbPool.Get()
+		defer sbPool.Put(sb)
 		for i := range arr.Len() {
 			term := arr.Elem(i)
 			s, ok := term.Value.(String)

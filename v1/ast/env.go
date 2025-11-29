@@ -417,7 +417,8 @@ func mergeTypes(a, b types.Type) types.Type {
 }
 
 func (n *typeTreeNode) String() string {
-	b := strings.Builder{}
+	b := sbPool.Get()
+	defer sbPool.Put(b)
 
 	if k := n.key; k != nil {
 		b.WriteString(k.String())

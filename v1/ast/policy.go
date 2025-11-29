@@ -542,7 +542,7 @@ func (pkg *Package) MarshalJSON() ([]byte, error) {
 		"path": pkg.Path,
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Package {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Package() {
 		if pkg.Location != nil {
 			data["location"] = pkg.Location
 		}
@@ -653,7 +653,7 @@ func (imp *Import) MarshalJSON() ([]byte, error) {
 		data["alias"] = imp.Alias
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Import {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Import() {
 		if imp.Location != nil {
 			data["location"] = imp.Location
 		}
@@ -807,7 +807,7 @@ func (rule *Rule) MarshalJSON() ([]byte, error) {
 		data["else"] = rule.Else
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Rule {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Rule() {
 		if rule.Location != nil {
 			data["location"] = rule.Location
 		}
@@ -1001,7 +1001,8 @@ func (head *Head) String() string {
 }
 
 func (head *Head) stringWithOpts(opts toStringOpts) string {
-	buf := strings.Builder{}
+	buf := sbPool.Get()
+	defer sbPool.Put(buf)
 	buf.WriteString(head.Ref().String())
 	containsAdded := false
 
@@ -1036,7 +1037,7 @@ func (head *Head) stringWithOpts(opts toStringOpts) string {
 
 func (head *Head) MarshalJSON() ([]byte, error) {
 	var loc *Location
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Head && head.Location != nil {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Head() && head.Location != nil {
 		loc = head.Location
 	}
 
@@ -1623,7 +1624,7 @@ func (expr *Expr) MarshalJSON() ([]byte, error) {
 		data["negated"] = true
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Expr {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Expr() {
 		if expr.Location != nil {
 			data["location"] = expr.Location
 		}
@@ -1753,7 +1754,7 @@ func (d *SomeDecl) MarshalJSON() ([]byte, error) {
 		"symbols": d.Symbols,
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.SomeDecl {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.SomeDecl() {
 		if d.Location != nil {
 			data["location"] = d.Location
 		}
@@ -1826,7 +1827,7 @@ func (q *Every) MarshalJSON() ([]byte, error) {
 		"body":   q.Body,
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Every {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.Every() {
 		if q.Location != nil {
 			data["location"] = q.Location
 		}
@@ -1899,7 +1900,7 @@ func (w *With) MarshalJSON() ([]byte, error) {
 		"value":  w.Value,
 	}
 
-	if astJSON.GetOptions().MarshalOptions.IncludeLocation.With {
+	if astJSON.GetOptions().MarshalOptions.IncludeLocation.With() {
 		if w.Location != nil {
 			data["location"] = w.Location
 		}

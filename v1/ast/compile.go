@@ -1187,18 +1187,20 @@ func (c *Compiler) checkRuleConflicts() {
 
 		case len(defaultRules) > 1:
 
-			defaultRuleLocations := strings.Builder{}
+			defaultRuleLocations := sbPool.Get()
 			defaultRuleLocations.WriteString(defaultRules[0].Loc().String())
 			for i := 1; i < len(defaultRules); i++ {
 				defaultRuleLocations.WriteString(", ")
 				defaultRuleLocations.WriteString(defaultRules[i].Loc().String())
 			}
 
+			locs := defaultRuleLocations.String()
+			sbPool.Put(defaultRuleLocations)
 			return !c.err(NewError(
 				TypeErr,
 				defaultRules[0].Module.Package.Loc(),
 				"multiple default rules %s found at %s",
-				name, defaultRuleLocations.String()),
+				name, locs),
 			)
 		}
 

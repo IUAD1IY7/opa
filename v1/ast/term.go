@@ -413,7 +413,7 @@ func (term *Term) MarshalJSON() ([]byte, error) {
 		"value": term.Value,
 	}
 	jsonOptions := astJSON.GetOptions().MarshalOptions
-	if jsonOptions.IncludeLocation.Term {
+	if jsonOptions.IncludeLocation.Term() {
 		if term.Location != nil {
 			d["location"] = term.Location
 		}
@@ -650,8 +650,9 @@ func NumberTerm(n json.Number) *Term {
 }
 
 // IntNumberTerm creates a new Term with an integer Number value.
+// Uses interned terms for commonly used integers (-1 to 512).
 func IntNumberTerm(i int) *Term {
-	return &Term{Value: newIntNumberValue(i)}
+	return internedIntNumberTerm(i)
 }
 
 // UIntNumberTerm creates a new Term with an unsigned integer Number value.
@@ -763,8 +764,9 @@ func floatNumber(f float64) Number {
 type String string
 
 // StringTerm creates a new Term with a String value.
+// Uses interned terms for commonly used strings.
 func StringTerm(s string) *Term {
-	return &Term{Value: String(s)}
+	return internedStringTerm(s)
 }
 
 // Equal returns true if the other Value is a String and is equal.
@@ -2302,11 +2304,14 @@ func (obj *object) KeysIterator() ObjectKeysIterator {
 
 // MarshalJSON returns JSON encoded bytes representing obj.
 func (obj *object) MarshalJSON() ([]byte, error) {
-	sl := make([][2]*Term, obj.Len())
+	l := obj.Len()
+	sl := termPair2SlicePool.Get(l)
+	defer termPair2SlicePool.Put(sl)
+
 	for i, node := range obj.sortedKeys() {
-		sl[i] = Item(node.key, node.value)
+		(*sl)[i] = Item(node.key, node.value)
 	}
-	return json.Marshal(sl)
+	return json.Marshal(*sl)
 }
 
 // Merge returns a new Object containing the non-overlapping keys of obj and other. If there are
