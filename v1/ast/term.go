@@ -2778,11 +2778,26 @@ func (c Call) MakeExpr(output *Term) *Expr {
 }
 
 func (c Call) String() string {
-	args := make([]string, len(c)-1)
-	for i := 1; i < len(c); i++ {
-		args[i-1] = c[i].String()
+	if len(c) == 0 {
+		return ""
 	}
-	return fmt.Sprintf("%v(%v)", c[0], strings.Join(args, ", "))
+
+	sb := sbPool.Get()
+	sb.Grow(len(c) * 16)
+	defer sbPool.Put(sb)
+
+	sb.WriteString(c[0].String())
+	sb.WriteByte('(')
+
+	for i := 1; i < len(c); i++ {
+		if i > 1 {
+			sb.WriteString(", ")
+		}
+		sb.WriteString(c[i].String())
+	}
+
+	sb.WriteByte(')')
+	return sb.String()
 }
 
 func termSliceCopy(a []*Term) []*Term {
